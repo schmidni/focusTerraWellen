@@ -50,17 +50,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        &__content {
-            & h2 {
-                font-size: 3.5rem;
-                margin: 1rem 0;
-            }
+    }
     
-            & p {
-                font-size: 1.8rem;
-            }
-    
+    &__text {
+        & h2 {
+            font-size: 3.5rem;
+            margin: 1rem 0;
         }
+
+        & p {
+            font-size: 1.8rem;
+        }
+
     }
 }

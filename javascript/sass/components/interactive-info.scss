@@ -1,21 +1,4 @@
-.fullscreen_image {
-    height: 100vh;
-    overflow-y: hidden;
-    box-sizing: inline-block;
-    position: relative;
-
-    &__img, &__content {
-        height: 100%;
-        min-width: 100vw;
-    }
-
-    &__content {
-        width: 100%;
-        position: relative;
-        top: -100vh;
-        left: 0;
-    }
-
+.interactive-info {
     &__pointer {
         height: 6vh;
         width: 6vh;
@@ -27,7 +10,6 @@
     }
 
     &__text {
-        box-sizing: border-box;
         font-size: 1.6rem;
         white-space: normal;
 

@@ -1,7 +1,6 @@
-import 'whatwg-fetch';
 import LocomotiveScroll from 'locomotive-scroll';
 
-export default class App {
+export default class InteractiveImage {
     constructor(scrollContainer) {
         // Initialize Locomotive Scroll (horizontal direction)
         this.lscroll = new LocomotiveScroll({
@@ -12,7 +11,7 @@ export default class App {
             tablet: { smooth: false, direction: 'vertical' },
         });
 
-        document.getElementById('pointer-1').addEventListener('click', (event) => {
+        document.getElementById('pointer-1').addEventListener('click', () => {
             this.toggleDisplay(document.getElementById('text-1'));
         });
     }
