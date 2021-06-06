@@ -6,3 +6,9 @@
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
+
+@import "components/fullscreen_image";
+@import "components/navigation";
+@import "components/hero";
+
+@import "../node_modules/locomotive-scroll/dist/locomotive-scroll";

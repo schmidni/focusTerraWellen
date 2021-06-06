@@ -1,0 +1,42 @@
+.fullscreen_image {
+    height: 100vh;
+    overflow-y: hidden;
+    box-sizing: inline-block;
+    position: relative;
+
+    &__img, &__content {
+        height: 100%;
+        min-width: 100vw;
+    }
+
+    &__content {
+        width: 100%;
+        position: relative;
+        top: -100vh;
+        left: 0;
+    }
+
+    &__pointer {
+        height: 6vh;
+        width: 6vh;
+        background-color: yellowgreen;
+        z-index: 999;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+
+    &__text {
+        box-sizing: border-box;
+        font-size: 1.6rem;
+        white-space: normal;
+
+        width: 30vw;
+
+        background-color: yellowgreen;
+        z-index: 999;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+    }
+}

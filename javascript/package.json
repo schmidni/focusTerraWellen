@@ -43,6 +43,7 @@
     "webpack-cli": "^4.4.0"
   },
   "dependencies": {
+    "locomotive-scroll": "^4.1.1",
     "whatwg-fetch": "^3.5.0"
   }
 }

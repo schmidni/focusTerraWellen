@@ -1,25 +1,27 @@
 import 'whatwg-fetch';
+import LocomotiveScroll from 'locomotive-scroll';
 
 export default class App {
-    constructor(element) {
-        this.ENDPOINT = 'https://jsonplaceholder.typicode.com/users/';
+    constructor(scrollContainer) {
+        // Initialize Locomotive Scroll (horizontal direction)
+        this.lscroll = new LocomotiveScroll({
+            el: scrollContainer,
+            smooth: true,
+            direction: 'horizontal',
+            smartphone: { smooth: false, direction: 'vertical' },
+            tablet: { smooth: false, direction: 'vertical' },
+        });
 
-        element.addEventListener('click', () => {
-            this.getUsers().then((data) => {
-                const chld = `
-                <div>${data.map((el, idx) => `<p key="${idx}">${el.name}</p>`).join('')}</div>
-                `;
-
-                element.insertAdjacentHTML('afterend', chld);
-            });
+        document.getElementById('pointer-1').addEventListener('click', (event) => {
+            this.toggleDisplay(document.getElementById('text-1'));
         });
     }
 
-    getUsers = () =>
-        fetch(this.ENDPOINT)
-            .then((response) => {
-                if (!response.ok) throw Error(response.statusText);
-                return response.json();
-            })
-            .then((json) => json);
+    toggleDisplay = (el) => {
+        if (el.style.display === 'none') {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    };
 }

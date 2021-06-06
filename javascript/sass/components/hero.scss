@@ -1,0 +1,66 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/1.jpg');
+    background-size: 100%;
+    background-position: center;
+
+    &__icon {
+        height: 7.5rem;
+        width: 7.5rem;
+        position: absolute;
+        left: calc(50vw - 3.75rem);
+        bottom: 2rem;
+        fill: rgb(31, 66, 88);
+
+    }
+
+    &__title {
+        position: absolute;
+        top: 5vh;
+        left: 10vh;
+
+        font-size: 15rem;
+        font-weight: 600;
+        color: blue;
+
+        & span {
+            position: relative;
+            display: inline-block;
+            top: -11rem;
+            left: 12rem;
+            transform: rotate(-5deg);
+            color: rgb(31, 66, 88);
+        }
+    }
+
+    &__box {
+        height: 50vh;
+        width: 50vw;
+        background-color: rgba(31, 66, 88, 0.8);
+
+        position: absolute;
+        top: 35vh;
+        left: 10vw;
+        
+        color: white;
+        padding: 0 5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+            & h2 {
+                font-size: 3.5rem;
+                margin: 1rem 0;
+            }
+    
+            & p {
+                font-size: 1.8rem;
+            }
+    
+        }
+    }
+}
