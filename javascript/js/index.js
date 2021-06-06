@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/App */ \"./src/components/App.js\");\n // check if locomotive scroll container is present and initiate locomotive scroll\n\nvar scrollcontainer = document.querySelector('[data-scroll-container]');\nvar app = null;\nif (scrollcontainer != null) app = new _components_App__WEBPACK_IMPORTED_MODULE_0__.default(scrollcontainer);\n\n//# sourceURL=webpack://javascript/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/App */ \"./src/components/App.js\");\n // check if locomotive scroll container is present and initiate locomotive scroll\n\nvar scrollcontainer = document.querySelector('[data-scroll-container]');\nvar app = null;\nif (scrollcontainer != null) app = new _components_App__WEBPACK_IMPORTED_MODULE_0__.default(scrollcontainer);\nvar toggleMenu = document.getElementById('toggleMenu');\ntoggleMenu.addEventListener('click', function () {\n  toggleMenu.classList.toggle('active');\n});\n\n//# sourceURL=webpack://javascript/./src/index.js?");
 
 /***/ }),
 

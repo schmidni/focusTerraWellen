@@ -90,7 +90,7 @@ h1 {
   height: 100vh;
   width: 100%;
   background-image: url("../img/1.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-position: center; }
   .hero__icon {
     height: 7.5rem;
@@ -130,6 +130,109 @@ h1 {
       margin: 1rem 0; }
     .hero__box__content p {
       font-size: 1.8rem; }
+
+.menu__toggle {
+  background-color: white;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  z-index: 1002;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
+
+.menu__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#61acc5, white);
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+
+.menu__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+
+.menu__toggle.active ~ .menu__background {
+  transform: scale(80); }
+
+.menu__toggle.active ~ .menu__nav {
+  opacity: 1;
+  width: 100%; }
+
+.menu__list {
+  list-style: none;
+  text-align: center; }
+
+.menu__item {
+  margin: 1rem; }
+
+.menu__link:link, .menu__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 320%;
+  transition: all .4s; }
+
+.menu__link:hover, .menu__link:active {
+  background-position: 100%;
+  color: black;
+  transform: translateX(1rem); }
+
+.menu__icon {
+  position: relative;
+  margin-top: 3.5rem; }
+  .menu__icon, .menu__icon::before, .menu__icon::after {
+    display: inline-block;
+    width: 3rem;
+    height: 2px;
+    background-color: grey;
+    transition: all .2s; }
+  .menu__icon::before, .menu__icon::after {
+    content: "";
+    position: absolute;
+    left: 0; }
+  .menu__icon::before {
+    top: -.8rem; }
+  .menu__icon::after {
+    top: .8rem; }
+
+.menu__toggle:hover .menu__icon::before {
+  top: -1rem; }
+
+.menu__toggle:hover .menu__icon::after {
+  top: 1rem; }
+
+.menu__toggle.active .menu__icon {
+  background-color: transparent; }
+
+.menu__toggle.active .menu__icon::before {
+  top: 0;
+  transform: rotate(-135deg); }
+
+.menu__toggle.active .menu__icon::after {
+  top: 0;
+  transform: rotate(135deg); }
 
 /*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
