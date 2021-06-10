@@ -16,27 +16,7 @@
 
     }
 
-    &__title {
-        position: absolute;
-        top: 5vh;
-        left: 10vh;
-
-        font-family: 'Bree Serif', serif;
-        font-size: 15rem;
-        font-weight: 600;
-        line-height: 1.2;
-        color: blue;
-
-        & span {
-            position: relative;
-            display: inline-block;
-            top: -11rem;
-            left: 12rem;
-            transform: rotate(-5deg);
-            color: $color-base;
-        }
-    }
-
+    
     &__box {
         height: vh;
         width: 50vw;
@@ -50,6 +30,8 @@
         padding: 3rem 3rem;
 
         display: flex;
+        flex-direction: column;
+        
         justify-content: center;
         align-items: top;
     }

@@ -4,23 +4,52 @@ body {
     line-height: 1.5;
 }
 
-.hero__text {
+.hero {
 
-    color: $color-base;
-    &:not(:last-child) {
-        margin: 1rem;
-    }
-    & h2 {
-        font-size: 3rem;
-        text-transform: uppercase;
-        // margin: 1rem 0;
+    &__text {
+        color: $color-base;
+
+        // flex: 1 1 0px;
+        // width: 0;
+
+        &:not(:last-child) {
+            margin: 1.5rem;
+        }
+
+        & h2 {
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            // margin: 1rem 0;
+        }
+
+        & p {
+            font-size: 1.8rem;
+        }
+
     }
 
-    & p {
-        font-size: 1.8rem;
-    }
+    &__title {
+        position: absolute;
+        top: 5vh;
+        left: 10vw;
 
+        font-family: 'Bree Serif', serif;
+        font-size: 15rem;
+        font-weight: 600;
+        line-height: 1.2;
+        color: blue;
+
+        & span {
+            position: relative;
+            display: inline-block;
+            top: -11rem;
+            left: 12rem;
+            transform: rotate(-5deg);
+            color: $color-base;
+        }
+    }
 }
+
 
 .navigation__title {
     // font-family: 'Bree Serif', serif;
