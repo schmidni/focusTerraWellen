@@ -12,7 +12,7 @@
         position: absolute;
         left: calc(50vw - 3.75rem);
         bottom: 2rem;
-        fill: rgb(31, 66, 88);
+        fill: $color-base;
 
     }
 
@@ -21,8 +21,10 @@
         top: 5vh;
         left: 10vh;
 
+        font-family: 'Bree Serif', serif;
         font-size: 15rem;
         font-weight: 600;
+        line-height: 1.2;
         color: blue;
 
         & span {
@@ -31,36 +33,26 @@
             top: -11rem;
             left: 12rem;
             transform: rotate(-5deg);
-            color: rgb(31, 66, 88);
+            color: $color-base;
         }
     }
 
     &__box {
-        height: 50vh;
+        height: vh;
         width: 50vw;
-        background-color: rgba(31, 66, 88, 0.8);
+        background-color: rgba(white, 0.5);
 
         position: absolute;
-        top: 35vh;
-        left: 10vw;
+        top: 40vh;
+        left: 5vw;
         
         color: white;
-        padding: 0 5rem;
+        padding: 3rem 3rem;
 
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: top;
     }
     
-    &__text {
-        & h2 {
-            font-size: 3.5rem;
-            margin: 1rem 0;
-        }
-
-        & p {
-            font-size: 1.8rem;
-        }
-
-    }
+    
 }

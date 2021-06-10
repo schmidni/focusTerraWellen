@@ -1,0 +1,39 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero__text {
+
+    color: $color-base;
+    &:not(:last-child) {
+        margin: 1rem;
+    }
+    & h2 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        // margin: 1rem 0;
+    }
+
+    & p {
+        font-size: 1.8rem;
+    }
+
+}
+
+.navigation__title {
+    // font-family: 'Bree Serif', serif;
+    font-size: 7rem;
+    text-transform: uppercase;
+    // color: burlywood;
+    color: $color-offwhite;
+}
+
+.navigation__text {
+    font-size: 2rem;
+    font-weight: 600;
+    color: blanchedalmond;
+    height: 0;
+    overflow: hidden;
+}

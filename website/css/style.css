@@ -11,6 +11,33 @@ html {
 body {
   box-sizing: border-box; }
 
+body {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.hero__text {
+  color: #00314f; }
+  .hero__text:not(:last-child) {
+    margin: 1rem; }
+  .hero__text h2 {
+    font-size: 3rem;
+    text-transform: uppercase; }
+  .hero__text p {
+    font-size: 1.8rem; }
+
+.navigation__title {
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: #f6ede1; }
+
+.navigation__text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: blanchedalmond;
+  height: 0;
+  overflow: hidden; }
+
 .interactive-info__pointer {
   height: 6vh;
   width: 6vh;
@@ -46,21 +73,12 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  transition: height, 0.5s; }
+  transition: height, 0.5; }
   .navigation__link {
     text-decoration: none; }
   .navigation__content {
     position: relative;
     z-index: 999; }
-  .navigation__title {
-    font-size: 7rem;
-    color: burlywood; }
-  .navigation__text {
-    font-size: 2rem;
-    font-weight: 600;
-    color: blanchedalmond;
-    height: 0;
-    overflow: hidden; }
   .navigation__overlay {
     height: 100%;
     width: 100%;
@@ -193,13 +211,15 @@ body {
     position: absolute;
     left: calc(50vw - 3.75rem);
     bottom: 2rem;
-    fill: #1f4258; }
+    fill: #00314f; }
   .hero__title {
     position: absolute;
     top: 5vh;
     left: 10vh;
+    font-family: 'Bree Serif', serif;
     font-size: 15rem;
     font-weight: 600;
+    line-height: 1.2;
     color: blue; }
     .hero__title span {
       position: relative;
@@ -207,24 +227,19 @@ body {
       top: -11rem;
       left: 12rem;
       transform: rotate(-5deg);
-      color: #1f4258; }
+      color: #00314f; }
   .hero__box {
-    height: 50vh;
+    height: vh;
     width: 50vw;
-    background-color: rgba(31, 66, 88, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
-    top: 35vh;
-    left: 10vw;
+    top: 40vh;
+    left: 5vw;
     color: white;
-    padding: 0 5rem;
+    padding: 3rem 3rem;
     display: flex;
     justify-content: center;
-    align-items: center; }
-  .hero__text h2 {
-    font-size: 3.5rem;
-    margin: 1rem 0; }
-  .hero__text p {
-    font-size: 1.8rem; }
+    align-items: top; }
 
 /*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
