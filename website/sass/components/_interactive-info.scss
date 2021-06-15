@@ -1,13 +1,57 @@
 .interactive-info {
     &__pointer {
-        height: 6vh;
-        width: 6vh;
-        background-color: yellowgreen;
+        // height: 6vh;
+        // width: 6vh;
+        // background-color: yellowgreen;
         z-index: 999;
         position: absolute;
         top: 10%;
         left: 10%;
+
+        .icon-circle {
+            // stroke-width: 3px;
+            // stroke: rgb(183, 159, 1);
+            // fill: none;
+            position: absolute;
+            height: 6vh;
+            width: 6vh;
+            border-radius: 50%;
+            border: 2px solid rgb(183, 159, 1);
+
+            animation-name: circleGrows;
+            animation-timing-function: linear;
+            animation-duration: 2s; 
+            animation-iteration-count: infinite;
+
+            &--1 {
+                animation-delay: 0s;
+            }
+            &--2 {
+                animation-delay: .5s;
+            }
+            &--3 {
+                animation-delay: 1s;
+            }
+            &--4 {
+                animation-delay: 1.5s;
+            }
+            
+        }
+
+        
     }
+
+    
+
+    // &__icon {
+    //     height: 6vh;
+    //     width: 6vh;
+    //     background-color: yellowgreen;
+    //     z-index: 999;
+    //     position: absolute;
+    //     top: 10%;
+    //     left: 10%;
+    // }
 
     &__text {
         font-size: 1.6rem;

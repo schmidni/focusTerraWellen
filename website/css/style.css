@@ -66,15 +66,40 @@ h5 {
 h6 {
   font-weight: 500;
   font-size: inherit; }
+/* animations! */
+/* at-rules */
+@keyframes circleGrows {
+  0% {
+    /* percent in time */
+    opacity: 1;
+    transform: scale(0.1); }
+  100% {
+    opacity: 0;
+    transform: scale(1); } }
 
 .interactive-info__pointer {
-  height: 6vh;
-  width: 6vh;
-  background-color: yellowgreen;
   z-index: 999;
   position: absolute;
   top: 10%;
   left: 10%; }
+  .interactive-info__pointer .icon-circle {
+    position: absolute;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    border: 2px solid #b79f01;
+    animation-name: circleGrows;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; }
+    .interactive-info__pointer .icon-circle--1 {
+      animation-delay: 0s; }
+    .interactive-info__pointer .icon-circle--2 {
+      animation-delay: .5s; }
+    .interactive-info__pointer .icon-circle--3 {
+      animation-delay: 1s; }
+    .interactive-info__pointer .icon-circle--4 {
+      animation-delay: 1.5s; }
 
 .interactive-info__text {
   font-size: 1.6rem;
