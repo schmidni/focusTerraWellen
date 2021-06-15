@@ -39,46 +39,47 @@ body {
   box-sizing: border-box; }
 
 body {
-  font-family: 'Dosis', sans-serif;
-  font-weight: 400;
-  line-height: 1.5; }
-
-.hero__text {
-  color: #00314f; }
-  .hero__text:not(:last-child) {
-    margin: 1.5rem; }
-  .hero__text h2 {
-    font-size: 2.4rem;
-    text-transform: uppercase; }
-  .hero__text p {
-    font-size: 1.8rem; }
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400; }
 
 .hero__title {
   position: absolute;
   top: 5vh;
   left: 10vw;
-  font-family: 'Bree Serif', serif;
-  font-size: 15rem;
+  font-family: 'Dr Sugiyama', cursive;
+  font-size: 23rem;
   font-weight: 600;
   line-height: 1.2;
-  color: blue; }
+  color: #00314f; }
   .hero__title span {
     position: relative;
     display: inline-block;
-    top: -11rem;
-    left: 12rem;
+    font-size: 18rem;
+    top: -18rem;
+    left: 15rem;
     transform: rotate(-5deg);
-    color: #00314f; }
+    color: #009cb4; }
+
+.hero__text {
+  color: #00314f;
+  line-height: 1.5; }
+  .hero__text:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .hero__text h2 {
+    font-size: 2.4rem;
+    text-transform: uppercase; }
+  .hero__text p {
+    font-size: 1.6rem; }
 
 .navigation__title {
   font-size: 7rem;
-  text-transform: uppercase;
+  font-weight: 700;
   color: #f6ede1; }
 
 .navigation__text {
   font-size: 2rem;
-  font-weight: 600;
-  color: blanchedalmond;
+  font-weight: 400;
+  color: white;
   height: 0;
   overflow: hidden; }
 

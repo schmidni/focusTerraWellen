@@ -1,19 +1,49 @@
 body {
-    font-family: 'Dosis', sans-serif;
+    // font-family: 'Dosis', sans-serif;
+    // font-family: 'Nunito', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    // font-family: 'Lato', sans-serif;
+    // font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    line-height: 1.5;
+    // line-height: 1.5;
 }
 
 .hero {
 
+    &__title {
+        position: absolute;
+        top: 5vh;
+        left: 10vw;
+
+        // font-family: 'Bree Serif', serif;
+        // font-family: 'Damion', cursive;
+        font-family: 'Dr Sugiyama', cursive;
+        // font-family: 'Kristi', cursive;
+        // font-family: 'Pacifico', cursive;
+        // font-family: 'Vibur', cursive;
+        font-size: 23rem;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $color-base;
+        // color: rgb(0, 156, 180);
+
+        & span {
+            position: relative;
+            display: inline-block;
+            font-size: 18rem;
+            top: -18rem;
+            left: 15rem;
+            transform: rotate(-5deg);
+            color: rgb(0, 156, 180);
+        }
+    }
+
     &__text {
         color: $color-base;
-
-        // flex: 1 1 0px;
-        // width: 0;
+        line-height: 1.5;
 
         &:not(:last-child) {
-            margin: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         & h2 {
@@ -23,30 +53,9 @@ body {
         }
 
         & p {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
 
-    }
-
-    &__title {
-        position: absolute;
-        top: 5vh;
-        left: 10vw;
-
-        font-family: 'Bree Serif', serif;
-        font-size: 15rem;
-        font-weight: 600;
-        line-height: 1.2;
-        color: blue;
-
-        & span {
-            position: relative;
-            display: inline-block;
-            top: -11rem;
-            left: 12rem;
-            transform: rotate(-5deg);
-            color: $color-base;
-        }
     }
 }
 
@@ -54,15 +63,16 @@ body {
 .navigation__title {
     // font-family: 'Bree Serif', serif;
     font-size: 7rem;
-    text-transform: uppercase;
+    font-weight: 700;
+    // text-transform: uppercase;
     // color: burlywood;
     color: $color-offwhite;
 }
 
 .navigation__text {
     font-size: 2rem;
-    font-weight: 600;
-    color: blanchedalmond;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
     height: 0;
     overflow: hidden;
 }
