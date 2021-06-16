@@ -85,7 +85,7 @@ h6 {
   position: absolute;
   top: 10%;
   left: 10%;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   cursor: pointer; }
   .interactive-info__pointer .icon-circle {
     position: absolute;
@@ -111,7 +111,6 @@ h6 {
     transform: scale(1.2); }
 
 .interactive-info__text {
-  transition: all 0.2s ease-in;
   font-size: 1.6rem;
   white-space: normal;
   color: white;
@@ -126,7 +125,8 @@ h6 {
   left: 12%;
   opacity: 0;
   transform: scale(0);
-  transform-origin: top left; }
+  transform-origin: top left;
+  transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1); }
   .interactive-info__text.text-active {
     opacity: 1;
     transform: scale(1); }
