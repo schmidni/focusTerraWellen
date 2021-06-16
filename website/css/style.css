@@ -1,3 +1,18 @@
+/*
+0-600       phone
+600-900     tablet
+900-1200    tablet landscape
+            main
+1800+       big screen
+*/
+/* $breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big
+
+ORDER: Base, typography > general layout, grid > pages
+*/
 *,
 *::after,
 *::before {
@@ -7,9 +22,50 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
+
+body, p {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5; }
+
+h1, .h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h5 {
+  font-weight: 700;
+  font-size: 1.8rem; }
+
+h6 {
+  font-weight: 500;
+  font-size: inherit; }
 
 .interactive-info__pointer {
   height: 6vh;
@@ -30,6 +86,11 @@ body {
   top: 15%;
   left: 15%; }
 
+.title-section {
+  position: absolute;
+  top: 0;
+  left: 1.5rem; }
+
 .fullscreen-image {
   box-sizing: inline-block;
   height: 100vh;
@@ -47,20 +108,17 @@ body {
   display: flex;
   align-items: center;
   transition: height, 0.5s; }
+  .navigation__title {
+    color: white; }
+  .navigation__text {
+    color: white;
+    height: 0;
+    overflow: hidden; }
   .navigation__link {
     text-decoration: none; }
   .navigation__content {
     position: relative;
     z-index: 999; }
-  .navigation__title {
-    font-size: 7rem;
-    color: burlywood; }
-  .navigation__text {
-    font-size: 2rem;
-    font-weight: 600;
-    color: blanchedalmond;
-    height: 0;
-    overflow: hidden; }
   .navigation__overlay {
     height: 100%;
     width: 100%;
@@ -187,44 +245,42 @@ body {
   background-image: url("../img/1.jpg");
   background-size: cover;
   background-position: center; }
+  .hero__title {
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    font-family: 'Dr Sugiyama', cursive;
+    font-size: 23rem;
+    text-transform: none;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #00314f; }
+    .hero__title--sub {
+      position: relative;
+      display: inline-block;
+      font-size: 18rem;
+      top: -18rem;
+      left: 15rem;
+      transform: rotate(-5deg);
+      color: #009cb4; }
+  .hero__text {
+    color: #00314f; }
+    .hero__text:not(:last-child) {
+      margin-bottom: 1.5rem; }
   .hero__icon {
     height: 7.5rem;
     width: 7.5rem;
     position: absolute;
     left: calc(50vw - 3.75rem);
     bottom: 2rem;
-    fill: #1f4258; }
-  .hero__title {
-    position: absolute;
-    top: 5vh;
-    left: 10vh;
-    font-size: 15rem;
-    font-weight: 600;
-    color: blue; }
-    .hero__title span {
-      position: relative;
-      display: inline-block;
-      top: -11rem;
-      left: 12rem;
-      transform: rotate(-5deg);
-      color: #1f4258; }
+    fill: #00314f; }
   .hero__box {
-    height: 50vh;
     width: 50vw;
-    background-color: rgba(31, 66, 88, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
-    top: 35vh;
-    left: 10vw;
-    color: white;
-    padding: 0 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  .hero__text h2 {
-    font-size: 3.5rem;
-    margin: 1rem 0; }
-  .hero__text p {
-    font-size: 1.8rem; }
+    top: 40vh;
+    left: 5vw;
+    padding: 3rem; }
 
 /*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {

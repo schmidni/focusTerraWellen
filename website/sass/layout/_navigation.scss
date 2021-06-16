@@ -6,6 +6,16 @@
     display: flex;
     align-items: center;
     transition: height, 0.5s;
+    
+    &__title {
+        color: white;
+    }
+
+    &__text {
+        color: white;
+        height: 0;
+        overflow: hidden;
+    }
 
     &__link {
         text-decoration: none;
@@ -16,19 +26,7 @@
         z-index: 999;
     }
 
-    &__title {
-        font-size: 7rem;
-        color: burlywood;
-    }
-
-    &__text {
-        font-size: 2rem;
-        font-weight: 600;
-        color: blanchedalmond;
-        height: 0;
-        overflow: hidden;
-    }
-
+    
     &__overlay {
         height: 100%;
         width: 100%;
