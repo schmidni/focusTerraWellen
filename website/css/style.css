@@ -38,50 +38,33 @@ html {
 body {
   box-sizing: border-box; }
 
-body {
+body, p {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 400; }
-
-.hero__title {
-  position: absolute;
-  top: 5vh;
-  left: 10vw;
-  font-family: 'Dr Sugiyama', cursive;
-  font-size: 23rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: #00314f; }
-  .hero__title span {
-    position: relative;
-    display: inline-block;
-    font-size: 18rem;
-    top: -18rem;
-    left: 15rem;
-    transform: rotate(-5deg);
-    color: #009cb4; }
-
-.hero__text {
-  color: #00314f;
-  line-height: 1.5; }
-  .hero__text:not(:last-child) {
-    margin-bottom: 1.5rem; }
-  .hero__text h2 {
-    font-size: 2.4rem;
-    text-transform: uppercase; }
-  .hero__text p {
-    font-size: 1.6rem; }
-
-.navigation__title {
-  font-size: 7rem;
-  font-weight: 700;
-  color: #f6ede1; }
-
-.navigation__text {
-  font-size: 2rem;
   font-weight: 400;
-  color: white;
-  height: 0;
-  overflow: hidden; }
+  font-size: 1.6rem;
+  line-height: 1.5; }
+
+h1, .h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h2, .h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h3, .h3 {
+  font-size: 2rem;
+  font-weight: 700; }
+
+h5, .h5 {
+  font-weight: 700;
+  font-size: 1.8rem; }
+
+h6, .h6 {
+  font-weight: 500;
+  font-size: inherit; }
 
 .interactive-info__pointer {
   height: 6vh;
@@ -110,6 +93,8 @@ body {
   .fullscreen-image__img {
     height: 100%;
     min-width: 100vw; }
+  .fullscreen-image__title-section {
+    position: absolute; }
 
 .navigation {
   height: 20vh;
@@ -118,7 +103,13 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  transition: height, 0.5; }
+  transition: height, 0.5s; }
+  .navigation__title {
+    color: white; }
+  .navigation__text {
+    color: white;
+    height: 0;
+    overflow: hidden; }
   .navigation__link {
     text-decoration: none; }
   .navigation__content {
@@ -250,6 +241,28 @@ body {
   background-image: url("../img/1.jpg");
   background-size: cover;
   background-position: center; }
+  .hero__title {
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    font-family: 'Dr Sugiyama', cursive;
+    font-size: 23rem;
+    text-transform: none;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #00314f; }
+    .hero__title--sub {
+      position: relative;
+      display: inline-block;
+      font-size: 18rem;
+      top: -18rem;
+      left: 15rem;
+      transform: rotate(-5deg);
+      color: #009cb4; }
+  .hero__text {
+    color: #00314f; }
+    .hero__text:not(:last-child) {
+      margin-bottom: 1.5rem; }
   .hero__icon {
     height: 7.5rem;
     width: 7.5rem;
@@ -258,18 +271,12 @@ body {
     bottom: 2rem;
     fill: #00314f; }
   .hero__box {
-    height: vh;
     width: 50vw;
     background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     top: 40vh;
     left: 5vw;
-    color: white;
-    padding: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: top; }
+    padding: 3rem; }
 
 /*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {

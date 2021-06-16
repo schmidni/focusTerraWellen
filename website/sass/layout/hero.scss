@@ -6,6 +6,42 @@
     background-size: cover;
     background-position: center;
 
+    &__title {
+        position: absolute;
+        top: 5vh;
+        left: 10vw;
+
+        // font-family: 'Bree Serif', serif;
+        // font-family: 'Damion', cursive;
+        font-family: 'Dr Sugiyama', cursive;
+        // font-family: 'Kristi', cursive;
+        // font-family: 'Pacifico', cursive;
+        // font-family: 'Vibur', cursive;
+        font-size: 23rem;
+        text-transform: none;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $color-base;
+
+        &--sub {
+            position: relative;
+            display: inline-block;
+            font-size: 18rem;
+            top: -18rem;
+            left: 15rem;
+            transform: rotate(-5deg);
+            color: rgb(0, 156, 180);
+        }
+    }
+
+    &__text {
+        color: $color-base;
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
     &__icon {
         height: 7.5rem;
         width: 7.5rem;
@@ -13,12 +49,10 @@
         left: calc(50vw - 3.75rem);
         bottom: 2rem;
         fill: $color-base;
-
     }
 
     
     &__box {
-        height: vh;
         width: 50vw;
         background-color: rgba(white, 0.5);
 
@@ -26,14 +60,7 @@
         top: 40vh;
         left: 5vw;
         
-        color: white;
-        padding: 3rem 3rem;
-
-        display: flex;
-        flex-direction: column;
-        
-        justify-content: center;
-        align-items: top;
+        padding: 3rem;
     }
     
     

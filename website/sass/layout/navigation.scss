@@ -5,7 +5,17 @@
     position: relative;
     display: flex;
     align-items: center;
-    transition: height, 0.5;
+    transition: height, 0.5s;
+    
+    &__title {
+        color: white;
+    }
+
+    &__text {
+        color: white;
+        height: 0;
+        overflow: hidden;
+    }
 
     &__link {
         text-decoration: none;
