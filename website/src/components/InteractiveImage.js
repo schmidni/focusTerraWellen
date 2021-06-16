@@ -16,11 +16,15 @@ export default class InteractiveImage {
         });
     }
 
+    // toggleDisplay = (el) => {
+    //     if (el.style.display === 'none') {
+    //         el.style.display = 'block';
+    //     } else {
+    //         el.style.display = 'none';
+    //     }
+    // };
+
     toggleDisplay = (el) => {
-        if (el.style.display === 'none') {
-            el.style.display = 'block';
-        } else {
-            el.style.display = 'none';
-        }
+        el.classList.toggle('text-active')
     };
 }

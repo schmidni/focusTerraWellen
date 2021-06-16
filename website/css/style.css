@@ -111,17 +111,25 @@ h6 {
     transform: scale(1.2); }
 
 .interactive-info__text {
+  transition: all 0.2s ease-in;
   font-size: 1.6rem;
   white-space: normal;
   color: white;
   width: 30vw;
   padding: 3rem;
+  border-radius: 0.5rem;
   background-color: rgba(154, 141, 58, 0.9);
   box-shadow: rgba(33, 29, 0, 0.5) 0.3rem 0.3rem 1rem;
   z-index: 999;
   position: absolute;
   top: 15%;
-  left: 15%; }
+  left: 12%;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top left; }
+  .interactive-info__text.text-active {
+    opacity: 1;
+    transform: scale(1); }
 
 .title-section {
   position: absolute;
