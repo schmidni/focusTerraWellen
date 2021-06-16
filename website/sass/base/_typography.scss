@@ -15,26 +15,26 @@ h1, .h1 {
     text-transform: uppercase;
 }
 
-h2, .h2 {
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h3 {
     font-size: 2.4rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-h3, .h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    // text-transform: uppercase;
-}
-
 // image intro 
-h5, .h5 {
+h5 {
     font-weight: 700;
     font-size: 1.8rem;
 }
 
 //interactive info intro
-h6, .h6 {
+h6 {
     font-weight: 500;
     font-size: inherit;
 }
