@@ -38,6 +38,17 @@ html {
 body {
   box-sizing: border-box; }
 
+/* animations! */
+/* at-rules */
+@keyframes circleGrows {
+  0% {
+    /* percent in time */
+    opacity: 1;
+    transform: scale(0.01); }
+  100% {
+    opacity: 0;
+    transform: scale(1); } }
+
 body, p {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -66,16 +77,6 @@ h5 {
 h6 {
   font-weight: 500;
   font-size: inherit; }
-/* animations! */
-/* at-rules */
-@keyframes circleGrows {
-  0% {
-    /* percent in time */
-    opacity: 1;
-    transform: scale(0.01); }
-  100% {
-    opacity: 0;
-    transform: scale(1); } }
 
 .interactive-info__pointer {
   height: 6vh;
@@ -92,7 +93,7 @@ h6 {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    border: 0.3rem solid #c6ac03;
+    border: 0.4rem solid #c6ac03;
     box-shadow: 0px 0px 2rem #fff8cb, #6b5c00 0px 0px 0.75rem inset;
     animation-name: circleGrows;
     animation-timing-function: linear;
@@ -111,7 +112,6 @@ h6 {
     transform: scale(1.2); }
 
 .interactive-info__text {
-  font-size: 1.6rem;
   white-space: normal;
   color: white;
   width: 30vw;
@@ -130,11 +130,29 @@ h6 {
   .interactive-info__text.text-active {
     opacity: 1;
     transform: scale(1); }
+  .interactive-info__text > *:not(:last-child) {
+    margin-bottom: 1.5rem; }
 
 .title-section {
   position: absolute;
   top: 0;
   left: 1.5rem; }
+
+.close-icon {
+  position: relative; }
+  .close-icon::before, .close-icon::after {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    display: inline-block;
+    width: 3rem;
+    height: 2px;
+    background-color: white;
+    content: ""; }
+  .close-icon::before {
+    transform: rotate(-135deg); }
+  .close-icon::after {
+    transform: rotate(135deg); }
 
 .fullscreen-image {
   box-sizing: inline-block;

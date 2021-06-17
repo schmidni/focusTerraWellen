@@ -14,6 +14,10 @@ export default class InteractiveImage {
         document.getElementById('pointer-1').addEventListener('click', () => {
             this.toggleDisplay(document.getElementById('text-1'));
         });
+
+        document.getElementById('close-icon-1').addEventListener('click', () => {
+            this.toggleDisplay(document.getElementById('text-1'));
+        });
     }
 
     // toggleDisplay = (el) => {
