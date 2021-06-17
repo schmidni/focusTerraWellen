@@ -7,8 +7,8 @@
         border-radius: 50%;
         z-index: 999;
         position: absolute;
-        top: 10%;
-        left: 10%;
+        top: 46%;
+        left: 33%;
 
         transition: all 0.2s ease; 
         cursor: pointer;
@@ -18,8 +18,8 @@
             height: 100%;
             width: 100%;
             border-radius: 50%;
-            border: .4rem solid rgb(198, 172, 3);
-            box-shadow: 0px 0px 2rem rgb(255, 248, 203), rgb(107, 92, 0) 0px 0px .75rem inset;
+            border: .4rem solid $color-info-icon;
+            box-shadow: 0px 0px 1rem lighten($color-info-icon, 30%), darken($color-info-icon, 30%) 0px 0px 1rem inset;
 
             animation-name: circleGrows;
             animation-timing-function: linear;
@@ -54,8 +54,8 @@
         padding: 3rem;
 
         border-radius: 0.5rem;
-        background-color: rgba(154, 141, 58, 0.9);
-        box-shadow: rgba(33, 29, 0, 0.5) .3rem .3rem 1rem ;
+        background-color: rgba(darken($color-info-icon, 20%), 0.9);
+        box-shadow: rgba(darken($color-info-icon, 80%), 0.5) .3rem .3rem 1rem ;
         z-index: 999;
         position: absolute;
         top: 15%;
@@ -77,6 +77,9 @@
         }
     }
 
-    
+    &__close{
+        height: 2rem;
+        width: 2rem;
+    }
    
 }

@@ -45,20 +45,23 @@ body {
     /* percent in time */
     opacity: 1;
     transform: scale(0.01); }
+  75% {
+    opacity: 1; }
   100% {
     opacity: 0;
     transform: scale(1); } }
 
 body, p {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5; }
 
 h1, .h1 {
+  font-family: 'Zilla Slab', serif;
   font-size: 5rem;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: none; }
 
 h2 {
   font-size: 3rem;
@@ -72,7 +75,8 @@ h3 {
 
 h5 {
   font-weight: 700;
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  line-height: 1.2; }
 
 h6 {
   font-weight: 500;
@@ -84,8 +88,8 @@ h6 {
   border-radius: 50%;
   z-index: 999;
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 46%;
+  left: 33%;
   transition: all 0.2s ease;
   cursor: pointer; }
   .interactive-info__pointer .icon-circle {
@@ -93,8 +97,8 @@ h6 {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    border: 0.4rem solid #c6ac03;
-    box-shadow: 0px 0px 2rem #fff8cb, #6b5c00 0px 0px 0.75rem inset;
+    border: 0.4rem solid #05afde;
+    box-shadow: 0px 0px 1rem #80e1fc, #023948 0px 0px 1rem inset;
     animation-name: circleGrows;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
@@ -117,8 +121,8 @@ h6 {
   width: 30vw;
   padding: 3rem;
   border-radius: 0.5rem;
-  background-color: rgba(154, 141, 58, 0.9);
-  box-shadow: rgba(33, 29, 0, 0.5) 0.3rem 0.3rem 1rem;
+  background-color: rgba(3, 96, 122, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.5) 0.3rem 0.3rem 1rem;
   z-index: 999;
   position: absolute;
   top: 15%;
@@ -133,19 +137,28 @@ h6 {
   .interactive-info__text > *:not(:last-child) {
     margin-bottom: 1.5rem; }
 
+.interactive-info__close {
+  height: 2rem;
+  width: 2rem; }
+
 .title-section {
   position: absolute;
   top: 0;
   left: 1.5rem; }
 
 .close-icon {
-  position: relative; }
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 0.2s;
+  transform-origin: 75% 50%; }
   .close-icon::before, .close-icon::after {
     position: absolute;
     top: 1rem;
     left: 0;
     display: inline-block;
-    width: 3rem;
+    width: 150%;
     height: 2px;
     background-color: white;
     content: ""; }
@@ -153,6 +166,8 @@ h6 {
     transform: rotate(-135deg); }
   .close-icon::after {
     transform: rotate(135deg); }
+  .close-icon:hover {
+    transform: scale(1.2) rotate(90deg); }
 
 .fullscreen-image {
   box-sizing: inline-block;
@@ -312,17 +327,19 @@ h6 {
     position: absolute;
     top: 5vh;
     left: 10vw;
-    font-family: 'Dr Sugiyama', cursive;
-    font-size: 23rem;
+    font-family: 'Zilla Slab', serif;
+    font-size: 25rem;
     text-transform: none;
-    font-weight: 600;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.8rem;
     line-height: 1.2;
     color: #00314f; }
     .hero__title--sub {
       position: relative;
       display: inline-block;
       font-size: 18rem;
-      top: -18rem;
+      top: -20rem;
       left: 15rem;
       transform: rotate(-5deg);
       color: #009cb4; }
