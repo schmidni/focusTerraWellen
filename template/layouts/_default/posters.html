@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ $bundleName := string .Page.Params.bundle}}
+{{ $headless := .Site.GetPage $bundleName }}
+{{ $reusablePages := $headless.Resources.Match "info*" }}
+<h2>Block</h2>
+{{ range $reusablePages }}
+<h3>{{ .Title }}</h3>
+{{ .Content }}
+{{ end }}
+{{ end }}

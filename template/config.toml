@@ -1,0 +1,26 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo Blog"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
+
+[permalinks]
+  blog = "/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Physics"
+    url = "/physics/"
+    weight = 2
+  [[menu.main]]
+    name = "Empfänger"
+    url = "/empfaenger/"
+    weight = 3
+
+[params]
+  dateFormat = "Jan 2, 2006"
+  homeText = "You just made a Hugo blog from scratch."
+
