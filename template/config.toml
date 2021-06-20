@@ -1,6 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Hugo Blog"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
 
 [permalinks]
@@ -24,3 +23,14 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
   dateFormat = "Jan 2, 2006"
   homeText = "You just made a Hugo blog from scratch."
 
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    title = "My New Hugo i18n Site"
+    languageName = "English"
+    weight = 1
+  [languages.de]
+    title = "Meine neue Hugo i18n Site"
+    languageName = "Deutsch"
+    weight = 2
