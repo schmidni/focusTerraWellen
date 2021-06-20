@@ -1,0 +1,36 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
+
+[permalinks]
+  blog = "/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Physics"
+    url = "/physics/"
+    weight = 2
+  [[menu.main]]
+    name = "Empfänger"
+    url = "/empfaenger/"
+    weight = 3
+
+[params]
+  dateFormat = "Jan 2, 2006"
+  homeText = "You just made a Hugo blog from scratch."
+
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    title = "My New Hugo i18n Site"
+    languageName = "English"
+    weight = 1
+  [languages.de]
+    title = "Meine neue Hugo i18n Site"
+    languageName = "Deutsch"
+    weight = 2
