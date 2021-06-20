@@ -13,7 +13,7 @@
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
-    "devserver": "live-server --port=5000 --no-browser --watch=css,js,index.html,img",
+    "devserver": "live-server --port=5000 --no-browser --watch=css,js,index.html,empfaenger.html,img",
     "start": "npm-run-all dev:sass --parallel devserver watch:js watch:sass"
   },
   "author": "",

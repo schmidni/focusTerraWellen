@@ -14,13 +14,21 @@ export default class InteractiveImage {
         document.getElementById('pointer-1').addEventListener('click', () => {
             this.toggleDisplay(document.getElementById('text-1'));
         });
+
+        document.getElementById('close-icon-1').addEventListener('click', () => {
+            this.toggleDisplay(document.getElementById('text-1'));
+        });
     }
 
+    // toggleDisplay = (el) => {
+    //     if (el.style.display === 'none') {
+    //         el.style.display = 'block';
+    //     } else {
+    //         el.style.display = 'none';
+    //     }
+    // };
+
     toggleDisplay = (el) => {
-        if (el.style.display === 'none') {
-            el.style.display = 'block';
-        } else {
-            el.style.display = 'none';
-        }
+        el.classList.toggle('text-active')
     };
 }

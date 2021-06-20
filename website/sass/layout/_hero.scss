@@ -13,13 +13,17 @@
 
         // font-family: 'Bree Serif', serif;
         // font-family: 'Damion', cursive;
-        font-family: 'Dr Sugiyama', cursive;
+        // font-family: 'Dr Sugiyama', cursive;
         // font-family: 'Kristi', cursive;
         // font-family: 'Pacifico', cursive;
         // font-family: 'Vibur', cursive;
-        font-size: 23rem;
+        font-family: 'Zilla Slab', serif;
+        // font-family: 'Roboto Slab', serif;
+        font-size: 25rem;
         text-transform: none;
-        font-weight: 600;
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: -0.8rem;
         line-height: 1.2;
         color: $color-base;
 
@@ -27,7 +31,7 @@
             position: relative;
             display: inline-block;
             font-size: 18rem;
-            top: -18rem;
+            top: -20rem;
             left: 15rem;
             transform: rotate(-5deg);
             color: rgb(0, 156, 180);
