@@ -6,36 +6,51 @@
     background-size: cover;
     background-position: center;
 
+    // display: flex;
+    // flex-direction: column;
+
     &__title {
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         left: 10vw;
 
-        // font-family: 'Bree Serif', serif;
-        // font-family: 'Damion', cursive;
-        // font-family: 'Dr Sugiyama', cursive;
-        // font-family: 'Kristi', cursive;
-        // font-family: 'Pacifico', cursive;
-        // font-family: 'Vibur', cursive;
         font-family: 'Zilla Slab', serif;
-        // font-family: 'Roboto Slab', serif;
-        font-size: 25rem;
         text-transform: none;
         font-weight: 900;
         font-style: italic;
         letter-spacing: -0.8rem;
         line-height: 1.2;
-        color: $color-base;
 
+
+        &--main{
+            font-size: 25rem;
+            color: $color-base;
+        }
+        
         &--sub {
             position: relative;
             display: inline-block;
             font-size: 18rem;
-            top: -20rem;
+            top: -15rem;
             left: 15rem;
             transform: rotate(-5deg);
             color: rgb(0, 156, 180);
         }
+
+        @include respond(hero-tab) {
+            transform: scale(80%);
+            transform-origin: 0 50%;
+            top: 20vh;
+            left: 5vw;
+        }
+
+        @include respond(hero-phone) {
+            transform: scale(60%);
+            transform-origin: 0 50%;
+            top: 20vh;
+            left: 5vw;
+        }
+            
     }
 
     &__text {

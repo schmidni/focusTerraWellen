@@ -5,7 +5,9 @@
     justify-content: space-evenly; //main axis
     align-items: center;
 
-    // transform: skewX(-3deg);
+    @include respond(hero-tab) {
+        flex-direction: column;
+    }
 
     &:hover .h1 {
         @include respond(tab-land) {
@@ -22,12 +24,24 @@
     min-width: 0rem;
     flex: 1 1 20rem;
     
-    transition: width, 0.7s;
+    transition: all, 0.7s;
+
+    @include respond(hero-tab) {
+        min-width: 100%;
+        min-height: 0rem;
+        flex: 1 1 10rem;
+        transition: all, 0.5s;
+    }
 
     &:hover {
         min-width: 50rem;
         filter: saturate(100%);
         padding: 5rem;
+
+        @include respond(hero-tab) {
+            min-width: 100%;
+            min-height: 40rem;
+        }
 
         .h1 {
             opacity: 100%;
@@ -48,18 +62,34 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
+        @include respond(hero-tab) {
+            justify-content: center;
+            padding: 4rem 10rem;
+        }
     }
 
     &:hover &__content {
         height: 100%;
         width: 50rem;
         justify-content: center;
+        overflow: hidden;
+
+        @include respond(hero-tab) {
+            width: 100%;
+        }
     }
 
     &__title {
         color: white;
         transform: rotate(-90deg);
-        white-space: nowrap;        
+        white-space: nowrap;    
+        
+        @include respond(hero-tab) {
+            flex-direction: column;
+            transform: rotate(0deg);
+            white-space: normal;
+        }
     }
 
     &:hover &__title {
