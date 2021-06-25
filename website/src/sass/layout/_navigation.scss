@@ -1,32 +1,86 @@
-.navigation {
-    height: 20vh;
-    background-position: 0% 50%;
-    padding: 4rem 10rem;
+.navigation-container {
     position: relative;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; //main axis
     align-items: center;
-    transition: height, 0.5s;
+
+    // transform: skewX(-3deg);
+
+    &:hover .h1 {
+        @include respond(tab-land) {
+            opacity: 0;
+        }
+    }
+}
+
+
+.navigation {
+    height: 70rem;
+    background-position: 0% 50%;
+    filter: saturate(20%);
+    min-width: 0rem;
+    flex: 1 1 20rem;
     
+    transition: width, 0.7s;
+
+    &:hover {
+        min-width: 50rem;
+        filter: saturate(100%);
+        padding: 5rem;
+
+        .h1 {
+            opacity: 100%;
+            white-space: normal;
+        }
+
+        
+    }
+    
+    &__content {
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        padding: 4rem;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &:hover &__content {
+        height: 100%;
+        width: 50rem;
+        justify-content: center;
+    }
+
     &__title {
         color: white;
+        transform: rotate(-90deg);
+        white-space: nowrap;        
+    }
+
+    &:hover &__title {
+        transform: rotate(0);
+        margin: 0;
     }
 
     &__text {
         color: white;
-        height: 0;
-        overflow: hidden;
+        display: none;
+        transition: opacity, 0.7s;
+    }
+
+    &:hover &__text {
+        display: block;
     }
 
     &__link {
         text-decoration: none;
     }
 
-    &__content {
-        position:relative;
-        z-index: 999;
-    }
-
-    
     &__overlay {
         height: 100%;
         width: 100%;
@@ -35,18 +89,10 @@
         left: 0;
         background-color: black;
         opacity: 0.5;
-        transition: opacity, 0.5s;
-    }
-
-    &:hover {
-        height: 30vh;
+        transition: opacity, 0.7s;
     }
 
     &:hover &__overlay {
-        opacity: 0.2;
-    }
-
-    &:hover &__content &__text {
-        height: auto;
+        opacity: 0.3;
     }
 }
