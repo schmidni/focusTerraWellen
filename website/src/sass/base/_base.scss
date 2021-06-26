@@ -15,7 +15,7 @@ html {
     }
     
     @include respond(tab-port) {
-        font-size: 50%; // 1 rem == 8px
+        font-size: 45%; // 1 rem == 8px
     }
 
     @include respond(phone) {
@@ -23,11 +23,12 @@ html {
     }
     
     @include respond(big) {
-        font-size: 75%; // 1 rem == 12px: 12/16
+        font-size: 90%; // 1 rem == 12px: 12/16
     }
 
 }
 
 body {
+    position: relative;
     box-sizing: border-box;
 }
