@@ -47,6 +47,8 @@
     }
 
     &__text {
+        height: 50vh;
+        overflow-y: auto;
         
         white-space: normal;
         color: white;

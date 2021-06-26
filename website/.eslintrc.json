@@ -11,7 +11,7 @@
   "parserOptions": {
     "ecmaVersion": 2021,
     "babelOptions": {
-      "root": "./website"
+      "root": "./"
     },
     "sourceType": "module"
   },
