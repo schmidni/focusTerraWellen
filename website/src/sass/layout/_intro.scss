@@ -46,8 +46,12 @@
         color: white;
     }
 
-    
-
+    &__icon {
+        fill: white;
+        height:5rem;
+        width: 5rem;
+        margin-top: 4px;
+    }
 
     &__text {
         color: white;
@@ -64,11 +68,11 @@
         z-index: 999;
     }
 
-    &:hover {
+    @include on-hover('') {
         height: 30rem;
     }
 
-    &:hover &__content &__text {
+    @include on-hover('&__content &__text'){
         height: auto;
     }
 

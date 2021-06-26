@@ -1,5 +1,6 @@
 import LocomotiveScroll from 'locomotive-scroll';
-import closePopupElement from '../utils/closePopupElement';
+import debounce from '../utils/debounce';
+import InfoBox from './InfoBox';
 
 export default class InteractiveImage {
     constructor(scrollContainer) {
@@ -12,25 +13,34 @@ export default class InteractiveImage {
             tablet: { smooth: false, direction: 'vertical' },
         });
 
-        document.getElementById('pointer-1').addEventListener('click', (e) => {
-            const closeIcon = document.getElementById('close-icon-1');
-            const popupElement = document.getElementById('text-1');
-            const activeClass = 'text-active';
-            e.stopImmediatePropagation();
+        // init and save all InfoBoxes
+        this.info = [...document.getElementsByClassName('interactive-info')].reduce(
+            (acc, currVal) => {
+                acc.push(new InfoBox(currVal, this.lscroll));
+                return acc;
+            },
+            []
+        );
 
-            popupElement.classList.toggle(activeClass);
+        // add event listener to update position when window is resized
+        window.addEventListener('resize', debounce(this.updatePosition, 30));
 
-            closePopupElement(popupElement, closeIcon, activeClass);
-        });
-
-        const mc = document.querySelector('.interactive-info__text');
-        mc.onmouseover = () => {
-            this.lscroll.stop();
-        };
-        mc.onmouseout = () => this.lscroll.start();
+        // set position on first load
+        this.updatePosition();
     }
 
-    toggleDisplay = (el) => {
-        el.classList.toggle('text-active');
+    // update position relative to image width
+    updatePosition = () => {
+        const { height, width } = document
+            .querySelector('.fullscreen-image__img')
+            .getBoundingClientRect();
+
+        this.info.forEach((infoBox) => {
+            const newWidth = `${(infoBox.element.dataset.posx / 100) * width}px`;
+            const newHeight = `${(infoBox.element.dataset.posy / 100) * height}px`;
+
+            infoBox.element.style.left = newWidth;
+            infoBox.element.style.top = newHeight;
+        });
     };
 }

@@ -42,3 +42,18 @@ ORDER: Base, typography > general layout, grid > pages
         @media (min-width: 112.5em) { @content }; // 1800px
     }
 }
+
+
+@mixin on-hover($class) {
+    @media not all and (hover: hover), not all and (pointer: fine) {
+        &.hover #{$class} {
+            @content;
+        }
+    }
+    
+    @media (hover: hover) and (pointer: fine) {
+        &:hover #{$class} {
+            @content;
+        }
+    }
+}

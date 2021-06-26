@@ -25,10 +25,9 @@ html {
     @include respond(big) {
         font-size: 90%; // 1 rem == 12px: 12/16
     }
-
 }
 
 body {
-    position: relative;
     box-sizing: border-box;
+    height: 100%;
 }

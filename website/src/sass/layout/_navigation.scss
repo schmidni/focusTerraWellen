@@ -1,5 +1,6 @@
 .navigation-container {
     position: relative;
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly; //main axis
@@ -8,10 +9,13 @@
     @include respond(hero-tab) {
         flex-direction: column;
     }
-
-    &:hover .h1 {
-        @include respond(tab-land) {
-            opacity: 0;
+    @include on-hover('') {
+        .h1 {
+            @include respond(tab-land) {
+                opacity: 0;
+            }
+            opacity: 0.75;
+            font-size: 4rem;
         }
     }
 }
@@ -21,9 +25,10 @@
     height: 80rem;
     background-position: 0% 50%;
     filter: saturate(20%);
-    min-width: 0rem;
     flex: 1 1 20rem;
+    overflow:hidden;
     
+    min-width: 0rem;
     transition: all, 0.7s;
 
     @include respond(hero-tab) {
@@ -33,7 +38,7 @@
         transition: all, 0.5s;
     }
 
-    &:hover {
+    @include on-hover(''){
         min-width: 50rem;
         filter: saturate(100%);
         padding: 5rem;
@@ -46,22 +51,22 @@
         .h1 {
             opacity: 100%;
             white-space: normal;
-        }
-
-        
+        } 
     }
     
     &__content {
-        height: 100%;
-        width: 100%;
-        position:absolute;
-        padding: 4rem;
-        top: 0;
-        left: 0;
-        z-index: 999;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+
+        height: 100%;
+        width: 100%;
+        padding: 4rem;
 
         @include respond(hero-tab) {
             justify-content: center;
@@ -69,9 +74,10 @@
         }
     }
 
-    &:hover &__content {
+    @include on-hover('&__content'){
         height: 100%;
         width: 50rem;
+
         justify-content: center;
         overflow: hidden;
 
@@ -91,8 +97,7 @@
             white-space: normal;
         }
     }
-
-    &:hover &__title {
+    @include on-hover('&__title') {
         transform: rotate(0);
         margin: 0;
     }
@@ -102,13 +107,25 @@
         display: none;
         transition: opacity, 0.7s;
     }
-
-    &:hover &__text {
-        display: block;
+    @include on-hover('&__text') {
+        display:block;
     }
 
     &__link {
         text-decoration: none;
+        display: none;
+    }
+
+    @include on-hover('&__link') {
+        display:block;
+        margin-top: 2px;
+        width: fit-content;
+
+        svg {
+            fill:white;
+            height: 5rem;
+            width: 5rem;
+        }
     }
 
     &__overlay {
@@ -121,8 +138,8 @@
         opacity: 0.5;
         transition: opacity, 0.7s;
     }
-
-    &:hover &__overlay {
-        opacity: 0.3;
+    	
+    @include on-hover('&__overlay') {
+        opacity: .3;
     }
 }

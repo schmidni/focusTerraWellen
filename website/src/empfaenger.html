@@ -6,25 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Terra</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 </head>
-<!-- 
-<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <symbol id="info-icon-circle" viewBox="0 0 50 50">
-            <title>circle</title>
-            <circle cx="25" cy="25" r="25" fill="none" stroke="black" stroke-width="3" />
-        </symbol>
-    </defs>
-</svg> -->
 
 <body>
+    <div class="menu">
+        <div id="toggleMenu" class="menu__toggle">
+            <span class="menu__icon">&nbsp;</span>
+        </div>
+        <div class="menu__background"></div>
+        <nav class="menu__nav">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="#" class="menu__link">Menu 1</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Menu 2</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Menu 3</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Menu 4</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Menu 5</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main data-scroll-container>
 
@@ -40,7 +43,7 @@
 
             <img class="fullscreen-image__img" src="images/2_1_Empfaenger_Verbindung_zur_Welt.jpg" alt="" />
 
-            <div class="interactive-info">
+            <div class="interactive-info" data-posx="25" data-posy="25">
                 <div id="pointer-1" class="interactive-info__pointer">
                     <div class="icon-circle icon-circle--1"></div>
                     <div class="icon-circle icon-circle--2"></div>
@@ -91,6 +94,110 @@
                     </div>
                 </div>
             </div>
+            <div class="interactive-info" data-posx="50" data-posy="15">
+                <div class="interactive-info__pointer">
+                    <div class="icon-circle icon-circle--1"></div>
+                    <div class="icon-circle icon-circle--2"></div>
+                    <div class="icon-circle icon-circle--3"></div>
+                    <div class="icon-circle icon-circle--4"></div>
+                </div>
+
+
+                <div class="interactive-info__text">
+                    <h6>
+                        Unsere Welt ist voller Farben und Geräusche – die wir mit
+                        unseren Augen sehen oder Ohren hören. Vielen Tieren
+                        erscheint die Welt ganz anders, da sie Dinge wahrnehmen
+                        können, die unseren Sinnen verborgen sind. Um unsere
+                        Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit denen
+                    </h6>
+                    <h3>Augen auf!</h3>
+                    <p>
+                        Das Licht, das wir sehen, sind elektromagnetische
+                        Wellen in einem bestimmten Wellenlängenbereich.
+                        Wellen ausserhalb dieses sichtbaren Bereichs, also
+                        z.B. kurzwelligere UV-Strahlung oder langwelligere
+                        Infrarotstrahlung, können wir nicht sehen. Einige Tiere
+                        hingegen schon.
+                    </p>
+                    <p>
+                        Honigbienen sehen nicht nur im sichtbaren, sondern
+                        auch im ultravioletten (UV) Bereich. Sie werden durch
+                        Strukturen in Blüten, die nur im UV-Bereich sichtbar
+                        sind, direkt zum Nektar geführt.
+                    </p>
+                    <p>
+                        Papageien und andere Vogelarten können die Ober- und
+                        Unterseite von Blättern dank UV-Sicht unterscheiden
+                        und sich dadurch im dichten Wald besser orientieren.
+                        Auch bei der Partnersuche spielt die UV-Sicht eine Rolle:
+                        Die Federn der Männchen erscheinen strahlender, wenn
+                        sie ein gesundes Immunsystem haben.
+                    </p>
+                    <p>
+                        Einige Kaltblüter haben die Fähigkeit, Wärme in Form
+                        von Infrarotstrahlung zu sehen. Dies ermöglicht ihnen,
+                        warmblütige Beute gezielt auch im Dunkeln oder bei
+                        trüber Sicht aufzuspüren. So verfügen mache Schlangen
+                    </p>
+                    <div class="interactive-info__close">
+                        <span class="close-icon">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-info" data-posx="75" data-posy="55">
+                <div class="interactive-info__pointer">
+                    <div class="icon-circle icon-circle--1"></div>
+                    <div class="icon-circle icon-circle--2"></div>
+                    <div class="icon-circle icon-circle--3"></div>
+                    <div class="icon-circle icon-circle--4"></div>
+                </div>
+
+
+                <div class="interactive-info__text">
+                    <h6>
+                        Unsere Welt ist voller Farben und Geräusche – die wir mit
+                        unseren Augen sehen oder Ohren hören. Vielen Tieren
+                        erscheint die Welt ganz anders, da sie Dinge wahrnehmen
+                        können, die unseren Sinnen verborgen sind. Um unsere
+                        Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit denen
+                    </h6>
+                    <h3>Augen auf!</h3>
+                    <p>
+                        Das Licht, das wir sehen, sind elektromagnetische
+                        Wellen in einem bestimmten Wellenlängenbereich.
+                        Wellen ausserhalb dieses sichtbaren Bereichs, also
+                        z.B. kurzwelligere UV-Strahlung oder langwelligere
+                        Infrarotstrahlung, können wir nicht sehen. Einige Tiere
+                        hingegen schon.
+                    </p>
+                    <p>
+                        Honigbienen sehen nicht nur im sichtbaren, sondern
+                        auch im ultravioletten (UV) Bereich. Sie werden durch
+                        Strukturen in Blüten, die nur im UV-Bereich sichtbar
+                        sind, direkt zum Nektar geführt.
+                    </p>
+                    <p>
+                        Papageien und andere Vogelarten können die Ober- und
+                        Unterseite von Blättern dank UV-Sicht unterscheiden
+                        und sich dadurch im dichten Wald besser orientieren.
+                        Auch bei der Partnersuche spielt die UV-Sicht eine Rolle:
+                        Die Federn der Männchen erscheinen strahlender, wenn
+                        sie ein gesundes Immunsystem haben.
+                    </p>
+                    <p>
+                        Einige Kaltblüter haben die Fähigkeit, Wärme in Form
+                        von Infrarotstrahlung zu sehen. Dies ermöglicht ihnen,
+                        warmblütige Beute gezielt auch im Dunkeln oder bei
+                        trüber Sicht aufzuspüren. So verfügen mache Schlangen
+                    </p>
+                    <div class="interactive-info__close">
+                        <span class="close-icon">&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 </body>
