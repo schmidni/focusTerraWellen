@@ -7,6 +7,7 @@ export default class InfoBox {
         this.pointer = this.element.querySelector('.interactive-info__pointer');
         this.textBox = this.element.querySelector('.interactive-info__text');
         this.close = this.element.querySelector('.interactive-info__close');
+        this.pos = { x: this.element.dataset.posx, y: this.element.dataset.posy };
         this.createToggle();
         this.stopStartLocoScroll();
     }
@@ -15,9 +16,9 @@ export default class InfoBox {
         this.pointer.addEventListener('click', (e) => {
             e.stopImmediatePropagation();
 
-            this.textBox.classList.toggle('text-active');
+            this.element.classList.toggle('active');
 
-            closePopupElement(this.textBox, this.close, 'text-active');
+            closePopupElement(this.element, this.close, 'active');
         });
     };
 

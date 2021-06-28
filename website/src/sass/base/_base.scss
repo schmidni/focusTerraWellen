@@ -23,7 +23,7 @@ html {
     }
     
     @include respond(big) {
-        font-size: 90%; // 1 rem == 12px: 12/16
+        font-size: 68.75%; // 1 rem == 11px: 11/16
     }
 }
 

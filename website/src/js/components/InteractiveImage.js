@@ -13,7 +13,7 @@ export default class InteractiveImage {
             tablet: { smooth: false, direction: 'vertical' },
         });
 
-        // init and save all InfoBoxes
+        // init all InfoBoxes to array in this.info
         this.info = [...document.getElementsByClassName('interactive-info')].reduce(
             (acc, currVal) => {
                 acc.push(new InfoBox(currVal, this.lscroll));
@@ -31,16 +31,18 @@ export default class InteractiveImage {
 
     // update position relative to image width
     updatePosition = () => {
+        // get images' bounding rect
         const { height, width } = document
             .querySelector('.fullscreen-image__img')
             .getBoundingClientRect();
 
+        // update each info box position
         this.info.forEach((infoBox) => {
-            const newWidth = `${(infoBox.element.dataset.posx / 100) * width}px`;
-            const newHeight = `${(infoBox.element.dataset.posy / 100) * height}px`;
+            const newLeft = `${(infoBox.pos.x / 100) * width}px`;
+            const newTop = `${(infoBox.pos.y / 100) * height}px`;
 
-            infoBox.element.style.left = newWidth;
-            infoBox.element.style.top = newHeight;
+            infoBox.element.style.left = newLeft;
+            infoBox.element.style.top = newTop;
         });
     };
 }
