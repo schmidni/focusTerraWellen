@@ -1,9 +1,9 @@
-export default function checkInstanceOfClicked(e, instance) {
+export default function checkInstanceOfClicked(e, checkType) {
     let targetElement = e.target;
 
     do {
-        if (targetElement instanceof instance) {
-            // This is a click inside. Do nothing, just return.
+        if (targetElement instanceof checkType) {
+            // target element is of the respective type, return true
             return true;
         }
         // Go up the DOM

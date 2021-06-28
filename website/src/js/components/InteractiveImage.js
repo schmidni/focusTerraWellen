@@ -1,6 +1,6 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import debounce from '../utils/debounce';
-import InfoBox from './InfoBox';
+import InteractiveInfo from './InteractiveInfo';
 
 export default class InteractiveImage {
     constructor(scrollContainer) {
@@ -13,10 +13,10 @@ export default class InteractiveImage {
             tablet: { smooth: false, direction: 'vertical' },
         });
 
-        // init all InfoBoxes to array in this.info
+        // init all InteractiveInfo objects to array
         this.info = [...document.getElementsByClassName('interactive-info')].reduce(
             (acc, currVal) => {
-                acc.push(new InfoBox(currVal, this.lscroll));
+                acc.push(new InteractiveInfo(currVal, this.lscroll));
                 return acc;
             },
             []
@@ -31,18 +31,18 @@ export default class InteractiveImage {
 
     // update position relative to image width
     updatePosition = () => {
-        // get images' bounding rect
+        // get images bounding rect
         const { height, width } = document
             .querySelector('.fullscreen-image__img')
             .getBoundingClientRect();
 
         // update each info box position
-        this.info.forEach((infoBox) => {
-            const newLeft = `${(infoBox.pos.x / 100) * width}px`;
-            const newTop = `${(infoBox.pos.y / 100) * height}px`;
+        this.info.forEach((infoElement) => {
+            const newLeft = `${(infoElement.pos.x / 100) * width}px`;
+            const newTop = `${(infoElement.pos.y / 100) * height}px`;
 
-            infoBox.element.style.left = newLeft;
-            infoBox.element.style.top = newTop;
+            infoElement.element.style.left = newLeft;
+            infoElement.element.style.top = newTop;
         });
     };
 }
