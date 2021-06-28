@@ -37,14 +37,14 @@
             color: rgb(0, 156, 180);
         }
 
-        @include respond(hero-tab) {
+        @include respond(tab-small) {
             transform: scale(80%);
             transform-origin: 0 50%;
             top: 20vh;
             left: 5vw;
         }
 
-        @include respond(hero-phone) {
+        @include respond(phone-small) {
             transform: scale(60%);
             transform-origin: 0 50%;
             top: 20vh;
