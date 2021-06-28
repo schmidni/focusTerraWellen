@@ -7,8 +7,8 @@
 
     &__pointer {
         position: relative;
-        height: 6vh;
-        width: 6vh;
+        height: 10vh;
+        width: 10vh;
         border-radius: 50%;
         z-index: 999;
 
@@ -20,8 +20,9 @@
             height: 100%;
             width: 100%;
             border-radius: 50%;
-            border: .4rem solid $color-info-icon;
-            box-shadow: 0px 0px 1rem lighten($color-info-icon, 30%), darken($color-info-icon, 30%) 0px 0px 1rem inset;
+            border-color: $color-info-icon;
+            border-style: solid;
+            box-shadow: 0px 0px 2rem lighten($color-info-icon, 30%), darken($color-info-icon, 30%) 0px 0px 2rem inset;
 
             animation-name: circleGrows;
             animation-timing-function: linear;
