@@ -9,8 +9,8 @@ export default class InteractiveImage {
             el: scrollContainer,
             smooth: true,
             direction: 'horizontal',
-            smartphone: { smooth: false, direction: 'vertical' },
-            tablet: { smooth: false, direction: 'vertical' },
+            smartphone: { smooth: true, direction: 'vertical' },
+            tablet: { smooth: true, direction: 'vertical' },
         });
 
         // init all InteractiveInfo objects to array
@@ -22,11 +22,11 @@ export default class InteractiveImage {
             []
         );
 
-        // // listen for scroll events to hide title section - NOT GETTING CALLED!
+        // listen for scroll events to hide title section!
         this.titlesection = [
             ...document.getElementsByClassName('fullscreen-image__titlesection'),
         ].shift();
-        // window.addEventListener('scroll', this.hideTitle, { once: true });
+
         this.titleVisible = true;
         this.lscroll.on('scroll', () => {
             if (this.titleVisible) {
