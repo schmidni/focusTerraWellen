@@ -17,12 +17,13 @@ export default class InteractiveInfo {
         window.addEventListener('resize', debounce(this.updateTextBox, 30));
     }
 
+    // set the text box position in relation to the space available
     updateTextBox = () => {
-        // don't compute position if  in fullscreen mode
+        // don't compute new position if on mobile
         if (window.matchMedia('(max-width: 720px)').matches) {
-            // console.log('small tablet mode');
+            // in mobile mode;
         } else {
-            // console.log('positioning');
+            // desktop
             const { height, width } = document
                 .querySelector('.fullscreen-image__img')
                 .getBoundingClientRect();

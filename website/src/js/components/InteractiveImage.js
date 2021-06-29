@@ -22,17 +22,15 @@ export default class InteractiveImage {
             []
         );
 
-        // listen for scroll events to hide title section!
+        // hide title section on first scroll event
         this.titlesection = [
             ...document.getElementsByClassName('fullscreen-image__titlesection'),
         ].shift();
-
         this.titleVisible = true;
         this.lscroll.on('scroll', () => {
             if (this.titleVisible) {
                 this.titlesection.classList.add('hidden');
                 this.titleVisible = false;
-                console.log(this.titlesection);
             }
         });
 
