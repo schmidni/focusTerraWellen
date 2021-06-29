@@ -19,7 +19,10 @@ export default class InteractiveInfo {
 
     updateTextBox = () => {
         // don't compute position if  in fullscreen mode
-        if (window.matchMedia('(min-width: 720px)')) {
+        if (window.matchMedia('(max-width: 720px)').matches) {
+            // console.log('small tablet mode');
+        } else {
+            // console.log('positioning');
             const { height, width } = document
                 .querySelector('.fullscreen-image__img')
                 .getBoundingClientRect();
@@ -32,20 +35,18 @@ export default class InteractiveInfo {
             let offsetY = -this.pointer.offsetHeight;
             let offsetX = this.pointer.offsetWidth / 2;
 
-            if (originY + offsetY > height - this.textBox.offsetHeight) {
+            if (originY + offsetY + this.textBox.offsetHeight >= height - margin) {
                 offsetY = height - originY - this.textBox.offsetHeight - margin;
             } else if (originY + offsetY < 0) {
                 offsetY = -originY + margin;
             }
 
             if (originX + offsetX > width - this.textBox.offsetWidth) {
-                offsetX = -this.textBox.offsetWidth;
+                offsetX -= this.textBox.offsetWidth;
             }
 
             this.textBox.style.left = `${offsetX}px`;
             this.textBox.style.top = `${offsetY}px`;
-        } else {
-            console.log('too small');
         }
     };
 

@@ -22,12 +22,22 @@ export default class InteractiveImage {
             []
         );
 
+        // listen for scroll events to hide title section - NOT GETTING CALLED!
+        this.titlesection = document.getElementsByClassName('fullscreen-image__titlesection');
+        window.addEventListener('scroll', this.hideTitle, { once: true });
+
         // add event listener to update position when window is resized
         window.addEventListener('resize', debounce(this.updatePosition, 30));
 
         // set position on first load
         this.updatePosition();
     }
+
+    // hide title section
+    hideTitle = () => {
+        console.log('scrolled..');
+        this.titlesection.classList.toggle('hidden');
+    };
 
     // update position relative to image width
     updatePosition = () => {
