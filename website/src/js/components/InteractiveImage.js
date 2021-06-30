@@ -25,12 +25,12 @@ export default class InteractiveImage {
         // hide title section on first scroll event
         this.titlesection = document.querySelector('.fullscreen-image__titlesection');
         this.titleVisible = true;
-        this.lscroll.on('scroll', () => {
-            if (this.titleVisible) {
-                this.titlesection.classList.add('hidden');
-                this.titleVisible = false;
-            }
-        });
+        // this.lscroll.on('scroll', () => {
+        //     if (this.titleVisible) {
+        //         this.titlesection.classList.add('hidden');
+        //         this.titleVisible = false;
+        //     }
+        // });
 
         // add event listener to update position when window is resized
         window.addEventListener('resize', debounce(this.updatePosition, 30));
