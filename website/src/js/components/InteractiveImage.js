@@ -21,7 +21,6 @@ export default class InteractiveImage {
             },
             []
         );
-
         // hide title section on first scroll event
         this.titlesection = document.querySelector('.fullscreen-image__titlesection');
         this.titleVisible = true;
@@ -34,7 +33,6 @@ export default class InteractiveImage {
 
         // add event listener to update position when window is resized
         window.addEventListener('resize', debounce(this.updatePosition, 30));
-
         // set position on first load
         this.updatePosition();
     }
