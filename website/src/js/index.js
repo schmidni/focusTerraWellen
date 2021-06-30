@@ -3,7 +3,8 @@ import InteractiveImage from './components/InteractiveImage';
 import checkInstanceOfClicked from './utils/checkInstanceOfClicked';
 
 // check if scroll container is present and initialize locomotive scroll
-const scrollcontainer = document.querySelector('[data-scroll-container]');
+// const scrollcontainer = document.querySelector('[data-scroll-container]');
+const scrollcontainer = document.getElementById('data-scroll-container');
 let app = null;
 // eslint-disable-next-line no-unused-vars
 if (scrollcontainer != null) app = new InteractiveImage(scrollcontainer);
