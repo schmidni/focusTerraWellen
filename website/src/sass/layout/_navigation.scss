@@ -23,7 +23,8 @@
 
 .navigation {
     height: 80rem;
-    background-position: 0% 50%;
+    // background-position: 0% 50%;
+    background-size:cover;
     filter: saturate(20%);
     flex: 1 1 20rem;
     overflow:hidden;
@@ -70,7 +71,11 @@
 
         @include respond(tab-small) {
             justify-content: center;
-            padding: 4rem 10rem;
+            padding: 4rem $padding-left-default;
+        }
+
+        @include respond(big) {
+            padding-bottom: 12rem;
         }
     }
 
