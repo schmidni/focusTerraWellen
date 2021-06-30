@@ -1,0 +1,33 @@
+.impressum {
+    background-color: darken($color-base, 10%);
+    padding: 0 10rem 10rem 10rem;
+    color: white;
+
+    & .h1 {
+        padding-bottom: 4rem;
+    }
+
+    &__content{
+        display: flex;
+        flex: 1 1 0;
+        justify-content: space-between;
+        gap: 2rem;
+
+        @include respond(phone) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__text {
+        p {
+            padding-bottom: 1rem;   
+        }
+
+        h5 {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        } 
+    }
+
+    
+}

@@ -11,22 +11,24 @@
     
     .wave {
         display: block;
-        
+        margin-bottom: -2px;
         width: 100%;
         height: math.div(100%, 1920) * 100;
     }
-    #wave-1{
+    #wave-1, #wave-4, #wave-end{
         fill: $color-base;
     }
-    #wave-2{
+    #wave-3 {
         fill: rgb(0, 77, 98);
     }
-    #wave-3, #wave-end{
+    #wave-2{
         fill: rgb(0, 152, 147);
     }
     #wave-end {
         margin-bottom: -(math.div(100%, 1920) * 100);
-
+    }
+    #wave-5 {
+        fill: darken($color-base, 10%);
     }
 }
 .intro-theme {
@@ -43,6 +45,8 @@
     display: flex;
     justify-content: flex-start;
     transition: height, 0.5s;
+
+    overflow: hidden;
 
         &__title {
         color: white;
@@ -78,18 +82,20 @@
         height: auto;
     }
 
-    &--1 {
+    &--1, &--4 {
         background-color: $color-base;
 
     }
 
-    &--2 {
+    &--3 {
         background-color: rgb(0, 77, 98);
 
     }
 
-    &--3 {
+    &--2 {
         background-color: rgb(0, 152, 147);
         
     }
+
+    
 }
