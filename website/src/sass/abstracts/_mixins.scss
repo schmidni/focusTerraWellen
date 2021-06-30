@@ -18,7 +18,7 @@ ORDER: Base, typography > general layout, grid > pages
 // em and rem is not affected by root-size!! (1 em == 16px
 @mixin respond($breakpoint) {
 
-    @if $breakpoint == hero-phone {
+    @if $breakpoint == phone-small {
         @media (max-width: 28em) { @content }; // 448px
     }
 
@@ -26,7 +26,7 @@ ORDER: Base, typography > general layout, grid > pages
         @media (max-width: 37.5em) { @content }; // 600px
     }
 
-    @if $breakpoint == hero-tab {
+    @if $breakpoint == tab-small {
         @media (max-width: 45em) { @content }; // 720px
     }
 

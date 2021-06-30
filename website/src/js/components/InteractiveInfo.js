@@ -1,4 +1,5 @@
 import closePopupElement from '../utils/closePopupElement';
+import debounce from '../utils/debounce';
 
 export default class InteractiveInfo {
     constructor(element, lscroll) {
@@ -11,7 +12,44 @@ export default class InteractiveInfo {
 
         this.createToggle();
         this.stopStartLocoScroll();
+        this.updateTextBox();
+
+        window.addEventListener('resize', debounce(this.updateTextBox, 30));
     }
+
+    // set the text box position in relation to the space available
+    updateTextBox = () => {
+        // don't compute new position if on mobile
+        if (window.matchMedia('(max-width: 720px)').matches) {
+            // in mobile mode;
+        } else {
+            // desktop
+            const { height, width } = document
+                .querySelector('.fullscreen-image__img')
+                .getBoundingClientRect();
+
+            const margin = height / 50;
+
+            const originX = (this.pos.x / 100) * width;
+            const originY = (this.pos.y / 100) * height;
+
+            let offsetY = -this.pointer.offsetHeight;
+            let offsetX = this.pointer.offsetWidth / 2;
+
+            if (originY + offsetY + this.textBox.offsetHeight >= height - margin) {
+                offsetY = height - originY - this.textBox.offsetHeight - margin;
+            } else if (originY + offsetY < 0) {
+                offsetY = -originY + margin;
+            }
+
+            if (originX + offsetX > width - this.textBox.offsetWidth) {
+                offsetX -= this.textBox.offsetWidth;
+            }
+
+            this.textBox.style.left = `${offsetX}px`;
+            this.textBox.style.top = `${offsetY}px`;
+        }
+    };
 
     // event listener to open textBox
     createToggle = () => {

@@ -9,8 +9,8 @@ export default class InteractiveImage {
             el: scrollContainer,
             smooth: true,
             direction: 'horizontal',
-            smartphone: { smooth: false, direction: 'vertical' },
-            tablet: { smooth: false, direction: 'vertical' },
+            smartphone: { smooth: true, direction: 'vertical' },
+            tablet: { smooth: true, direction: 'vertical' },
         });
 
         // init all InteractiveInfo objects to array
@@ -21,6 +21,16 @@ export default class InteractiveImage {
             },
             []
         );
+
+        // hide title section on first scroll event
+        this.titlesection = document.querySelector('.fullscreen-image__titlesection');
+        this.titleVisible = true;
+        this.lscroll.on('scroll', () => {
+            if (this.titleVisible) {
+                this.titlesection.classList.add('hidden');
+                this.titleVisible = false;
+            }
+        });
 
         // add event listener to update position when window is resized
         window.addEventListener('resize', debounce(this.updatePosition, 30));
