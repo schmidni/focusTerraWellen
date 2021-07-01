@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .navigation-container {
     position: relative;
 
@@ -23,7 +25,6 @@
 
 .navigation {
     height: 80rem;
-    // background-position: 0% 50%;
     background-size:cover;
     filter: saturate(20%);
     flex: 1 1 20rem;
@@ -32,11 +33,27 @@
     min-width: 0rem;
     transition: all, 0.7s;
 
+    &:last-of-type {  
+        @include respond(tab-small) {
+            min-height: 15rem;
+        }
+    }
+    &:last-of-type &__title {
+        @include respond(tab-small) {
+            align-self: auto;
+            margin-top: - math.div(100%, 1920) * 100;
+        }
+    }
+
     @include respond(tab-small) {
         min-width: 100%;
         min-height: 0rem;
         flex: 1 1 10rem;
         transition: all, 0.5s;
+    }
+    
+    @include respond(phone-small) {
+        min-height: 15rem;
     }
 
     @include on-hover(''){
@@ -99,9 +116,12 @@
         @include respond(tab-small) {
             flex-direction: column;
             transform: rotate(0deg);
+        }
+        @media (max-width: 400px) {
             white-space: normal;
         }
     }
+
     @include on-hover('&__title') {
         transform: rotate(0);
         margin: 0;
