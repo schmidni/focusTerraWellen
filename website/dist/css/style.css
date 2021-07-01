@@ -640,9 +640,31 @@ h6, .h6 {
           justify-content: center;
   -webkit-align-items: center;
           align-items: center;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
   width: 0;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+@media (max-width: 37.5em) {
+  .menu__nav {
+    -webkit-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.menu__home {
+  position: absolute;
+  top: 20vh;
+}
+@media (max-width: 37.5em) {
+  .menu__home {
+    position: relative;
+    top: unset;
+  }
+}
+.menu__home .menu__link:link, .menu__home .menu__link:visited {
+  font-size: 3rem !important;
+  font-weight: 400 !important;
 }
 .menu__toggle.active ~ .menu__background {
   -webkit-transform: scale(80);
@@ -657,13 +679,13 @@ h6, .h6 {
   text-align: center;
 }
 .menu__item {
-  margin: 1rem;
+  margin: 0.5vh;
 }
 .menu__link:link, .menu__link:visited {
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -805,6 +827,32 @@ h6, .h6 {
   position: relative;
   margin-top: -5.2083333333%;
 }
+.wave-container--first .intro-theme {
+  min-height: 15rem !important;
+}
+.wave-container--first .intro-theme__content {
+  margin-top: 10px;
+}
+@media not all and (hover: hover), not all and (pointer: fine) {
+  .wave-container--first .intro-theme.hover {
+    height: 25rem;
+  }
+  @media (max-width: 37.5em) {
+    .wave-container--first .intro-theme.hover {
+      height: 30rem;
+    }
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .wave-container--first .intro-theme:hover {
+    height: 25rem;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (max-width: 37.5em) {
+  .wave-container--first .intro-theme:hover {
+    height: 30rem;
+  }
+}
 .wave-container .wave {
   display: block;
   margin-bottom: -2px;
@@ -870,12 +918,17 @@ h6, .h6 {
 .intro-theme__content {
   position: relative;
   z-index: 999;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
+  margin-top: -1%;
+}
+@media (max-width: 45em) {
+  .intro-theme__content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
 }
 @media not all and (hover: hover), not all and (pointer: fine) {
   .intro-theme.hover {
