@@ -50,6 +50,9 @@ export default class InteractiveInfo {
 
             this.textBox.style.left = `${offsetX}px`;
             this.textBox.style.top = `${offsetY}px`;
+        } else {
+            this.textBox.style.left = 0;
+            this.textBox.style.top = 0;
         }
     };
 
