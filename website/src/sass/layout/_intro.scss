@@ -9,7 +9,24 @@
 
     position: relative;
     margin-top: -(math.div(100%, 1920) * 100);
-    
+
+    &--first {
+        & .intro-theme {
+            min-height:15rem!important;
+
+            &__content {
+                margin-top: 10px;
+            }
+            
+            @include on-hover(''){
+                height:25rem;
+                @include respond(phone) {
+                    height:30rem;
+                }
+            }
+        }
+    }
+
     .wave {
         display: block;
         margin-bottom: -2px;
@@ -77,12 +94,12 @@
     &__content {
         position:relative;
         z-index: 999;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    @include on-hover('&__content'){
+        margin-top: -1%;
+        @include respond(tab-small) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     @include on-hover('') {

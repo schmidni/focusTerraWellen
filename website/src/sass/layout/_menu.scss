@@ -35,12 +35,35 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
 
         width: 0;
         opacity: 0;
 
         transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
     }
+
+    &__home {
+        position: absolute;
+        top: 20vh;
+
+        @include respond(phone) {
+            position:relative;
+            top: unset;
+        }
+    }
+
+    &__home &__link { 
+        &:link, &:visited {
+            font-size: 3rem!important;
+            font-weight: 400!important;
+        }
+    }
+
 
     &__toggle.active ~ &__background {
         transform: scale(80);
@@ -58,15 +81,15 @@
     }
 
     &__item {
-        margin: 1rem;
+        margin: 0.5vh;
     }
 
     &__link {
         &:link, &:visited {
             display: inline-block;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            padding: 1rem 2rem;
+            padding: 0.5rem 1rem;
             color: white;
             text-decoration: none;
             text-transform: uppercase;
