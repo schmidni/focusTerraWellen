@@ -17,7 +17,6 @@
         top: 0;
 
         max-width: 120rem;
-        height: fit-content;
         white-space: normal;
 
         color: white;
@@ -28,7 +27,7 @@
         padding: 6rem 40rem 4rem 4rem;
         margin-top: -4rem;
 
-        transition: opacity 0.2s;
+        transition: opacity .6s;
 
         h1 {
             white-space: nowrap;
@@ -36,6 +35,18 @@
 
         &.hidden {
             opacity: 0;
+        }
+
+        @include respond(tab-land) {
+            max-width: 100vw;
+            padding-right: 20vw;
+
+            h1 {
+                white-space:normal;
+                line-height: 6rem;
+                margin-bottom: 1.3rem;
+            }
+
         }
     }
 

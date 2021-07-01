@@ -5,6 +5,10 @@ export default class InteractiveInfo {
     constructor(element, lscroll) {
         this.element = element;
         this.lscroll = lscroll;
+        // this.lscroll.on('scroll', ({ scroll }) => {
+        //     // console.log(position());
+        //     console.log(args);
+        // });
         this.pointer = this.element.querySelector('.interactive-info__pointer');
         this.textBox = this.element.querySelector('.interactive-info__text');
         this.close = this.element.querySelector('.interactive-info__close');
@@ -20,9 +24,7 @@ export default class InteractiveInfo {
     // set the text box position in relation to the space available
     updateTextBox = () => {
         // don't compute new position if on mobile
-        if (window.matchMedia('(max-width: 720px)').matches) {
-            // in mobile mode;
-        } else {
+        if (!window.matchMedia('(max-width: 720px)').matches) {
             // desktop
             const { height, width } = document
                 .querySelector('.fullscreen-image__img')
@@ -56,6 +58,11 @@ export default class InteractiveInfo {
         this.pointer.addEventListener('click', (e) => {
             // stop event so it doesn't trigger close listeners
             e.stopImmediatePropagation();
+
+            if (window.matchMedia('(max-width: 720px)').matches) {
+                console.log(this.lscroll.scroll.instance.scroll.x);
+                // this.textBox.style.left = this.scrollPosition.x;
+            }
 
             // toggle active class
             this.element.classList.toggle('active');
