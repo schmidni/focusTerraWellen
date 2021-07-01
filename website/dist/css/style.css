@@ -99,7 +99,7 @@ body, p {
 
 h1, .h1 {
   font-family: "Zilla Slab", serif;
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 700;
   text-transform: none;
 }
@@ -122,8 +122,8 @@ h5 {
   line-height: 1.2;
 }
 
-h6 {
-  font-weight: 500;
+h6, .h6 {
+  font-weight: 600;
   font-size: inherit;
 }
 
@@ -365,7 +365,7 @@ h6 {
 
 .navigation {
   height: 80rem;
-  background-position: 0% 50%;
+  background-size: cover;
   -webkit-filter: saturate(20%);
           filter: saturate(20%);
   -webkit-flex: 1 1 20rem;
@@ -434,13 +434,18 @@ h6 {
   z-index: 999;
   height: 100%;
   width: 100%;
-  padding: 4rem;
+  padding: 8rem 4rem;
 }
 @media (max-width: 45em) {
   .navigation__content {
     -webkit-justify-content: center;
             justify-content: center;
-    padding: 4rem 10rem;
+    padding: 4rem 8rem;
+  }
+}
+@media (min-width: 112.5em) {
+  .navigation__content {
+    padding-bottom: 12rem;
   }
 }
 @media not all and (hover: hover), not all and (pointer: fine) {
@@ -772,34 +777,39 @@ h6 {
 }
 .wave-container .wave {
   display: block;
+  margin-bottom: -2px;
   width: 100%;
   height: 5.2083333333%;
 }
-.wave-container #wave-1 {
+.wave-container #wave-1, .wave-container #wave-4, .wave-container #wave-end {
   fill: #00314f;
 }
-.wave-container #wave-2 {
+.wave-container #wave-3 {
   fill: #004d62;
 }
-.wave-container #wave-3, .wave-container #wave-end {
+.wave-container #wave-2 {
   fill: #009893;
 }
 .wave-container #wave-end {
   margin-bottom: -5.2083333333%;
 }
+.wave-container #wave-5 {
+  fill: #00111c;
+}
 
 .intro-theme {
   height: 20rem;
   background-position: 0% 50%;
-  padding-left: 10rem;
+  padding-left: 8rem;
   padding-bottom: 5.2083333333%;
-  padding-right: 10rem;
+  padding-right: 8rem;
   position: relative;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: flex-start;
           justify-content: flex-start;
   transition: height, 0.5s;
+  overflow: hidden;
 }
 .intro-theme:not(:last-child) {
   height: 12rem;
@@ -845,14 +855,41 @@ h6 {
     height: auto;
   }
 }
-.intro-theme--1 {
+.intro-theme--1, .intro-theme--4 {
   background-color: #00314f;
 }
-.intro-theme--2 {
+.intro-theme--3 {
   background-color: #004d62;
 }
-.intro-theme--3 {
+.intro-theme--2 {
   background-color: #009893;
+}
+
+.impressum {
+  background-color: #00111c;
+  padding: 0 8rem 8rem 8rem;
+  color: white;
+}
+.impressum .h1 {
+  padding-bottom: 4rem;
+}
+.impressum__content {
+  display: -webkit-flex;
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 37.5em) {
+  .impressum__content {
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+.impressum__text p {
+  padding-bottom: 1rem;
+}
+.impressum__text h5 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 /*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
