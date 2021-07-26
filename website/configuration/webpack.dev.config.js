@@ -9,8 +9,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const webpackConfiguration = require('../webpack.config');
 
-const outputPath = path.resolve(__dirname, '../dist');
-
 // fetch all html files in source folder
 const templateFiles = fs
     .readdirSync(path.resolve(__dirname, '../src/'))
@@ -29,12 +27,6 @@ const htmlPluginEntries = templateFiles.map(
 );
 
 module.exports = merge(webpackConfiguration, {
-    // overwrite output path from main config file to local
-    output: {
-        path: outputPath,
-        clean: true,
-    },
-
     /* Manage source maps generation process */
     devtool: 'eval-source-map',
 
@@ -53,13 +45,6 @@ module.exports = merge(webpackConfiguration, {
         port: 8000,
     },
 
-    /* File watcher options */
-    watchOptions: {
-        aggregateTimeout: 300,
-        poll: 300,
-        ignored: /node_modules/,
-    },
-
     /* Additional plugins configuration */
     plugins: [].concat(
         htmlPluginEntries,
@@ -67,8 +52,8 @@ module.exports = merge(webpackConfiguration, {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, '../src/', 'images'),
-                    to: path.resolve(outputPath, 'images'),
+                    from: path.resolve('src', 'images'),
+                    to: path.resolve('dist', 'images'),
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', 'Thumbs.db'],

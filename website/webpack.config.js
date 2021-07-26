@@ -1,8 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production';
-
 module.exports = {
     entry: {
         index: [
@@ -16,6 +14,8 @@ module.exports = {
     // default output folder. Possibly overwritten in subconfig
     output: {
         filename: 'js/[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
 
     module: {
@@ -59,7 +59,7 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    emit: devMode, // images are handled by CopyWebpackPlugin in dev mode
+                    // emit: false,
                     filename: 'images/[name][ext][query]',
                 },
             },
@@ -72,10 +72,19 @@ module.exports = {
             },
         ],
     },
+
+    /* File watcher options */
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 300,
+        ignored: /node_modules/,
+    },
+
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/style.css',
         }),
     ],
+
     target: 'web',
 };
