@@ -6,34 +6,125 @@ defaultContentLanguage = "de"
 [permalinks]
   blog = "/:filename/"
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Physics"
-    url = "/physics/"
-    weight = 2
-  [[menu.main]]
-    name = "Empfänger"
-    url = "/empfaenger/"
-    weight = 3
-  [[menu.main]]
-    name = "Reflexion"
-    url = "/reflexion/"
-    weight = 3
-    
 [params]
-  dateFormat = "Jan 2, 2006"
-  homeText = "You just made a Hugo blog from scratch."
+    dateFormat = "Jan 2, 2006"
+    homeText = "You just made a Hugo blog from scratch."
 
 [languages]
-  [languages.de]
-    title = "Wellen, Tauch ein!"
-    languageName = "Deutsch"
-    weight = 1
-  [languages.en]
-    title = "Waves, Dive In!"
-    languageName = "English"
-    weight = 2
+    [languages.de]
+        title = "Wellen, Tauch ein!"
+        languageName = "Deutsch"
+        weight = 1
+
+        [languages.de.menu]
+            [[languages.de.menu.main]]
+                name = "Home"
+                url = "/"
+                weight = 1
+            [[languages.de.menu.main]]
+                name = "Ich sehe was, ..."
+                url = "/empfaenger/"
+                weight = 1
+            [[languages.de.menu.main]]
+                name = "Hallo Echo"
+                url = "/reflexion/"
+                weight = 2
+            [[languages.de.menu.main]]
+                name = "Achtung-fertig-los"
+                url = "/geschwindigkeit/"
+                weight = 3
+            [[languages.de.menu.main]]
+                name = "Energie im Fokus"
+                url = "/energie/"
+                weight = 4
+            [[languages.de.menu.main]]
+                name = "Wer suchet, wird finden"
+                url = "/lokalisierung/"
+                weight = 5
+            [[languages.de.menu.main]]
+                name = "Daten reisen um die Welt"
+                url = "/kommunikation/"
+                weight = 6
+            [[languages.de.menu.main]]
+                name = "Wenn jemand eine Reise tut"
+                url = "/veraenderung/"
+                weight = 7
+            [[languages.de.menu.main]]
+                name = "Abrakadabra"
+                url = "/manipulierbarkeit/"
+                weight = 8
+            [[languages.de.menu.main]]
+                name = "Auf Spurensuche"
+                url = "/frequenzgehalt/"
+                weight = 9
+            [[languages.de.menu.main]]
+                name = "Auf die Grösse kommt's an"
+                url = "/???/"
+                weight = 10
+            [[languages.de.menu.main]]
+                name = "Wellen bewegen die Welt"
+                url = "/gesellschaft/"
+                weight = 11
+            [[languages.de.menu.main]]
+                name = "Zwei Seiten einer Medaille"
+                url = "/risiken/"
+                weight = 12
+
+    [languages.en]
+        title = "Waves, Dive In!"
+        languageName = "English"
+        weight = 2
+
+        [languages.en.menu]
+            [[languages.en.menu.main]]
+                name = "Home"
+                url = "/"
+                weight = 1
+            [[languages.en.menu.main]]
+                name = "I spy with my little eye"
+                url = "/receiver/"
+                weight = 1
+            [[languages.en.menu.main]]
+                name = "Hello Echo"
+                url = "/reflection/"
+                weight = 2
+            [[languages.en.menu.main]]
+                name = "Ready-Steady-Go"
+                url = "/speed/"
+                weight = 3
+            [[languages.en.menu.main]]
+                name = "Energy in Focus"
+                url = "/energy/"
+                weight = 4
+            [[languages.en.menu.main]]
+                name = "Seek and You Will Find"
+                url = "/localisation/"
+                weight = 5
+            [[languages.en.menu.main]]
+                name = "Data Travels Around the world"
+                url = "/???/"
+                weight = 6
+            [[languages.en.menu.main]]
+                name = "Travellers Have Stories to Tell"
+                url = "/change/"
+                weight = 7
+            [[languages.en.menu.main]]
+                name = "Abracadabra"
+                url = "/manipulable/"
+                weight = 8
+            [[languages.en.menu.main]]
+                name = "Hunting for Clues"
+                url = "/frequencycontent/"
+                weight = 9
+            [[languages.en.menu.main]]
+                name = "Size Matters"
+                url = "/???/"
+                weight = 10
+            [[languages.en.menu.main]]
+                name = "Waves Move the World"
+                url = "/society/"
+                weight = 11
+            [[languages.en.menu.main]]
+                name = "Two Sides of the Same Coin"
+                url = "/risks/"
+                weight = 12

@@ -32,6 +32,7 @@ module.exports = merge(webpackConfiguration, {
 
     /* Development Server Configuration */
     devServer: {
+        contentBase: path.resolve(__dirname, '../dist'),
         watchContentBase: true,
         publicPath: '/',
         historyApiFallback: true,

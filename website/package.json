@@ -7,11 +7,11 @@
     "build": "webpack --config configuration/webpack.dev.config.js --node-env development",
     "build:prod": "webpack --config configuration/webpack.prod.config.js --node-env production",
 
-    "watch": "webpack --watch --config configuration/webpack.dev.config.js --mode=development",
-    "start": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
+    "watch": "webpack --watch --config configuration/webpack.dev.config.js --node-env=development",
+    "start": "webpack serve --config configuration/webpack.dev.config.js --node-env=development",
 
-    "template:watch": "webpack --watch --config configuration/webpack.template.config.js --mode=development",
-    "template:build": "webpack --config configuration/webpack.template.config.js --mode=production"
+    "template:watch": "webpack --watch --config configuration/webpack.template.config.js --node-env=development",
+    "template:build": "webpack --config configuration/webpack.template.config.js --node-env=production"
   },
   "author": "",
   "license": "ISC",

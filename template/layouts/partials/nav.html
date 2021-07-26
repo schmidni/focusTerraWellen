@@ -1,27 +1,28 @@
-<div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center">
-        {{ range .Site.Menus.main }}
-        {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
-        {{ $text := print $icon " " .Name | safeHTML }}
-        <a class="nav-link" href="{{ .URL | absLangURL }}">{{ $text }}</a>
+
+<div class="menu">
+    <div id="toggleMenu" class="menu__toggle">
+        <span class="menu__icon">&nbsp;</span>
+    </div>
+    <div class="menu__background"></div>
+    <nav class="menu__nav">
+        <ul class="menu__list">
+            {{ range .Site.Menus.main }}
+                <li class="menu__item"><a class="menu__link" href="{{ .URL | absLangURL }}">{{ .Name | safeHTML }}</a></li>
+            {{ end }}
+        </ul>
+        {{ if .Site.IsMultiLingual }}
+            <ul>
+                {{ range .Site.Languages }}
+                    {{ if eq . $.Site.Language }}
+                        <li>{{ .LanguageName }}</li>
+                    {{ end }}
+                {{ end }}
+                {{ range $.Translations }}
+                    <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                {{ end }}
+            </ul>
         {{ end }}
     </nav>
 </div>
 
-{{ if .Site.IsMultiLingual }}
-<nav>
-    <ul>
-        {{ range .Site.Languages }}
-        {{ if eq . $.Site.Language }}
-        <li>{{ .LanguageName }}</span>
-            {{ end }}
-            {{ end }}
-            <ul class="dropdown__menu">
-                {{ range $.Translations }}
-                <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-            </ul>
-            {{ end }}
-        </li>
-    </ul>
-</nav>
-{{ end }}
+
