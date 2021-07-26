@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
-    "watch": "webpack --config configuration/webpack.watch.config.js --mode=development --watch",
+    "build": "webpack --config configuration/webpack.dev.config.js --node-env development",
+    "build_prod": "webpack --config configuration/webpack.dev.config.js --node-env production",
+    "watch": "webpack --config configuration/webpack.dev.config.js --mode=development --watch",
     "start": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
     "production": "webpack --config configuration/webpack.prod.config.js --mode=production"
   },
@@ -28,7 +29,6 @@
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "npm-run-all": "^4.1.5",
@@ -39,7 +39,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "html-loader": "^2.1.2"
   },
   "dependencies": {
     "imagesloaded": "^4.1.4",

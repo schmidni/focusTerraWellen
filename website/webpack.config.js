@@ -1,17 +1,21 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const environment = require('./configuration/environment');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    // Entry point, main.scss is referenced in entry point js
     entry: {
-        index: path.resolve(environment.paths.source, 'js', 'index.js'),
+        index: [
+            path.resolve(__dirname, 'src/js', 'index.js'),
+            path.resolve(__dirname, 'src/sass', 'main.scss'),
+        ],
     },
+
+    mode: process.env.NODE_ENV,
+
     // default output folder. Possibly overwritten in subconfig
     output: {
         filename: 'js/[name].js',
-        path: environment.paths.output,
     },
 
     module: {
@@ -26,7 +30,12 @@ module.exports = {
             {
                 test: /\.((c|sa|sc)ss)$/i,
                 use: [
-                    MiniCssExtractPlugin.loader, // extracts css into separate file
+                    {
+                        loader: MiniCssExtractPlugin.loader, // extracts css into separate file
+                        options: {
+                            publicPath: '../',
+                        },
+                    },
                     'css-loader', // css loader
                     {
                         loader: 'postcss-loader', // postprocessing css
@@ -46,19 +55,20 @@ module.exports = {
                     { loader: 'sass-loader', options: { sourceMap: true } }, // sass files loader
                 ],
             },
-            // loader for images, needed for reference in sass/css files
             {
-                test: /\.(png|gif|jpe?g|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'images/[name].[ext]',
-                            publicPath: '../',
-                            emit: false,
-                        },
-                    },
-                ],
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    emit: devMode, // images are handled by CopyWebpackPlugin in dev mode
+                    filename: 'images/[name][ext][query]',
+                },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext][query]',
+                },
             },
         ],
     },

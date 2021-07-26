@@ -1,4 +1,3 @@
-import '../sass/main.scss';
 import imagesLoaded from 'imagesloaded';
 import InteractiveImage from './components/InteractiveImage';
 import checkInstanceOfClicked from './utils/checkInstanceOfClicked';
