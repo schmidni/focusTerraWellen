@@ -1,6 +1,7 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+languageCode = "de-ch"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
+defaultContentLanguage = "de"
 
 [permalinks]
   blog = "/:filename/"
@@ -18,19 +19,21 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
     name = "Empfänger"
     url = "/empfaenger/"
     weight = 3
-
+  [[menu.main]]
+    name = "Reflexion"
+    url = "/reflexion/"
+    weight = 3
+    
 [params]
   dateFormat = "Jan 2, 2006"
   homeText = "You just made a Hugo blog from scratch."
 
-DefaultContentLanguage = "en"
-
 [languages]
-  [languages.en]
-    title = "My New Hugo i18n Site"
-    languageName = "English"
-    weight = 1
   [languages.de]
-    title = "Meine neue Hugo i18n Site"
+    title = "Wellen, Tauch ein!"
     languageName = "Deutsch"
+    weight = 1
+  [languages.en]
+    title = "Waves, Dive In!"
+    languageName = "English"
     weight = 2

@@ -2,9 +2,41 @@
 {{ $bundleName := string .Page.Params.bundle}}
 {{ $headless := .Site.GetPage $bundleName }}
 {{ $reusablePages := $headless.Resources.Match "info*" }}
-<h2>Block</h2>
-{{ range $reusablePages }}
-<h3>{{ .Title }}</h3>
-{{ .Content }}
-{{ end }}
+
+
+<main data-scroll-container id="data-scroll-container">
+
+    <div class="fullscreen-image" data-scroll-section>
+        <div class="fullscreen-image__titlesection">
+            {{ .Content }}
+        </div>
+
+        <img class="fullscreen-image__img" src='/images/{{ .Param "image" }}' alt="" />
+
+        {{ range $reusablePages }}
+        <div class=" interactive-info" data-posx='{{ .Param "posx" }}' data-posy='{{ .Param "posy" }}'>
+            <div id="pointer-1" class="interactive-info__pointer">
+                <div class="icon-circle icon-circle--1"></div>
+                <div class="icon-circle icon-circle--2"></div>
+                <div class="icon-circle icon-circle--3"></div>
+                <div class="icon-circle icon-circle--4"></div>
+            </div>
+
+
+            <div id="text-1" class="interactive-info__text">
+
+                <h3>{{ .Title }}</h3>
+                {{ .Content }}
+
+                <div id="close-icon-1" class="interactive-info__close">
+                    <span class="close-icon">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+    </div>
+</main>
+
+
 {{ end }}
