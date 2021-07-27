@@ -1,54 +1,62 @@
 @use "sass:math";
 
-.intro-container {
+.wave {
     position: relative;
-    z-index: 10;
-}
-
-.wave-container {
-
-    position: relative;
+    z-index: 100;
     margin-top: -(math.div(100%, 1920) * 100);
 
-    &--first {
-        & .intro-theme {
-            min-height:15rem!important;
-
-            &__content {
-                margin-top: 10px;
-            }
-            
-            @include on-hover(''){
-                height:25rem;
-                @include respond(phone) {
-                    height:30rem;
-                }
-            }
-        }
-    }
-
-    .wave {
+    .wave__svg {
         display: block;
         margin-bottom: -2px;
         width: 100%;
         height: math.div(100%, 1920) * 100;
-    }
-    #wave-1, #wave-4, #wave-end{
+
         fill: $color-base;
+        & ~ div {
+            background-color: $color-base;
+        }
+
+        &--turquoise {
+            fill: rgb(0, 152, 147);
+            & ~ div {
+                background-color: rgb(0, 152, 147);
+            }
+        }
+        &--teal {
+            fill: rgb(0, 77, 98);
+            & ~ div {
+                background-color: rgb(0, 77, 98);
+            }
+        }
+        &--dark {
+            fill: darken($color-base, 10%);
+            & ~ div {
+                background-color: darken($color-base, 10%);
+            }
+        }
     }
-    #wave-3 {
-        fill: rgb(0, 77, 98);
-    }
-    #wave-2{
-        fill: rgb(0, 152, 147);
-    }
-    #wave-end {
+
+    &--single &__svg:last-of-type {
         margin-bottom: -(math.div(100%, 1920) * 100);
-    }
-    #wave-5 {
-        fill: darken($color-base, 10%);
+
+        //     & .intro-theme {
+        //         min-height: 15rem !important;
+
+        //         &__content {
+        //             margin-top: 10px;
+        //         }
+
+        //         @include on-hover("") {
+        //             height: 25rem;
+        //             @include respond(phone) {
+        //                 height: 30rem;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
+
 .intro-theme {
     height: 20rem;
     background-position: 0% 50%;
@@ -70,13 +78,13 @@
         color: white;
         white-space: nowrap;
     }
-    @media (max-width:319px) {
+    @media (max-width: 319px) {
         white-space: normal;
     }
 
     &__icon {
         fill: white;
-        height:5rem;
+        height: 5rem;
         width: 5rem;
         margin-top: 4px;
     }
@@ -92,7 +100,7 @@
     }
 
     &__content {
-        position:relative;
+        position: relative;
         z-index: 999;
         margin-top: -1%;
         @include respond(tab-small) {
@@ -102,28 +110,11 @@
         }
     }
 
-    @include on-hover('') {
+    @include on-hover("") {
         height: 30rem;
     }
 
-    @include on-hover('&__content &__text'){
+    @include on-hover("&__content &__text") {
         height: auto;
     }
-
-    &--1, &--4 {
-        background-color: $color-base;
-
-    }
-
-    &--3 {
-        background-color: rgb(0, 77, 98);
-
-    }
-
-    &--2 {
-        background-color: rgb(0, 152, 147);
-        
-    }
-
-    
 }
