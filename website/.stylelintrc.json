@@ -3,6 +3,7 @@
     "rules": {
         "max-nesting-depth": 3,
         "color-named": null,
-        "indentation": 4
+        "indentation": 4,
+        "order/properties-alphabetical-order": null
     }
 }

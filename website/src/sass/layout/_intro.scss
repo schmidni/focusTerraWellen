@@ -1,36 +1,42 @@
-@use "sass:math";
+@use 'sass:math';
 
 .wave {
+    margin-top: -(math.div(100%, 1920) * 100);
     position: relative;
     z-index: 100;
-    margin-top: -(math.div(100%, 1920) * 100);
 
-    .wave__svg {
+    &__svg {
         display: block;
-        margin-bottom: -2px;
-        width: 100%;
-        height: math.div(100%, 1920) * 100;
 
         fill: $color-base;
-        & ~ div {
+        height: math.div(100%, 1920) * 100;
+        margin-bottom: -2px;
+        width: 100%;
+
+        ~ div {
             background-color: $color-base;
         }
 
         &--turquoise {
             fill: rgb(0, 152, 147);
-            & ~ div {
+
+            ~ div {
                 background-color: rgb(0, 152, 147);
             }
         }
+
         &--teal {
             fill: rgb(0, 77, 98);
-            & ~ div {
+
+            ~ div {
                 background-color: rgb(0, 77, 98);
             }
         }
+
         &--dark {
             fill: darken($color-base, 10%);
-            & ~ div {
+
+            ~ div {
                 background-color: darken($color-base, 10%);
             }
         }
@@ -38,83 +44,72 @@
 
     &--single &__svg:last-of-type {
         margin-bottom: -(math.div(100%, 1920) * 100);
-
-        //     & .intro-theme {
-        //         min-height: 15rem !important;
-
-        //         &__content {
-        //             margin-top: 10px;
-        //         }
-
-        //         @include on-hover("") {
-        //             height: 25rem;
-        //             @include respond(phone) {
-        //                 height: 30rem;
-        //             }
-        //         }
-        //     }
-        // }
+        margin-top: -2px;
     }
 }
 
-.intro-theme {
-    height: 20rem;
-    background-position: 0% 50%;
-    padding-left: $padding-left-default;
+$height: math.div(100%, 1920) * 100;
 
-    padding-bottom: math.div(100%, 1920) * 100;
-    &:not(:last-child) {
-        height: 12rem;
-    }
-    padding-right: $padding-left-default;
-    position: relative;
+.intro-theme {
     display: flex;
     justify-content: flex-start;
+
+    height: 20rem;
+    padding: 0 $padding-left-default;
+
     transition: height, 0.5s;
 
-    overflow: hidden;
+    @include on-hover('') {
+        height: 30rem;
+    }
+
+    @include on-hover('&__content &__text') {
+        height: auto;
+    }
+
+    &--first {
+        height: 15rem;
+    }
+
+    &--first &__content {
+        margin-top: 0 !important; 
+    }
 
     &__title {
         color: white;
         white-space: nowrap;
+
+        @media (max-width: 319px) {
+            white-space: normal;
+        }
     }
-    @media (max-width: 319px) {
-        white-space: normal;
+
+    &__content {
+        max-width: 75vw;
+        overflow: hidden;
+        
+        @include respond(big) {
+            margin-top: -2vw;
+            max-width: 50vw;
+            transition: margin 0.5s;
+        }
+
+        @include respond(tab-small) {
+            margin-top: -1vw;
+            max-width: none;
+        }
+    }
+
+    &__text {
+        height: 0;
+        color: white;
+        overflow: hidden;
     }
 
     &__icon {
         fill: white;
         height: 5rem;
-        width: 5rem;
         margin-top: 4px;
-    }
-
-    &__text {
-        color: white;
-        height: 0;
-        overflow: hidden;
-    }
-
-    &__link {
-        text-decoration: none;
-    }
-
-    &__content {
-        position: relative;
-        z-index: 999;
-        margin-top: -1%;
-        @include respond(tab-small) {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    }
-
-    @include on-hover("") {
-        height: 30rem;
-    }
-
-    @include on-hover("&__content &__text") {
-        height: auto;
+        width: 5rem;
     }
 }
