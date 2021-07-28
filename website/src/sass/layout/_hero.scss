@@ -2,7 +2,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url('../images/intro.jpg');
+    background-image: url("../images/intro.jpg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -12,30 +12,14 @@
         top: 20vh;
         left: 10vw;
 
-        font-family: 'Zilla Slab', serif;
+        font-family: "Zilla Slab", serif;
         text-transform: none;
         font-weight: 900;
         font-style: italic;
         letter-spacing: -0.8rem;
         line-height: 1.2;
 
-
-        &--main{
-            font-size: 25rem;
-            color: $color-base;
-        }
-        
-        &--sub {
-            position: relative;
-            display: inline-block;
-            font-size: 18rem;
-            top: -15rem;
-            left: 15rem;
-            transform: rotate(-5deg);
-            color: rgb(0, 156, 180);
-        }
-
-        @include respond(tab-small) {
+        @include respond(tab-port) {
             transform: scale(80%);
             transform-origin: 0 50%;
             top: 20vh;
@@ -48,7 +32,21 @@
             top: 20vh;
             left: 5vw;
         }
-  
+
+        &--main {
+            font-size: 25rem;
+            color: $color-base;
+        }
+
+        &--sub {
+            position: relative;
+            display: inline-block;
+            font-size: 18rem;
+            top: -15rem;
+            left: 15rem;
+            transform: rotate(-5deg);
+            color: rgb(0, 156, 180);
+        }
     }
 
     &__text {
@@ -68,7 +66,6 @@
         fill: $color-base;
     }
 
-    
     &__box {
         width: 50vw;
         background-color: rgba(white, 0.5);
@@ -76,9 +73,7 @@
         position: absolute;
         top: 40vh;
         left: 5vw;
-        
+
         padding: 3rem;
     }
-    
-    
 }

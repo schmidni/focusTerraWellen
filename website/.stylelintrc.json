@@ -4,6 +4,7 @@
         "max-nesting-depth": 3,
         "color-named": null,
         "indentation": 4,
-        "order/properties-alphabetical-order": null
+        "order/properties-alphabetical-order": null,
+        "string-quotes": "double"
     }
 }

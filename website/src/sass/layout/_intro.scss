@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 .wave {
     margin-top: -(math.div(100%, 1920) * 100);
@@ -48,8 +48,6 @@
     }
 }
 
-$height: math.div(100%, 1920) * 100;
-
 .intro-theme {
     display: flex;
     justify-content: flex-start;
@@ -59,44 +57,79 @@ $height: math.div(100%, 1920) * 100;
 
     transition: height, 0.5s;
 
-    @include on-hover('') {
+    @include on-hover("") {
         height: 30rem;
+
+        @include respond(phone-small) {
+            height: 35rem;
+        }
     }
 
-    @include on-hover('&__content &__text') {
+    @include on-hover("&__content &__text") {
         height: auto;
     }
 
-    &--first {
+    @include on-hover("&__content") {
+        margin-top: -(math.div(100%, 1920) * 130);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @include on-hover("&__content--single") {
+        margin-top: 0;
+    }
+
+    &--single {
         height: 15rem;
     }
 
-    &--first &__content {
-        margin-top: 0 !important; 
-    }
-
-    &__title {
-        color: white;
-        white-space: nowrap;
-
-        @media (max-width: 319px) {
-            white-space: normal;
-        }
-    }
-
     &__content {
+        margin-top: -1vw;
         max-width: 75vw;
         overflow: hidden;
-        
+        transition: margin 0.5s;
+
         @include respond(big) {
             margin-top: -2vw;
             max-width: 50vw;
-            transition: margin 0.5s;
         }
 
-        @include respond(tab-small) {
-            margin-top: -1vw;
+        @include respond(tab-land) {
+            margin-top: 1vw;
+        }
+
+        @include respond(tab-port) {
+            margin-top: 30px;
             max-width: none;
+        }
+        @include respond(phone) {
+            margin-top: 25px;
+        }
+        @include respond(phone-small) {
+            margin-top: 35px;
+        }
+    }
+
+    &__content--single {
+        margin-top: 0.5vw;
+
+        @include respond(tab-land) {
+            margin-top: 2vw;
+        }
+
+        @include respond(tab-port) {
+            margin-top: 30px;
+        }
+
+        @include respond(phone) {
+            margin-top: 15px;
+        }
+        @include respond(phone-small) {
+            margin-top: 25px;
+        }
+        @media (max-width: 390px) {
+            margin-top: 0;
         }
     }
 
@@ -104,6 +137,15 @@ $height: math.div(100%, 1920) * 100;
         height: 0;
         color: white;
         overflow: hidden;
+    }
+
+    &__title {
+        color: white;
+        white-space: nowrap;
+
+        @media (max-width: 390px) {
+            white-space: normal;
+        }
     }
 
     &__icon {

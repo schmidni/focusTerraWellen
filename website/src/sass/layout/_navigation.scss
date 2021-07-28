@@ -8,60 +8,47 @@
     justify-content: space-evenly; //main axis
     align-items: center;
 
-    @include respond(tab-small) {
+    @include respond(tab-port) {
         flex-direction: column;
     }
-    @include on-hover('') {
+    @include on-hover("") {
         .h1 {
+            opacity: 0.75;
+            font-size: 4rem;
             @include respond(tab-land) {
                 opacity: 0;
             }
-            opacity: 0.75;
-            font-size: 4rem;
         }
     }
 }
 
-
 .navigation {
     height: 80rem;
-    background-size:cover;
+    background-size: cover;
     filter: saturate(50%);
     flex: 1 1 20rem;
-    overflow:hidden;
-    
-    min-width: 0rem;
+    overflow: hidden;
+
+    min-width: 0;
     transition: all, 0.7s;
 
-    &:last-of-type {  
-        @include respond(tab-small) {
-            min-height: 15rem;
-        }
-    }
-    &:last-of-type &__title {
-        @include respond(tab-small) {
-            align-self: auto;
-            margin-top: - math.div(100%, 1920) * 100;
-        }
-    }
-
-    @include respond(tab-small) {
+    @include respond(tab-port) {
         min-width: 100%;
-        min-height: 0rem;
+        min-height: 0;
         flex: 1 1 10rem;
         transition: all, 0.5s;
     }
-    
+
     @include respond(phone-small) {
         min-height: 15rem;
     }
 
-    @include on-hover(''){
+    @include on-hover("") {
         min-width: 50rem;
         filter: saturate(100%);
         padding: 5rem;
 
-        @include respond(tab-small) {
+        @include respond(tab-port) {
             min-width: 100%;
             min-height: 40rem;
         }
@@ -69,15 +56,64 @@
         .h1 {
             opacity: 100%;
             white-space: normal;
-        } 
+        }
     }
-    
+
+    @include on-hover("&__content") {
+        height: 100%;
+        width: 50rem;
+
+        justify-content: center;
+        overflow: hidden;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    @include on-hover("&__title") {
+        transform: rotate(0);
+        margin: 0;
+    }
+    @include on-hover("&__text") {
+        display: block;
+    }
+
+    @include on-hover("&__link") {
+        display: block;
+        margin-top: 2px;
+        width: fit-content;
+
+        svg {
+            fill: white;
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+
+    @include on-hover("&__overlay") {
+        opacity: 0.3;
+    }
+
+    &:last-of-type {
+        @include respond(tab-port) {
+            min-height: 15rem;
+        }
+    }
+
+    &:last-of-type &__title {
+        @include respond(tab-port) {
+            align-self: auto;
+            margin-top: -1 * math.div(100%, 1920) * 100;
+        }
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
-        position:absolute;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 999;
@@ -86,7 +122,7 @@
         width: 100%;
         padding: 8rem 4rem;
 
-        @include respond(tab-small) {
+        @include respond(tab-port) {
             justify-content: center;
             padding: 4rem $padding-left-default;
         }
@@ -96,24 +132,12 @@
         }
     }
 
-    @include on-hover('&__content'){
-        height: 100%;
-        width: 50rem;
-
-        justify-content: center;
-        overflow: hidden;
-
-        @include respond(tab-small) {
-            width: 100%;
-        }
-    }
-
     &__title {
         color: white;
         transform: rotate(-90deg);
-        white-space: nowrap;    
-        
-        @include respond(tab-small) {
+        white-space: nowrap;
+
+        @include respond(tab-port) {
             flex-direction: column;
             transform: rotate(0deg);
         }
@@ -122,18 +146,10 @@
         }
     }
 
-    @include on-hover('&__title') {
-        transform: rotate(0);
-        margin: 0;
-    }
-
     &__text {
         color: white;
         display: none;
         transition: opacity, 0.7s;
-    }
-    @include on-hover('&__text') {
-        display:block;
     }
 
     &__link {
@@ -141,30 +157,14 @@
         display: none;
     }
 
-    @include on-hover('&__link') {
-        display:block;
-        margin-top: 2px;
-        width: fit-content;
-
-        svg {
-            fill:white;
-            height: 5rem;
-            width: 5rem;
-        }
-    }
-
     &__overlay {
         height: 100%;
         width: 100%;
-        position:absolute;
+        position: absolute;
         top: 0;
         left: 0;
         background-color: black;
         opacity: 0.5;
         transition: opacity, 0.7s;
-    }
-    	
-    @include on-hover('&__overlay') {
-        opacity: .3;
     }
 }
