@@ -1,18 +1,4 @@
 .menu {
-    &__toggle {
-        background-color: white;
-        height: 7rem;
-        width: 7rem;
-        border-radius: 50%;
-        position: fixed;
-        top: 6rem;
-        right: 6rem;
-        z-index: 1002;
-        box-shadow: 0 1rem 3rem rgba(black, 0.1);
-        text-align: center;
-        cursor: pointer;
-    }
-
     &__background {
         height: 6rem;
         width: 6rem;
@@ -22,7 +8,7 @@
         right: 6.5rem;
         background-image: radial-gradient(rgb(97, 172, 197), white);
         z-index: 1000;
-        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
     &__nav {
@@ -40,30 +26,12 @@
         width: 0;
         opacity: 0;
 
-        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
         @include respond(phone) {
             flex-direction: column;
         }
     }
-
-    &__home {
-        position: absolute;
-        top: 20vh;
-
-        @include respond(phone) {
-            position:relative;
-            top: unset;
-        }
-    }
-
-    &__home &__link { 
-        &:link, &:visited {
-            font-size: 3rem!important;
-            font-weight: 400!important;
-        }
-    }
-
 
     &__toggle.active ~ &__background {
         transform: scale(80);
@@ -72,10 +40,14 @@
     &__toggle.active ~ &__nav {
         opacity: 1;
         width: 100%;
+
+        .menu__list {
+            display: block;
+        }
     }
 
-
     &__list {
+        display: none;
         list-style: none;
         text-align: center;
     }
@@ -85,7 +57,8 @@
     }
 
     &__link {
-        &:link, &:visited {
+        &:link,
+        &:visited {
             display: inline-block;
             font-size: 2.5rem;
             font-weight: 300;
@@ -93,23 +66,41 @@
             color: white;
             text-decoration: none;
             text-transform: uppercase;
-            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+            background-image: linear-gradient(
+                120deg,
+                transparent 0%,
+                transparent 50%,
+                white 50%
+            );
             background-size: 320%;
-            transition: all .4s;
+            transition: all 0.4s;
         }
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             background-position: 100%;
             color: black;
             transform: translateX(1rem);
         }
+    }
 
+    &__toggle {
+        background-color: white;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        z-index: 1002;
+        box-shadow: 0 1rem 3rem rgba(black, 0.1);
+        text-align: center;
+        cursor: pointer;
     }
 
     &__icon {
         position: relative;
         margin-top: 3.5rem;
-
 
         &,
         &::before,
@@ -118,7 +109,7 @@
             width: 3rem;
             height: 2px;
             background-color: grey;
-            transition: all .2s;
+            transition: all 0.2s;
         }
 
         &::before,
@@ -129,11 +120,11 @@
         }
 
         &::before {
-            top: -.8rem;
+            top: -0.8rem;
         }
 
         &::after {
-            top: .8rem;
+            top: 0.8rem;
         }
     }
 
@@ -141,7 +132,6 @@
         top: -1rem;
     }
 
-    
     &__toggle:hover &__icon::after {
         top: 1rem;
     }
@@ -159,5 +149,4 @@
         top: 0;
         transform: rotate(135deg);
     }
-
 }
