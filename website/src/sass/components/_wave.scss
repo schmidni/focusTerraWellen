@@ -1,0 +1,47 @@
+.wave {
+    margin-top: -5%;
+    position: relative;
+    z-index: 100;
+
+    &__svg {
+        display: block;
+
+        fill: $color-base;
+        height: 5%;
+        margin-bottom: -2px;
+        width: 100%;
+
+        ~ div {
+            background-color: $color-base;
+        }
+
+        &--turquoise {
+            fill: rgb(0, 152, 147);
+
+            ~ div {
+                background-color: rgb(0, 152, 147);
+            }
+        }
+
+        &--teal {
+            fill: rgb(0, 77, 98);
+
+            ~ div {
+                background-color: rgb(0, 77, 98);
+            }
+        }
+
+        &--dark {
+            fill: darken($color-base, 10%);
+
+            ~ div {
+                background-color: darken($color-base, 10%);
+            }
+        }
+    }
+
+    &--single &__svg:last-of-type {
+        margin-bottom: -5%;
+        margin-top: -2px;
+    }
+}

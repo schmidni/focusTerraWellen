@@ -1,13 +1,14 @@
 .impressum {
     background-color: darken($color-base, 10%);
-    padding: 0 $padding-left-default $padding-left-default $padding-left-default;
+    padding: 0 $padding-left-default $padding-left-default
+        $padding-left-default;
     color: white;
 
-    & .h1 {
+    .h1 {
         padding-bottom: 4rem;
     }
 
-    &__content{
+    &__content {
         display: flex;
         // justify-content: space-between;
         gap: 2rem;
@@ -21,14 +22,12 @@
         // flex: 1 1 40rem; // if columns should be equal
 
         p {
-            padding-bottom: 1rem;   
+            padding-bottom: 1rem;
         }
 
         h5 {
             padding-top: 2.5rem;
             padding-bottom: 2.5rem;
-        } 
+        }
     }
-
-    
 }

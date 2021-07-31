@@ -21,7 +21,7 @@ toggleMenu?.addEventListener('click', () => {
 // collect all navigation elements
 const navigation = [
     ...document.getElementsByClassName('navigation'),
-    ...document.getElementsByClassName('intro-theme'),
+    ...document.getElementsByClassName('intro'),
 ];
 
 // construct media query

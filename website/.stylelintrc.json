@@ -5,6 +5,7 @@
         "color-named": null,
         "indentation": 4,
         "order/properties-alphabetical-order": null,
-        "string-quotes": "double"
+        "string-quotes": "double",
+        "function-parentheses-space-inside": "never-single-line"
     }
 }
