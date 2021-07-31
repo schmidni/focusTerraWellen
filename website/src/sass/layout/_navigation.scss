@@ -1,42 +1,16 @@
-@use "sass:math";
-
-.navigation-container {
-    position: relative;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; //main axis
-    align-items: center;
-
-    @include respond(tab-port) {
-        flex-direction: column;
-    }
-    @include on-hover("") {
-        .h1 {
-            opacity: 0.75;
-            font-size: 4rem;
-            @include respond(tab-land) {
-                opacity: 0;
-            }
-        }
-    }
-}
-
 .navigation {
     height: 80rem;
     background-size: cover;
     filter: saturate(50%);
-    flex: 1 1 20rem;
+    flex-basis: 20rem;
     overflow: hidden;
 
     min-width: 0;
-    transition: all, 0.7s;
-
+    transition: width, 0.7s;
     @include respond(tab-port) {
         min-width: 100%;
         min-height: 0;
-        flex: 1 1 10rem;
-        transition: all, 0.5s;
+        flex-basis: 10rem;
     }
 
     @include respond(phone-small) {
@@ -97,15 +71,48 @@
 
     &:last-of-type {
         @include respond(tab-port) {
-            min-height: 15rem;
+            flex-basis: 15rem;
         }
     }
 
     &:last-of-type &__title {
         @include respond(tab-port) {
             align-self: auto;
-            margin-top: -1 * math.div(100%, 1920) * 100;
+            margin-top: -5%;
         }
+    }
+
+    &__container {
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; //main axis
+        align-items: center;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
+        @include on-hover("") {
+            .h1 {
+                opacity: 0.75;
+                font-size: 4rem;
+                @include respond(tab-land) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.5;
+        transition: opacity, 0.7s;
     }
 
     &__content {
@@ -120,15 +127,19 @@
 
         height: 100%;
         width: 100%;
-        padding: 8rem 4rem;
+        padding: 12rem 4rem;
+
+        @include respond(big) {
+            padding-bottom: 14rem;
+        }
+
+        @include respond(tab-land) {
+            padding-bottom: 8rem;
+        }
 
         @include respond(tab-port) {
             justify-content: center;
             padding: 4rem $padding-left-default;
-        }
-
-        @include respond(big) {
-            padding-bottom: 12rem;
         }
     }
 
@@ -155,16 +166,5 @@
     &__link {
         text-decoration: none;
         display: none;
-    }
-
-    &__overlay {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: black;
-        opacity: 0.5;
-        transition: opacity, 0.7s;
     }
 }
