@@ -58,14 +58,9 @@ export default class InteractiveInfo {
 
     // event listener to open textBox
     createToggle = () => {
-        this.pointer.addEventListener('click', (e) => {
-            // stop event so it doesn't trigger close listeners
-            e.stopImmediatePropagation();
-
-            if (window.matchMedia('(max-width: 720px)').matches) {
-                console.log(this.lscroll.scroll.instance.scroll.x);
-                // this.textBox.style.left = this.scrollPosition.x;
-            }
+        this.pointer.addEventListener('click', () => {
+            // somehow not needed anymore?
+            // e.stopImmediatePropagation();
 
             // toggle active class
             this.element.classList.toggle('active');
