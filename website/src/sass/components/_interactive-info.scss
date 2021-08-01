@@ -55,7 +55,7 @@
     &__text {
         position: absolute;
         min-height: fit-content;
-        max-height: 70vh;
+        max-height: 70vh; // if changed, need to update javascript interactiveInfo.js
         width: 60rem;
         overflow-y: auto;
         padding: 4rem 5rem;
@@ -73,6 +73,10 @@
         transform-origin: top left;
         transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 
+        // Scrollbar styling
+        scrollbar-width: thin;
+        scrollbar-color: black transparent;
+
         // fullscreen on smaller devices
         @include respond(tab-port) {
             position: fixed;
@@ -85,14 +89,8 @@
             max-height: 100%;
         }
 
-        & > *:not(:last-child) {
+        > *:not(:last-child) {
             margin-bottom: 1.5rem;
-        }
-
-        // Scrollbar styling
-        & {
-            scrollbar-width: thin;
-            scrollbar-color: black transparent;
         }
 
         /* Targtes on Chrome, Edge, and Safari */

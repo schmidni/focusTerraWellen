@@ -5,10 +5,7 @@ export default class InteractiveInfo {
     constructor(element, lscroll) {
         this.element = element;
         this.lscroll = lscroll;
-        // this.lscroll.on('scroll', ({ scroll }) => {
-        //     // console.log(position());
-        //     console.log(args);
-        // });
+
         this.pointer = this.element.querySelector('.interactive-info__pointer');
         this.textBox = this.element.querySelector('.interactive-info__text');
         this.close = this.element.querySelector('.interactive-info__close');
@@ -24,13 +21,12 @@ export default class InteractiveInfo {
     // set the text box position in relation to the space available
     updateTextBox = () => {
         // don't compute new position if on mobile
-        if (!window.matchMedia('(max-width: 720px)').matches) {
+        if (!window.matchMedia('(max-width: 800px)').matches) {
             // desktop
             const { height, width } = document
                 .querySelector('.fullscreen-image__img')
                 .getBoundingClientRect();
-
-            const margin = height / 50;
+            const margin = height / 40;
 
             const originX = (this.pos.x / 100) * width;
             const originY = (this.pos.y / 100) * height;
@@ -38,14 +34,17 @@ export default class InteractiveInfo {
             let offsetY = -this.pointer.offsetHeight;
             let offsetX = this.pointer.offsetWidth / 2;
 
-            if (originY + offsetY + this.textBox.offsetHeight >= height - margin) {
-                offsetY = height - originY - this.textBox.offsetHeight - margin;
+            const textBoxHeight = height * 0.7; // hardcoded value from CSS 70vh
+            const textBoxWidth = this.textBox.offsetWidth;
+
+            if (originY + offsetY + textBoxHeight >= height - margin) {
+                offsetY = height - originY - textBoxHeight - margin;
             } else if (originY + offsetY < 0) {
                 offsetY = -originY + margin;
             }
 
-            if (originX + offsetX > width - this.textBox.offsetWidth) {
-                offsetX -= this.textBox.offsetWidth;
+            if (originX + offsetX > width - textBoxWidth) {
+                offsetX -= textBoxWidth;
             }
 
             this.textBox.style.left = `${offsetX}px`;
