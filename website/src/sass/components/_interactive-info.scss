@@ -27,7 +27,7 @@
             animation-name: circleGrows;
             animation-timing-function: linear;
             animation-fill-mode: backwards;
-            animation-duration: 2s;
+            animation-duration: $animation-length;
             animation-iteration-count: infinite;
 
             &--1 {
@@ -35,15 +35,15 @@
             }
 
             &--2 {
-                animation-delay: 0.5s;
+                animation-delay: $animation-length * 0.25;
             }
 
             &--3 {
-                animation-delay: 1s;
+                animation-delay: $animation-length * 0.5;
             }
 
             &--4 {
-                animation-delay: 1.5s;
+                animation-delay: $animation-length * 0.75;
             }
         }
 

@@ -16,26 +16,26 @@
         }
 
         &--turquoise {
-            fill: rgb(0, 152, 147);
+            fill: $color-turquoise;
 
             ~ div {
-                background-color: rgb(0, 152, 147);
+                background-color: $color-turquoise;
             }
         }
 
         &--teal {
-            fill: rgb(0, 77, 98);
+            fill: $color-teal;
 
             ~ div {
-                background-color: rgb(0, 77, 98);
+                background-color: $color-teal;
             }
         }
 
         &--dark {
-            fill: darken($color-base, 10%);
+            fill: darken($color-base, 7%);
 
             ~ div {
-                background-color: darken($color-base, 10%);
+                background-color: darken($color-base, 7%);
             }
         }
     }
