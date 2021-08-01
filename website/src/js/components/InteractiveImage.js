@@ -27,6 +27,11 @@ export default class InteractiveImage {
             []
         );
 
+        this.annotations = [...document.getElementsByClassName('annotations__element')];
+        this.annotations.forEach((annot) => {
+            annot.style.transform = `rotate(${annot.dataset.rot}deg)`;
+        });
+
         // add event listener to update position when window is resized
         window.addEventListener('resize', debounce(this.updatePosition, 30));
 
@@ -49,6 +54,11 @@ export default class InteractiveImage {
             infoElement.element.style.left = newLeft;
             infoElement.element.style.top = newTop;
         });
+
+        this.annotations.forEach((annot) => {
+            annot.style.left = `${(annot.dataset.posx / 100) * width}px`;
+            annot.style.top = `${(annot.dataset.posy / 100) * height}px`;
+        });
     };
 
     hideTitleOnScroll = () => {
@@ -70,7 +80,6 @@ export default class InteractiveImage {
                 this.titleSection.classList.add('hidden');
                 this.titleVisible = false;
             }
-            console.log(this.fullscreenImage.getBoundingClientRect());
         };
     };
 }
