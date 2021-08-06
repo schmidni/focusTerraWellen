@@ -13,13 +13,13 @@
 </div>
 
 
-<div class="wave wave--single">
+<div class="wave">
     <svg class="wave__svg " xmlns="http://www.w3.org/2000/svg" width="1920" height="100" viewBox="0 0 1920 100">
         <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
     </svg>
-    <div class="intro intro--single">
-        <div class="intro__content intro__content--single">
-            <h3 class="intro__title h1">Was ist eine Welle?</h3>
+    <div class="intro">
+        <div class="intro__content">
+            <h3 class="intro__title h1">Tauch ein!</h3>
             <div class="intro__text">
                 <p>
                     Sie malen den Regenbogen in den Himmel, lassen dein Lieblingslied erklingen und wärmen
@@ -28,7 +28,54 @@
                     indirekt wahr.
                 </p>
 
-                <a class="intro__link" {{ with .Site.GetPage "empfaenger" }} href='{{ .RelPermalink  }}' {{ end }}>
+                <a class="intro__link" {{ with .Site.GetPage "eintauchen" }} href='{{ .RelPermalink  }}' {{ end }}>
+                    <svg class="intro__icon">
+                        <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wave">
+    <svg class="wave__svg wave__svg--turquoise" xmlns="http://www.w3.org/2000/svg" width="1920" height="100"
+        viewBox="0 0 1920 100">
+        <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
+    </svg>
+    <div class="intro">
+        <div class="intro__content">
+            <h3 class="intro__title h1">Wellentypen</h3>
+            <div class="intro__text">
+                <p>
+                    Beobachten wir, wie die Sonne auf den Meereswellen glitzert, und hören wir das Rauschen der
+                    Brandung, nehmen wir drei verschiedene Wellen wahr: Wasserwellen, Schall und Licht. Sie sind
+                    Beispiele für physikalische Wellen und können verschiedenen Wellentypen zugeordnet werden.
+                </p>
+                <a class="intro__link" {{ with .Site.GetPage "wellentypen" }} href='{{ .RelPermalink  }}' {{ end }}>
+                    <svg class="intro__icon">
+                        <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wave wave--single">
+    <svg class="wave__svg wave__svg--teal" xmlns="http://www.w3.org/2000/svg" width="1920" height="100"
+        viewBox="0 0 1920 100">
+        <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
+    </svg>
+    <div class="intro intro--single">
+        <div class="intro__content">
+            <h3 class="intro__title h1">Wellenphysik</h3>
+            <div class="intro__text">
+                <p>
+                    Alle Wellentypen haben im Grunde die gleichen Eigenschaften. Sie bestimmen, wie sich eine
+                    Welle verhält, je nachdem, was ihr begegnet. Daraus ergeben sich verschiedene Nutzen –
+                    sowohl natürlich als auch durch Technologien.
+                </p>
+                <a class="intro__link" {{ with .Site.GetPage "wellenphysik" }} href='{{ .RelPermalink  }}' {{ end }}>
                     <svg class="intro__icon">
                         <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                     </svg>
@@ -47,12 +94,13 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Ich sehe was, ...</h2>
-            <div class="navigation__text">...was du nicht siehst. Unsere Welt ist voller Farben und
+            <div class="navigation__text">
+                ...was du nicht siehst. Unsere Welt ist voller Farben und
                 Geräusche – die
                 wir
                 mit unseren Augen sehen oder Ohren hören. Vielen Tieren erscheint die Welt aber ganz anders.
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "empfaenger" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -64,7 +112,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Hallooo Echooo</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -72,7 +121,7 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="reflexion.html">
+            <a class="navigation__link" {{ with .Site.GetPage "reflexion" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -84,7 +133,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Achtung-fertig-los</h2>
-            <div class="navigation__text">Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
+            <div class="navigation__text">
+                Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
                 Augen
                 sehen
                 oder Ohren hören. Vielen Tieren erscheint die Welt ganz anders, da sie Dinge wahrnehmen können,
@@ -92,7 +142,8 @@
                 unseren Sinnen verborgen sind. Um unsere Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit
                 denen
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "geschwindigkeit" }} href='{{ .RelPermalink  }}'
+                {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -104,7 +155,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Wellen als Werkzeug</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -112,7 +164,7 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "energie" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -124,7 +176,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Wo ist was</h2>
-            <div class="navigation__text">Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
+            <div class="navigation__text">
+                Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
                 Augen
                 sehen
                 oder Ohren hören. Vielen Tieren erscheint die Welt ganz anders, da sie Dinge wahrnehmen können,
@@ -132,7 +185,7 @@
                 unseren Sinnen verborgen sind. Um unsere Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit
                 denen
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "lokalisierung" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -144,7 +197,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Information</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -152,7 +206,7 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "kommunikation" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -164,7 +218,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Wenn einer eine Reise tut</h2>
-            <div class="navigation__text">Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
+            <div class="navigation__text">
+                Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
                 Augen
                 sehen
                 oder Ohren hören. Vielen Tieren erscheint die Welt ganz anders, da sie Dinge wahrnehmen können,
@@ -172,7 +227,7 @@
                 unseren Sinnen verborgen sind. Um unsere Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit
                 denen
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "veraenderung" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -184,7 +239,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Abracadabra</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -192,7 +248,8 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "manipulierbarkeit" }} href='{{ .RelPermalink  }}'
+                {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -203,7 +260,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Wer bin ich?</h2>
-            <div class="navigation__text">Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
+            <div class="navigation__text">
+                Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
                 Augen
                 sehen
                 oder Ohren hören. Vielen Tieren erscheint die Welt ganz anders, da sie Dinge wahrnehmen können,
@@ -211,7 +269,7 @@
                 unseren Sinnen verborgen sind. Um unsere Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit
                 denen
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "frequenzgehalt" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -223,7 +281,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Was ist das?</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -231,7 +290,7 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "wellenlaenge" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -242,7 +301,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">"Welle" als Begriff</h2>
-            <div class="navigation__text">Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
+            <div class="navigation__text">
+                Unsere Welt ist voller Farben und Geräusche – die wir mit unseren
                 Augen
                 sehen
                 oder Ohren hören. Vielen Tieren erscheint die Welt ganz anders, da sie Dinge wahrnehmen können,
@@ -250,7 +310,7 @@
                 unseren Sinnen verborgen sind. Um unsere Wahrnehmung zu erweitern, nutzen wir Hilfsmittel, mit
                 denen
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "gesellschaft" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -261,7 +321,8 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Zwei Seiten der Medaille</h2>
-            <div class="navigation__text">Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
+            <div class="navigation__text">
+                Technische Geräte nutzen, dass Wellen z.B. reflektiert, gebrochen oder
                 an
                 einem Hindernis abgelenkt werden können. Die kontrollierte Anwendung dieser Eigenschaften
                 bezeichnet
@@ -269,7 +330,7 @@
                 als Manipulation. Könnte man damit sogar Objekte – fast wie bei Harry Potter – unsichtbar
                 machen?
             </div>
-            <a class="navigation__link" href="empfaenger.html">
+            <a class="navigation__link" {{ with .Site.GetPage "risiken" }} href='{{ .RelPermalink  }}' {{ end }}>
                 <svg class="intro__icon">
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
@@ -279,65 +340,17 @@
 </div>
 
 <div class="wave">
-    <svg class="wave__svg wave__svg--turquoise" xmlns="http://www.w3.org/2000/svg" width="1920" height="100"
-        viewBox="0 0 1920 100">
-        <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
-    </svg>
-    <div class="intro">
-        <div class="intro__content">
-            <h3 class="intro__title h1">Wellentypen</h3>
-            <div class="intro__text">
-                <p>
-                    Beobachten wir, wie die Sonne auf den Meereswellen glitzert, und hören wir das Rauschen der
-                    Brandung, nehmen wir drei verschiedene Wellen wahr: Wasserwellen, Schall und Licht. Sie sind
-                    Beispiele für physikalische Wellen und können verschiedenen Wellentypen zugeordnet werden.
-                </p>
-                <a class="intro__link" href="empfaenger.html">
-                    <svg class="intro__icon">
-                        <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="wave">
-    <svg class="wave__svg wave__svg--teal" xmlns="http://www.w3.org/2000/svg" width="1920" height="100"
-        viewBox="0 0 1920 100">
-        <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
-    </svg>
-    <div class="intro">
-        <div class="intro__content">
-            <h3 class="intro__title h1">Wellenphysik</h3>
-            <div class="intro__text">
-                <p>
-                    Alle Wellentypen haben im Grunde die gleichen Eigenschaften. Sie bestimmen, wie sich eine
-                    Welle verhält, je nachdem, was ihr begegnet. Daraus ergeben sich verschiedene Nutzen –
-                    sowohl natürlich als auch durch Technologien.
-                </p>
-                <a class="intro__link" href="empfaenger.html">
-                    <svg class="intro__icon">
-                        <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-</div>
-<div class="wave">
     <svg class="wave__svg " xmlns="http://www.w3.org/2000/svg" width="1920" height="100" viewBox="0 0 1920 100">
         <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
     </svg>
     <div class="intro">
         <div class="intro__content">
-            <h3 class="intro__title h1">Die Welt erforschen</h3>
+            <h3 class="intro__title h1">Mit Wellen durch die Zeit</h3>
             <div class="intro__text">
                 <p>
                     Alles in der Welt geschieht, weil Energie sich von einem an einen anderen Ort bewegt.
                 </p>
-                <a class="intro__link" href="empfaenger.html">
+                <a class="intro__link" {{ with .Site.GetPage "zeit" }} href='{{ .RelPermalink  }}' {{ end }}>
                     <svg class="intro__icon">
                         <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                     </svg>

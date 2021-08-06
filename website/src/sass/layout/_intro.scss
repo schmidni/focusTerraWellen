@@ -32,6 +32,22 @@
 
     &--single {
         height: 15rem;
+
+        @include on-hover("") {
+            height: 22rem;
+
+            @include respond(tab-port) {
+                height: 26rem;
+            }
+
+            @include respond(phone-small) {
+                height: 31rem;
+            }
+        }
+
+        @include respond(tab-port) {
+            height: 18rem;
+        }
     }
 
     &__content {
