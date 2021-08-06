@@ -93,12 +93,16 @@
         @include respond(tab-port) {
             flex-direction: column;
         }
+
         @include on-hover("") {
             .h1 {
                 opacity: 0.75;
                 font-size: 4rem;
                 @include respond(tab-land) {
                     opacity: 0;
+                }
+                @include respond(tab-port) {
+                    opacity: 0.75;
                 }
             }
         }
@@ -140,6 +144,12 @@
         @include respond(tab-port) {
             justify-content: center;
             padding: 4rem $padding-left-default;
+        }
+        @include on-hover("") {
+            .h1 {
+                opacity: 1;
+                font-size: 4.5rem;
+            }
         }
     }
 
