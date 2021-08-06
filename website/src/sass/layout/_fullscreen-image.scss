@@ -16,37 +16,52 @@
         left: 0;
         top: 0;
 
-        max-width: 120rem;
-        white-space: normal;
-
+        width: 150rem;
+        // white-space: normal;
+        
         color: white;
-        background: linear-gradient(
-            to right,
-            rgba(darken($color-info-icon, 10%), 0.9),
-            rgba(darken($color-info-icon, 20%), 0.8),
-            rgba(black, 0)
-        );
-        border-radius: 0 0% 50% 0;
-        opacity: 1;
+        background-image: url(../images/icons/wave-titlesection.svg);
+        background-size: 100% 100%;
 
-        padding: 6rem 40rem 4rem 4rem;
-        margin-top: -4rem;
+        padding-left: 4rem;
+        padding-bottom: 6rem;
 
         transition: opacity 0.6s;
 
-        @include respond(tab-land) {
-            max-width: 100vw;
-            padding-right: 20vw;
+        h5, h6 {
+            max-width: 90rem;
+        } 
 
-            h1 {
-                white-space: normal;
-                line-height: 6rem;
-                margin-bottom: 1.3rem;
+        h1 {
+            line-height: 1;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        @include respond(tab-land) {
+            width: 125vw;
+
+            h1, h5, h6 {
+                max-width: 75vw;
+            }
+    
+        }
+
+        @include respond(tab-port) {
+            width: 150vw;
+
+            h1, h5, h6 {
+                max-width: 90vw;
             }
         }
 
-        h1 {
-            white-space: nowrap;
+        @include respond(phone) {
+            width: 180vw;
+
+            h1, h5, h6 {
+                max-width: 100;
+                padding-right: 1rem;
+            }
         }
 
         &.hidden {
