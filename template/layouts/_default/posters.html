@@ -3,7 +3,6 @@
 {{ $headless := .Site.GetPage $bundleName }}
 {{ $reusablePages := $headless.Resources.Match "info*" }}
 
-
 <main data-scroll-container id="data-scroll-container">
 
     <div class="fullscreen-image" data-scroll-section>
@@ -12,6 +11,14 @@
         </div>
 
         <img class="fullscreen-image__img" src='/images/{{ .Param "image" }}' alt="" />
+
+        {{ range .Param "annotations" }}
+        <div class="annotations">
+            <div class="annotations__element" data-posx="{{.posx}}" data-posy="{{.posy}}" data-rot="{{.rot}}">
+                {{.string}}
+            </div>
+        </div>
+        {{ end }}
 
         {{ range $reusablePages }}
         <div class=" interactive-info" data-posx='{{ .Param "posx" }}' data-posy='{{ .Param "posy" }}'>
