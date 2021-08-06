@@ -7,15 +7,27 @@ export default class InteractiveImage {
         this.titleSection = document.querySelector('.fullscreen-image__titlesection');
         this.fullscreenImage = document.querySelector('.fullscreen-image__img');
         this.titleVisible = true;
+        this.mobileLocomotive = {};
+
+        // some hack to use locomotive on desktop screens < 1024
+        if (window.matchMedia('not all and (hover: hover), not all and (pointer: fine)').matches) {
+            this.mobileLocomotive = {
+                smartphone: { smooth: false, direction: 'vertical' },
+                tablet: { smooth: false, direction: 'vertical' },
+            };
+        } else {
+            this.mobileLocomotive = {
+                tablet: { breakpoint: 0 },
+            };
+        }
 
         // Initialize Locomotive Scroll (horizontal direction)
         this.lscroll = new LocomotiveScroll({
             el: scrollContainer,
             smooth: true,
             direction: 'horizontal',
-            smartphone: { smooth: false, direction: 'vertical' },
-            tablet: { smooth: false, direction: 'vertical' },
             resetNativeScroll: false,
+            ...this.mobileLocomotive,
         });
 
         // init all InteractiveInfo objects to array
