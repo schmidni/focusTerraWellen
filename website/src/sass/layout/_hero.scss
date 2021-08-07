@@ -18,6 +18,12 @@
         font-style: italic;
         letter-spacing: -0.8rem;
         line-height: 1.2;
+        white-space: nowrap;
+
+        @include respond(big) {
+            transform: scale(120%);
+            transform-origin: 0 50%;
+        }
 
         @include respond(tab-port) {
             transform: scale(80%);
@@ -27,23 +33,23 @@
         }
 
         @include respond(phone-small) {
-            transform: scale(60%);
+            transform: scale(55%);
             transform-origin: 0 50%;
-            top: 20vh;
+            top: 15vh;
             left: 5vw;
         }
 
         &--main {
-            font-size: 25rem;
+            font-size: 20rem;
             color: $color-base;
         }
 
         &--sub {
             position: relative;
             display: inline-block;
-            font-size: 18rem;
-            top: -14rem;
-            left: 14rem;
+            font-size: 15rem;
+            top: -10rem;
+            left: 10rem;
             transform: rotate(-5deg);
             color: $color-turquoise;
         }

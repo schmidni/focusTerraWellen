@@ -7,6 +7,10 @@
 
     transition: height, 0.5s;
 
+    @include respond(tab-port) {
+        padding-left: $padding-left-small;
+    }
+
     @include on-hover("") {
         height: 30rem;
 
@@ -110,6 +114,9 @@
 
         @media (max-width: 390px) {
             white-space: normal;
+        }
+        @include respond(phone) {
+           
         }
     }
 
