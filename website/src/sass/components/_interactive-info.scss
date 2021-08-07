@@ -6,8 +6,8 @@
 
     &__pointer {
         position: relative;
-        height: 10vh;
-        width: 10vh;
+        height: 10rem;
+        width: 10rem;
         border-radius: 50%;
         z-index: 999;
 
@@ -82,6 +82,8 @@
             position: fixed;
             top: 0;
             left: 0;
+
+            padding: 3rem 4rem;
 
             min-width: 100vw;
             min-height: 100%;

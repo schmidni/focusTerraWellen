@@ -2,11 +2,18 @@
     height: 80rem;
     background-size: cover;
     filter: saturate(50%);
-    flex-basis: 20rem;
+    // flex-basis: 20rem;
+    flex: 1 0 auto;
     overflow: hidden;
 
     min-width: 0;
     transition: width, 0.7s;
+
+    @media (min-width: 3000px) {
+        height: 100rem;
+    }
+
+
     @include respond(tab-port) {
         min-width: 100%;
         min-height: 0;
@@ -20,7 +27,6 @@
     @include on-hover("") {
         min-width: 50rem;
         filter: saturate(100%);
-        padding: 5rem;
 
         @include respond(tab-port) {
             min-width: 100%;
@@ -131,11 +137,11 @@
 
         height: 100%;
         width: 100%;
-        padding: 12rem 4rem;
+        padding: 12rem $padding-left-default;
 
-        @include respond(big) {
-            padding-bottom: 14rem;
-        }
+        @media (min-width: 3000px) {
+            padding-bottom: 20rem;
+        }    
 
         @include respond(tab-land) {
             padding-bottom: 8rem;
@@ -143,7 +149,7 @@
 
         @include respond(tab-port) {
             justify-content: center;
-            padding: 4rem $padding-left-default;
+            padding: 4rem $padding-left-small;
         }
         @include on-hover("") {
             .h1 {
@@ -162,6 +168,7 @@
             flex-direction: column;
             transform: rotate(0deg);
         }
+
         @media (max-width: 390px) {
             white-space: normal;
         }
