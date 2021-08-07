@@ -3,16 +3,12 @@ languageCode = "de-ch"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
 defaultContentLanguage = "de"
 
-[permalinks]
-  blog = "/:filename/"
-
 [params]
     dateFormat = "Jan 2, 2006"
-    homeText = "You just made a Hugo blog from scratch."
 
 [languages]
     [languages.de]
-        title = "Wellen, Tauch ein!"
+        title = "Wellen, focusTerra"
         languageName = "Deutsch"
         weight = 1
 
@@ -71,7 +67,7 @@ defaultContentLanguage = "de"
                 weight = 12
 
     [languages.en]
-        title = "Waves, Dive In!"
+        title = "Waves, focusTerra"
         languageName = "English"
         weight = 2
 
