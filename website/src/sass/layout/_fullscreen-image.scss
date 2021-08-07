@@ -68,4 +68,65 @@
             opacity: 0;
         }
     }
+
+    &__weitergedacht {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+
+        width: 120rem;
+        white-space: normal;
+        
+        color: white;
+        background-image: url(../images/icons/wave-weitergedacht.svg);
+        background-size: 100% 100%;
+
+        float: right;
+        text-align: right;
+        padding: 0rem 6rem 6rem 60rem;
+        margin-bottom: -1rem;
+
+        transition: opacity 0.6s;
+
+       
+        .maskottchen {
+            height: 18rem;
+            margin-bottom: 1rem;
+        }
+    
+
+        @include respond(tab-land) {
+            width: 125vw;
+
+            h5, h6 {
+                max-width: 75vw;
+            }
+    
+        }
+
+        @include respond(tab-port) {
+            width: 150vw;
+            padding: 0rem 4rem 4rem 60rem;
+
+            h5, h6 {
+                max-width: 90vw;
+            }
+        }
+
+        @include respond(phone) {
+            width: 220vw;
+            padding-left: 124vw;
+
+            .maskottchen {
+                height: 15rem;
+                margin: 6rem 0rem 1rem 0rem;
+            }            
+        }
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
 }
