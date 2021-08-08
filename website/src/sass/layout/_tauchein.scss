@@ -18,6 +18,10 @@
         min-height: 30vh;
         margin-bottom: -50px;
 
+        @include respond(phone) {
+            padding: 2vw $padding-left-small;
+        }
+
         @include respond(tab-port) {
             margin-bottom: -25px;
         }
@@ -71,6 +75,10 @@
         position: relative;
         min-height: 40vh;
         padding: 0 $padding-left-default;
+
+        @include respond(phone) {
+            padding: 0 $padding-left-small;
+        }
 
         .h1 {
             position: relative;
