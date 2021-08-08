@@ -15,13 +15,13 @@
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 1001;
+        z-index: 10;
 
         width: 150rem;
         white-space: normal;
-        
+
         color: white;
-        background-image: url(../images/icons/wave-titlesection.svg);
+        background-image: url("../images/icons/wave-titlesection.svg");
         background-size: 100% 100%;
 
         padding-left: 4rem;
@@ -29,30 +29,23 @@
 
         transition: opacity 0.6s;
 
-        h5, h6 {
-            max-width: 90rem;
-        } 
-
-        h1 {
-            line-height: 1;
-            padding-top: 3rem;
-            padding-bottom: 2rem;
-        }
-
         @include respond(tab-land) {
             width: 120vw;
             padding-bottom: 18rem;
 
-            h1, h5, h6 {
+            h1,
+            h5,
+            h6 {
                 max-width: 80vw;
             }
-    
         }
 
         @include respond(tab-port) {
             width: 150vw;
 
-            h1, h5, h6 {
+            h1,
+            h5,
+            h6 {
                 max-width: 90vw;
             }
         }
@@ -61,7 +54,9 @@
             width: 180vw;
             padding-bottom: 20rem;
 
-            h1, h5, h6 {
+            h1,
+            h5,
+            h6 {
                 max-width: 100;
                 padding-right: 1rem;
             }
@@ -71,10 +66,23 @@
             width: 200vw;
             padding-bottom: 30rem;
 
-            h1, h5, h6 {
+            h1,
+            h5,
+            h6 {
                 max-width: 100;
                 padding-right: 1rem;
             }
+        }
+
+        h5,
+        h6 {
+            max-width: 90rem;
+        }
+
+        h1 {
+            line-height: 1;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
         }
 
         &.hidden {
@@ -87,43 +95,37 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        z-index: 999;
+        z-index: 10;
 
         width: 120rem;
         white-space: normal;
-        
+
         color: white;
-        background-image: url(../images/icons/wave-weitergedacht.svg);
+        background-image: url("../images/icons/wave-weitergedacht.svg");
         background-size: 100% 100%;
 
         float: right;
         text-align: right;
-        padding: 0rem 6rem 6rem 60rem;
+        padding: 0 6rem 6rem 60rem;
         margin-bottom: -1rem;
 
         transition: opacity 0.6s;
 
-       
-        .maskottchen {
-            height: 18rem;
-            margin-bottom: 1rem;
-        }
-    
-
         @include respond(tab-land) {
             width: 125vw;
 
-            h5, h6 {
+            h5,
+            h6 {
                 max-width: 75vw;
             }
-    
         }
 
         @include respond(tab-port) {
             width: 150vw;
-            padding: 0rem 4rem 4rem 60rem;
+            padding: 0 4rem 4rem 60rem;
 
-            h5, h6 {
+            h5,
+            h6 {
                 max-width: 90vw;
             }
         }
@@ -134,8 +136,13 @@
 
             .maskottchen {
                 height: 15rem;
-                margin: 6rem 0rem 1rem 0rem;
-            }            
+                margin: 6rem 0 1rem;
+            }
+        }
+
+        .maskottchen {
+            height: 18rem;
+            margin-bottom: 1rem;
         }
 
         &.hidden {
