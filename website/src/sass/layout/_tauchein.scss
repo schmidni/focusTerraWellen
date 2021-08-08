@@ -1,26 +1,30 @@
 .tauchein {
     min-height: 100vh;
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
     overflow: hidden;
+    background-color: $color-turquoise;
 
-    &__body {
-        background-color: $color-turquoise;
+    @include respond(tab-land) {
+        padding-bottom: 10rem;
+    }
+    @include respond(tab-port) {
+        padding-bottom: 0;
     }
 
     &__title {
-        flex: 0 0 100%;
-        z-index: 1;
-        padding: 5rem 5rem 0;
+        position: relative;
+        padding: 2vw $padding-left-default 0;
+
+        min-height: 30vh;
+        margin-bottom: -50px;
 
         @include respond(tab-port) {
-            margin-bottom: 15vh;
+            margin-bottom: -25px;
         }
 
         h1 {
+            position: relative;
+            z-index: 1;
             font-size: 12rem;
             color: $color-base;
         }
@@ -34,65 +38,15 @@
             transform: rotate(-10deg);
             color: $color-turquoise;
         }
-
-        &--wasist {
-            transform: rotate(-5deg);
-            height: 30vh;
-            line-height: 10rem;
-            margin-bottom: 10vh;
-
-            @include respond(tab-port) {
-                margin-top: 10vh;
-                // margin-bottom: 15vh;
-            }
-
-            .h1 {
-                color: white;
-                font-size: 10rem;
-            }
-        }
     }
 
-    &__content {
-        z-index: 1;
-        padding: 1rem 5rem;
-        overflow: hidden;
-
-        &--2 {
-            flex: 0 0 50%;
-        }
-
-        &--3 {
-            flex: 0 0 33%;
-            @include respond(tab-port) {
-                flex: 0 0 50%;
-            }
-        }
-
-        &,
-        &--3,
-        &--2 {
-            @include respond(phone) {
-                flex: 0 0 100%;
-                padding: 0 8rem;
-
-                p {
-                    margin-bottom: 2rem;
-                }
-            }
-        }
-
-        p {
-            margin-bottom: 2rem;
-        }
-    }
-
-    &__wave {
+    &__titlewave {
         position: absolute;
         top: 0;
         left: 0;
-        height: 70%;
+        height: 100%;
         width: 100%;
+        min-width: 1600px;
 
         svg {
             position: absolute;
@@ -101,13 +55,46 @@
             width: 100%;
             transform: rotate(180deg);
         }
+    }
 
-        &--2 {
+    .columns {
+        min-height: 50vh;
+    }
+}
+
+.wasist {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10rem;
+
+    &__title {
+        position: relative;
+        min-height: 40vh;
+        padding: 0 $padding-left-default;
+
+        .h1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 8rem;
+            transform: rotate(-5deg);
+        }
+    }
+
+    &__titlewave {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        min-width: 1600px;
+
+        svg {
+            position: absolute;
+            fill: $color-turquoise;
             height: 100%;
-
-            svg {
-                transform: rotate(0);
-            }
+            width: 100%;
+            transform: rotate(180deg);
         }
     }
 }
