@@ -5,11 +5,13 @@ import InteractiveInfo from './InteractiveInfo';
 export default class InteractiveImage {
     constructor(scrollContainer) {
         this.titleSection = document.querySelector('.fullscreen-image__titlesection');
+        this.weitergedacht = document.querySelector('.fullscreen-image__weitergedacht');
         this.fullscreenImage = document.querySelector('.fullscreen-image__img');
         this.titleVisible = true;
+        this.weitergedachtVisible = false;
         this.mobileLocomotive = {};
 
-        // some hack to use locomotive on desktop screens < 1024
+        // small hack to use locomotive on desktop screens < 1024
         if (window.matchMedia('not all and (hover: hover), not all and (pointer: fine)').matches) {
             this.mobileLocomotive = {
                 smartphone: { smooth: false, direction: 'vertical' },
@@ -45,7 +47,7 @@ export default class InteractiveImage {
         });
 
         // add event listener to update position when window is resized
-        window.addEventListener('resize', debounce(this.updatePosition, 30));
+        window.addEventListener('resize', debounce(this.updatePosition, 100));
 
         // set position on first load
         this.updatePosition();
@@ -67,21 +69,33 @@ export default class InteractiveImage {
             infoElement.element.style.top = newTop;
         });
 
+        // update each annotation position
         this.annotations.forEach((annot) => {
             annot.style.left = `${(annot.dataset.posx / 100) * width}px`;
             annot.style.top = `${(annot.dataset.posy / 100) * height}px`;
         });
+
+        const weiterLeft = `${width - this.weitergedacht.getBoundingClientRect().width}px`;
+        this.weitergedacht.style.left = weiterLeft;
     };
 
     hideTitleOnScroll = () => {
-        // hide title section on first scroll event
-        this.lscroll.on('scroll', ({ scroll }) => {
+        // hide title section on scroll event
+        this.lscroll.on('scroll', ({ scroll, limit }) => {
             if (scroll.x < 100 && !this.titleVisible) {
                 this.titleSection.classList.remove('hidden');
                 this.titleVisible = true;
             } else if (scroll.x >= 100 && this.titleVisible) {
                 this.titleSection.classList.add('hidden');
                 this.titleVisible = false;
+            }
+
+            if (scroll.x > limit.x - 100 && !this.weitergedachtVisible) {
+                this.weitergedacht.classList.remove('hidden');
+                this.weitergedachtVisible = true;
+            } else if (scroll.x <= limit.x - 100 && this.weitergedachtVisible) {
+                this.weitergedacht.classList.add('hidden');
+                this.weitergedachtVisible = false;
             }
         });
     };
@@ -91,6 +105,11 @@ export default class InteractiveImage {
             if (this.titleVisible) {
                 this.titleSection.classList.add('hidden');
                 this.titleVisible = false;
+            }
+
+            if (!this.weitergedachtVisible) {
+                this.weitergedacht.classList.remove('hidden');
+                this.weitergedachtVisible = true;
             }
         };
     };
