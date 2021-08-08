@@ -7,6 +7,8 @@ module.exports = {
             path.resolve(__dirname, 'src/js', 'index.js'),
             path.resolve(__dirname, 'src/sass', 'main.scss'),
         ],
+        stories: path.resolve(__dirname, 'src/js', 'stories.js'),
+        intros: path.resolve(__dirname, 'src/js', 'intros.js'),
     },
 
     mode: process.env.NODE_ENV,
