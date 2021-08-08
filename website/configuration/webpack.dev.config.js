@@ -46,6 +46,10 @@ module.exports = merge(webpackConfiguration, {
         port: 8000,
     },
 
+    optimization: {
+        runtimeChunk: 'single',
+    },
+
     /* Additional plugins configuration */
     plugins: [].concat(
         htmlPluginEntries,
