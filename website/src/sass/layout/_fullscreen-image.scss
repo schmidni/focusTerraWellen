@@ -11,7 +11,6 @@
     }
 
     &__titlesection {
-        display: block;
         position: absolute;
         left: 0;
         top: 0;
@@ -28,6 +27,17 @@
         padding-bottom: 16rem;
 
         transition: opacity 0.6s;
+
+        h5,
+        h6 {
+            max-width: 90rem;
+        }
+
+        h1 {
+            line-height: 1;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
 
         @include respond(tab-land) {
             width: 120vw;
@@ -57,8 +67,8 @@
             h1,
             h5,
             h6 {
-                max-width: 100;
-                padding-right: 1rem;
+                max-width: 100vw;
+                padding-right: 5rem;
             }
         }
 
@@ -69,20 +79,9 @@
             h1,
             h5,
             h6 {
-                max-width: 100;
-                padding-right: 1rem;
+                max-width: 100vw;
+                padding-right: 5rem;
             }
-        }
-
-        h5,
-        h6 {
-            max-width: 90rem;
-        }
-
-        h1 {
-            line-height: 1;
-            padding-top: 3rem;
-            padding-bottom: 2rem;
         }
 
         &.hidden {
@@ -91,11 +90,9 @@
     }
 
     &__weitergedacht {
-        display: block;
         position: absolute;
-        right: 0;
-        bottom: 0;
         z-index: 10;
+        bottom: 0;
 
         width: 120rem;
         white-space: normal;
