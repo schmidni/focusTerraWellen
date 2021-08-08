@@ -1,0 +1,12 @@
+.typen {
+    width: 100%;
+    // height: 100vh;
+    background-color: $color-teal;
+    overflow: hidden;
+
+    &__background {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+}
