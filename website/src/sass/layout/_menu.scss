@@ -6,7 +6,7 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient(rgb(97, 172, 197), white);
+        background-image: radial-gradient($color-base, $color-turquoise);
         z-index: 1000;
         transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     }
@@ -22,14 +22,15 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        gap: 6rem;
 
-        width: 0;
+        // width: 0;
         opacity: 0;
 
         transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
         @include respond(phone) {
-            flex-direction: column;
+            // flex-direction: column;
         }
     }
 
@@ -49,43 +50,52 @@
     &__list {
         display: none;
         list-style: none;
-        text-align: center;
+        text-align: left;
     }
 
     &__item {
         margin: 0.5vh;
+        font-size: 2.5rem;
+        font-weight: 600;
+        padding: 0.7rem 1rem;
     }
+
+    &__home {
+        margin: 0.5vh;
+        font-family: 'Zilla Slab', serif;
+        font-style: italic;
+        font-size: 6rem;
+        font-weight: 700;
+        padding: 2rem 1rem;
+    }
+
+    &__intro {
+        margin: 0.5vh;
+        font-family: 'Zilla Slab', serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        padding: .7rem 1rem;
+    }
+
+
 
     &__link {
         &:link,
         &:visited {
             display: inline-block;
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 0.5rem 1rem;
             color: white;
             text-decoration: none;
-            text-transform: uppercase;
-            background-image: linear-gradient(
-                120deg,
-                transparent 0%,
-                transparent 50%,
-                white 50%
-            );
-            background-size: 320%;
             transition: all 0.4s;
         }
 
         &:hover,
         &:active {
-            background-position: 100%;
-            color: black;
-            transform: translateX(1rem);
+            transform: scale(1.2);
         }
     }
 
     &__toggle {
-        background-color: white;
+        background-color: $color-base;
         height: 7rem;
         width: 7rem;
         border-radius: 50%;
@@ -98,6 +108,11 @@
         cursor: pointer;
     }
 
+    &__toggle.active {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
     &__icon {
         position: relative;
         margin-top: 3.5rem;
@@ -106,9 +121,9 @@
         &::before,
         &::after {
             display: inline-block;
-            width: 3rem;
-            height: 2px;
-            background-color: grey;
+            width: 3.2rem;
+            height: 3px;
+            background-color: white;
             transition: all 0.2s;
         }
 
@@ -120,24 +135,27 @@
         }
 
         &::before {
-            top: -0.8rem;
+            top: -1rem;
         }
 
         &::after {
-            top: 0.8rem;
+            top: 1rem;
         }
     }
 
     &__toggle:hover &__icon::before {
-        top: -1rem;
+        top: -1.2rem;
     }
 
     &__toggle:hover &__icon::after {
-        top: 1rem;
+        top: 1.2rem;
     }
 
     &__toggle.active &__icon {
         background-color: transparent;
+        &:hover {
+            transform: scale(1.2) rotate(90deg);
+        }
     }
 
     &__toggle.active &__icon::before {
