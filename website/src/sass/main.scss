@@ -9,6 +9,7 @@
 
 @import "components/annotations";
 @import "components/close-icon";
+@import "components/columns";
 @import "components/interactive-info";
 @import "components/wave";
 
@@ -18,5 +19,7 @@
 @import "layout/hero";
 @import "layout/intro";
 @import "layout/impressum";
+@import "layout/tauchein";
+@import "layout/physik";
 
 @import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
