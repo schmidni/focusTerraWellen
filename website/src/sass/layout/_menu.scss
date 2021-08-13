@@ -46,7 +46,6 @@
             border: 3px solid transparent;
         }
 
-
         transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
         @include respond(tab-port) {
@@ -64,27 +63,33 @@
     &__toggle.active ~ &__nav {
         opacity: 1;
         width: 100%;
-
-        .menu__list {
-            display: block;
-        }
     }
 
     &__list {
         list-style: none;
-        text-align: left; 
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding: 7vh 0;
+
+        @include respond(tab-port) {
+            padding: 0;
+        }
+
+        &--left {
+            justify-content: center;
+        }
     }
 
     &__item {
-
         font-size: 2.5rem;
         font-weight: 600;
-        padding-top: 2.4rem;
         padding-left: 6rem;
 
         @include respond(tab-port) {
-            padding-top: 1.2rem;
-            padding-left: 6rem;
+            padding-top: 1rem;
             font-size: 2rem;
 
             &:last-child {
@@ -96,16 +101,11 @@
             padding-top: 0.8rem;
             padding-left: 4rem;
             font-size: 1.8rem;
-
-            &:last-child {
-                padding-bottom: 2rem;
-            }
         }
-
     }
 
     &__home {
-        font-family: 'Zilla Slab', serif;
+        font-family: "Zilla Slab", serif;
         font-style: italic;
         font-size: 6rem;
         font-weight: 700;
@@ -117,7 +117,7 @@
     }
 
     &__intro {
-        font-family: 'Zilla Slab', serif;
+        font-family: "Zilla Slab", serif;
         font-size: 3.5rem;
         font-weight: 700;
 
@@ -129,8 +129,6 @@
             font-size: 2.2rem;
         }
     }
-
-
 
     &__link {
         &:link,
@@ -206,6 +204,7 @@
 
     &__toggle.active &__icon {
         background-color: transparent;
+
         &:hover {
             transform: scale(1.2) rotate(90deg);
         }
