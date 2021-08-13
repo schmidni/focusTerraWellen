@@ -1,12 +1,77 @@
 .typen {
     width: 100%;
-    // height: 100vh;
     background-color: $color-teal;
     overflow: hidden;
 
+    box-sizing: border-box;
+    overflow-y: hidden;
+    position: relative;
+    margin: 0;
+
     &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: content-box;
         height: 100vh;
-        margin: 0;
-        padding: 0;
+        max-width: 100vw;
+
+        img {
+            height: 100%;
+        }
+
+        @include respond(tab-land) {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        max-width: 1680px;
+        margin: 0 auto;
+        color: white;
+    }
+
+    &__header {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-around;
+    }
+
+    &__title {
+        text-align: right;
+        width: 100%;
+
+        h1 {
+            position: relative;
+            z-index: 1;
+
+            font-size: 10rem;
+            color: white;
+            transform: rotate(-5deg);
+
+            @include respond(tab-port) {
+                font-size: 8rem;
+            }
+        }
+    }
+
+    &__lead {
+        color: yellow;
+        width: 60%;
+
+        p {
+            font-size: 2rem;
+            line-height: 1.6;
+            align-self: start;
+        }
+        @include respond(tab-port) {
+            width: 80%;
+        }
     }
 }
