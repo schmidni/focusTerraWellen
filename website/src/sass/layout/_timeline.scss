@@ -1,31 +1,137 @@
 .timeline {
     background-color: $color-teal;
-    height: 200vh;
+    height: 1000vh;
     width: 100%;
 
+    $top: 90vh;
+
+    &__title {
+        padding: 6vh 5vw;
+        height: $top;
+        color: white;
+        width: 100%;
+        background-color: $color-turquoise;
+
+        &--bottom {
+            background-color: $color-teal;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+
+            font-size: 10rem;
+            color: white;
+            transform: rotate(-4deg);
+
+            @include respond(tab-port) {
+                font-size: 8rem;
+            }
+        }
+    }
+
+    &__lead {
+        width: 60%;
+        margin-top: 5rem;
+        line-height: 1.2;
+
+        h3 {
+            margin-top: 8rem;
+            max-width: 50vw;
+        }
+
+        p {
+            margin-top: 2rem;
+            color: yellow;
+            font-size: 2rem;
+            align-self: start;
+        }
+        @include respond(tab-port) {
+            width: 80%;
+        }
+    }
+
     svg {
-        position: absolute;
-        display: block;
-        left: 50%;
-        top: 50vh;
-        margin-bottom: 50vh;
-        overflow: visible;
-        transform: translateX(-50%);
+        width: 100%;
+        // min-width: 900px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    path {
-        fill: none;
-        stroke: #fff;
-        stroke-width: 2px;
+    &__line {
+        position: absolute;
+        top: calc($top - 3px);
+        left: 0;
+        z-index: 20;
+
+        path {
+            fill: none;
+            // stroke: white;
+            stroke-width: 2px;
+        }
     }
 
-    .circle {
+    &__background {
+        position: relative;
+        top: -3px;
+
+        path {
+            fill: $color-turquoise;
+        }
+    }
+
+    &__item {
+        display: none;
         position: absolute;
-        width: 2rem;
-        height: 2rem;
+        z-index: 999;
         top: -1rem;
         left: -1rem;
+        color: white;
+    }
+
+    &__dot {
+        width: 2rem;
+        height: 2rem;
         border-radius: 50%;
         background: #fff;
+
+        &--yellow {
+            background: yellow;
+        }
+    }
+
+    &__year {
+        position: absolute;
+        top: -2rem;
+        left: 3.25rem;
+        transform-origin: bottom left;
+        transform: rotate(-45deg);
+        width: 200px;
+
+        &--bottom {
+            top: 3.5rem;
+            left: -2rem;
+        }
+
+        &--yellow {
+            color: yellow;
+        }
+    }
+
+    &__event {
+        position: absolute;
+        top: -250px;
+        width: 400px;
+        max-width: 75vw;
+
+        &--bottom {
+            top: 75px;
+            left: -275px;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
     }
 }
