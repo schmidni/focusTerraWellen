@@ -88,6 +88,10 @@
 
         @include respond(phone-small) {
             margin-top: -12rem;
+
+            &--details {
+                color: $color-base;
+            }
         }
     }
 
