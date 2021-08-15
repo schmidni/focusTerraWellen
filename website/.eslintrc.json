@@ -22,7 +22,9 @@
         ],
         "prefer-promise-reject-errors": ["off"],
         "no-return-assign": ["off"],
+        "no-unused-expressions": [{"allowTernary": true}],
         "no-param-reassign": ["off"],
+        "prefer-const": ["off"],
         "prettier/prettier": [
             "error",
             {

@@ -3,6 +3,7 @@
     width: 100%;
     overflow: hidden;
     background-color: $color-turquoise;
+    color: white;
 
     @include respond(tab-land) {
         padding-bottom: 10rem;
