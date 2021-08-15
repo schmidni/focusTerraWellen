@@ -1,51 +1,91 @@
 export default class Timeline {
     constructor(timeline, lscroll) {
-        this.stopScroll = window.innerHeight * 0.6;
-        this.distance = 400;
-
+        // get html elements
         this.timeline = timeline;
+        this.lscroll = lscroll;
         this.linePath = this.timeline.querySelector('.timeline__line path');
-        this.bgPath = this.timeline.querySelector('.timeline__background path');
         this.title = this.timeline.querySelector('.timeline__title');
+        this.bottomTitle = this.timeline.querySelector('.timeline__title--bottom');
         this.svg = this.linePath.ownerSVGElement;
-        this.bgSvg = this.bgPath.ownerSVGElement;
-        this.circles = document.getElementsByClassName('timeline__item');
+        this.items = document.getElementsByClassName('timeline__item');
+
+        // get dimensions
         this.pathRect = this.linePath.getBoundingClientRect();
         this.pathTotalLength = this.linePath.getTotalLength();
-        this.startScroll = 0;
+        this.titleHeight = this.title.getBoundingClientRect().height;
 
-        lscroll.on('scroll', ({ scroll }) => {
+        // distance between timeline items
+        this.itemSpacing = 400;
+        this.timelineLength = (this.items.length-1)*this.itemSpacing;
+
+        // after how much scrolling the timeline is over
+        this.startScroll = this.titleHeight + this.timelineLength;
+
+        //set main container height
+        this.updateContainerHeight()
+
+        // update dimensions on resize
+        window.addEventListener('resize', () => {
             this.pathRect = this.linePath.getBoundingClientRect();
+            this.titleHeight = this.title.getBoundingClientRect().height;
+            this.startScroll = this.titleHeight + this.timelineLength;
+            this.updateContainerHeight()
+        });
 
-            this.circles.forEach((circle, idx) => {
+        // update positions on scroll
+        this.lscroll.on('scroll', ({ scroll }) => {
+            // update items position on path
+            this.items.forEach((circle, idx) => {
                 this.positionElements(scroll, circle, idx);
             });
+            // stop scrolling
             this.moveSVG(scroll);
         });
-        this.circles.forEach((circle, idx) => {
+
+        // initial positioning of timeline elements
+        this.items.forEach((circle, idx) => {
             this.positionElements({ x: 0, y: 0 }, circle, idx);
         });
     }
 
+
     positionElements = (scroll, circle, idx) => {
-        const { left, top, height, width } = this.pathRect;
-        const relativePageOffset = -top + scroll.y - this.distance * (idx+1);
+        const { left, height, width } = this.pathRect;
+        
+        // distance to scroll before element starts on path
+        const animationDelay = this.titleHeight + (this.itemSpacing * idx)
+        const relativePageOffset =  scroll.y - animationDelay;
+
+        // how far along the path - controls speed
         const pointPercentage = relativePageOffset / height / 3;
         const pointOnPath = pointPercentage * this.pathTotalLength;
+
+        // get x and y offset from path origin
         const pathPoint = this.linePath.getPointAtLength(pointOnPath);
+
+        // account for svg being scaled
         const x = pathPoint.x / (this.svg.viewBox.baseVal.width / width);
         const y = pathPoint.y / (this.svg.viewBox.baseVal.height / height);
 
-        const scrollY = scroll.y > this.startScroll ? scroll.y + this.startScroll : 
-                        scroll.y > this.stopScroll ? this.stopScroll : scroll.y;
+        // offset of path to the top of the page
+        const topOffset = this.titleHeight + (window.innerHeight - height)/2;
 
+        // only make element visible when on line
         this.checkVisibility(circle, pointPercentage);
 
+        // set actual translation on element
         circle.style.transform = `translate(
             ${left + x}px,
-            ${top + scrollY + y}px
+            ${topOffset + y - 6}px
             )`;
     };
+
+    updateContainerHeight = () => {
+        const bottomTitleHeight = this.bottomTitle.getBoundingClientRect().height;
+        const heightFixedContainer = this.titleHeight + window.innerHeight + bottomTitleHeight;
+        this.timeline.style.height = `${heightFixedContainer + this.timelineLength}px`;
+        this.lscroll.update();
+    }
 
     checkVisibility = (el, pointPercentage) => {
         pointPercentage < 0 || pointPercentage > 1
@@ -54,15 +94,12 @@ export default class Timeline {
     };
 
     moveSVG = (scroll) => {
-        this.startScroll = this.stopScroll + ((this.circles.length+2)*this.distance) + this.pathRect.height;
-
-        if (scroll.y > this.startScroll){
-        }
-        else if (scroll.y > this.stopScroll) {
-            this.timeline.style.transform = `translateY(${scroll.y - this.stopScroll}px)`;
-        }
-        else {
+        if (scroll.y < this.titleHeight) {
             this.timeline.style.transform = `translateY(0px)`;
+        }
+        else if (scroll.y < this.startScroll ) {
+            // stop scroll
+            this.timeline.style.transform = `translateY(${scroll.y - this.titleHeight}px)`;
         }
     };
 }

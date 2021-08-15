@@ -1,13 +1,9 @@
 .timeline {
     background-color: $color-teal;
-    height: 1000vh;
     width: 100%;
 
-    $top: 90vh;
-
     &__title {
-        padding: 6vh 5vw;
-        height: $top;
+        padding: 10vh 15vw 5vh $padding-left-default;
         color: white;
         width: 100%;
         background-color: $color-turquoise;
@@ -16,11 +12,16 @@
             background-color: $color-teal;
         }
 
+        @include respond(tab-port) {
+            padding-left: $padding-left-small;
+        }
+
         h1 {
             position: relative;
             z-index: 1;
 
             font-size: 10rem;
+            line-height: 1;
             color: white;
             transform: rotate(-4deg);
 
@@ -37,7 +38,6 @@
 
         h3 {
             margin-top: 8rem;
-            max-width: 50vw;
         }
 
         p {
@@ -46,35 +46,49 @@
             font-size: 2rem;
             align-self: start;
         }
-        @include respond(tab-port) {
+        @include respond(tab-land) {
             width: 80%;
+        }
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    &__svgs {
+        position: relative;
+        height: 100vh;
+        margin-top: -3px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__filler {
+        flex-grow: 1;
+
+        &--turquoise {
+            background-color: $color-turquoise;
+        }
+
+        &--teal {
+            background-color: $color-teal;
         }
     }
 
     svg {
         width: 100%;
-        // min-width: 900px;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        margin-top: -3px;
     }
 
     &__line {
         position: absolute;
-        top: calc($top - 3px);
-        left: 0;
-        z-index: 20;
 
         path {
             fill: none;
-            // stroke: white;
-            stroke-width: 2px;
         }
     }
 
     &__background {
         position: relative;
-        top: -3px;
 
         path {
             fill: $color-turquoise;
