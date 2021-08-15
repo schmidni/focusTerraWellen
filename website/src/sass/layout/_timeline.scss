@@ -103,17 +103,23 @@
         width: 400px;
         max-width: 75vw;
 
-        &--bottom {
-            top: 75px;
-            left: -275px;
-        }
-
         p {
             font-size: 1.4rem;
         }
 
         @include respond(tab-port) {
-            top: -100px;
+            top: -220px;
+            max-width: 60vw;
+        }
+
+        &--bottom {
+            top: 75px;
+            left: -275px;
+
+            @include respond(tab-port) {
+                top: 75px;
+                left: -200px;
+            }
         }
     }
 }

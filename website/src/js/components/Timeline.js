@@ -10,26 +10,29 @@ export default class Timeline {
         this.items = document.getElementsByClassName('timeline__item');
 
         // get dimensions
+        this.containerHeight = this.getSvgContainerHeight();
         this.pathRect = this.linePath.getBoundingClientRect();
         this.pathTotalLength = this.linePath.getTotalLength();
         this.titleHeight = this.title.getBoundingClientRect().height;
 
         // distance between timeline items
         this.itemSpacing = 400;
-        this.timelineLength = (this.items.length - 1) * this.itemSpacing;
+        this.itemDelay = 500;
+        this.timelineLength = (this.items.length - 1) * this.itemSpacing + this.itemDelay;
 
         // after how much scrolling the timeline is over
         this.startScroll = this.titleHeight + this.timelineLength;
 
         // set main container height
-        this.updateContainerHeight();
+        this.updateTimelineContainerHeight();
 
         // update dimensions on resize
         window.addEventListener('resize', () => {
             this.pathRect = this.linePath.getBoundingClientRect();
             this.titleHeight = this.title.getBoundingClientRect().height;
+            this.containerHeight = this.getSvgContainerHeight();
             this.startScroll = this.titleHeight + this.timelineLength;
-            this.updateContainerHeight();
+            this.updateTimelineContainerHeight();
         });
 
         // update positions on scroll
@@ -52,7 +55,7 @@ export default class Timeline {
         const { left, height, width } = this.pathRect;
 
         // distance to scroll before element starts on path
-        const animationDelay = this.titleHeight + this.itemSpacing * idx;
+        const animationDelay = this.titleHeight + this.itemSpacing * idx - this.itemDelay;
         const relativePageOffset = scroll.y - animationDelay;
 
         // how far along the path - controls speed
@@ -67,7 +70,7 @@ export default class Timeline {
         const y = pathPoint.y / (this.svg.viewBox.baseVal.height / height);
 
         // offset of path to the top of the page
-        const topOffset = this.titleHeight + (window.innerHeight - height) / 2;
+        const topOffset = this.titleHeight + (this.containerHeight - height) / 2;
 
         // only make element visible when on line
         this.checkVisibility(circle, pointPercentage);
@@ -79,9 +82,12 @@ export default class Timeline {
             )`;
     };
 
-    updateContainerHeight = () => {
+    getSvgContainerHeight = () =>
+        this.timeline.querySelector('.timeline__svgContainer').getBoundingClientRect().height;
+
+    updateTimelineContainerHeight = () => {
         const bottomTitleHeight = this.bottomTitle.getBoundingClientRect().height;
-        const heightFixedContainer = this.titleHeight + window.innerHeight + bottomTitleHeight;
+        const heightFixedContainer = this.titleHeight + this.containerHeight + bottomTitleHeight;
         this.timeline.style.height = `${heightFixedContainer + this.timelineLength}px`;
         this.lscroll.update();
     };
