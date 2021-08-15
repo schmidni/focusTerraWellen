@@ -1,47 +1,40 @@
 .tauchein {
+    position: relative;
     min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    padding-bottom: 10rem;
     background-color: $color-turquoise;
     color: $color-white;
 
-    @include respond(tab-land) {
-        padding-bottom: 10rem;
-    }
-    @include respond(tab-port) {
-        padding-bottom: 0;
+    &--white {
+        background-color: $color-white;
+        color: $color-teal;
     }
 
     &__title {
-        position: relative;
-        padding: 2vw $padding-left-default 0;
-
-        min-height: 30vh;
-        margin-bottom: -50px;
-
-        @include respond(phone) {
-            padding: 2vw $padding-left-small;
-        }
+        min-height: 45vh;
+        padding: 0 0 0 $padding-left-default;
 
         @include respond(tab-port) {
-            margin-bottom: -25px;
+            padding-left: $padding-left-small;
         }
 
-        h1 {
+        @include respond(phone-small) {
+            padding-left: 5vw;
+        }
+
+        .wavesTitle {
             position: relative;
             z-index: 1;
-            font-size: 12rem;
-            color: $color-base;
+            transform: scale(0.6);
+            margin-top: -5rem;
+
+            @include respond(phone-small) {
+                transform: scale(0.5);
+            }
         }
 
-        &--sub {
-            position: relative;
-            display: inline-block;
-            font-size: 10rem;
-            top: -13rem;
-            left: 12rem;
-            transform: rotate(-10deg);
-            color: $color-turquoise;
+        .h1--intro {
+            padding-top: 3rem;
         }
     }
 
@@ -49,7 +42,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 55vh;
+        min-height: 300px;
         width: 100%;
         min-width: 1600px;
 
@@ -60,50 +54,15 @@
             width: 100%;
             transform: rotate(180deg);
         }
+
+        &--turquoise {
+            svg {
+                fill: $color-turquoise;
+            }
+        }
     }
 
     .columns {
         min-height: 50vh;
-    }
-}
-
-.wasist {
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 10rem;
-
-    &__title {
-        position: relative;
-        min-height: 40vh;
-        padding: 0 $padding-left-default;
-
-        @include respond(phone) {
-            padding: 0 $padding-left-small;
-        }
-
-        .h1 {
-            position: relative;
-            z-index: 1;
-            color: $color-white;
-            font-size: 8rem;
-            transform: rotate(-5deg);
-        }
-    }
-
-    &__titlewave {
-        position: absolute;
-        top: -2px;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        min-width: 1600px;
-
-        svg {
-            position: absolute;
-            fill: $color-turquoise;
-            height: 100%;
-            width: 100%;
-            transform: rotate(180deg);
-        }
     }
 }

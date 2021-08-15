@@ -115,8 +115,6 @@
         @media (max-width: 390px) {
             white-space: normal;
         }
-        @include respond(phone) {
-        }
     }
 
     &__icon {
