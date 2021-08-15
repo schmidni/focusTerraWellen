@@ -16,20 +16,20 @@ export default class Timeline {
 
         // distance between timeline items
         this.itemSpacing = 400;
-        this.timelineLength = (this.items.length-1)*this.itemSpacing;
+        this.timelineLength = (this.items.length - 1) * this.itemSpacing;
 
         // after how much scrolling the timeline is over
         this.startScroll = this.titleHeight + this.timelineLength;
 
-        //set main container height
-        this.updateContainerHeight()
+        // set main container height
+        this.updateContainerHeight();
 
         // update dimensions on resize
         window.addEventListener('resize', () => {
             this.pathRect = this.linePath.getBoundingClientRect();
             this.titleHeight = this.title.getBoundingClientRect().height;
             this.startScroll = this.titleHeight + this.timelineLength;
-            this.updateContainerHeight()
+            this.updateContainerHeight();
         });
 
         // update positions on scroll
@@ -48,13 +48,12 @@ export default class Timeline {
         });
     }
 
-
     positionElements = (scroll, circle, idx) => {
         const { left, height, width } = this.pathRect;
-        
+
         // distance to scroll before element starts on path
-        const animationDelay = this.titleHeight + (this.itemSpacing * idx)
-        const relativePageOffset =  scroll.y - animationDelay;
+        const animationDelay = this.titleHeight + this.itemSpacing * idx;
+        const relativePageOffset = scroll.y - animationDelay;
 
         // how far along the path - controls speed
         const pointPercentage = relativePageOffset / height / 3;
@@ -68,7 +67,7 @@ export default class Timeline {
         const y = pathPoint.y / (this.svg.viewBox.baseVal.height / height);
 
         // offset of path to the top of the page
-        const topOffset = this.titleHeight + (window.innerHeight - height)/2;
+        const topOffset = this.titleHeight + (window.innerHeight - height) / 2;
 
         // only make element visible when on line
         this.checkVisibility(circle, pointPercentage);
@@ -85,7 +84,7 @@ export default class Timeline {
         const heightFixedContainer = this.titleHeight + window.innerHeight + bottomTitleHeight;
         this.timeline.style.height = `${heightFixedContainer + this.timelineLength}px`;
         this.lscroll.update();
-    }
+    };
 
     checkVisibility = (el, pointPercentage) => {
         pointPercentage < 0 || pointPercentage > 1
@@ -97,8 +96,7 @@ export default class Timeline {
         if (scroll.y < this.titleHeight) {
             // clear offset and let scroll normally
             this.timeline.style.transform = `translateY(0px)`;
-        }
-        else if (scroll.y < this.startScroll ) {
+        } else if (scroll.y < this.startScroll) {
             // stop scroll
             this.timeline.style.transform = `translateY(${scroll.y - this.titleHeight}px)`;
         }
