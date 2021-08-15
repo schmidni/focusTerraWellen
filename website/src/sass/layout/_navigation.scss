@@ -151,7 +151,7 @@
 
         height: 100%;
         width: 100%;
-        padding: 12rem $padding-left-default;
+        padding: 12rem 0;
 
         @media (min-width: 3000px) {
             padding-bottom: 20rem;
@@ -166,6 +166,8 @@
             padding: 4rem $padding-left-small;
         }
         @include on-hover("") {
+            padding: 12rem $padding-left-default;
+
             .h1 {
                 opacity: 1;
                 font-size: 4.5rem;
