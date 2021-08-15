@@ -134,7 +134,7 @@
         &:link,
         &:visited {
             display: inline-block;
-            color: white;
+            color: $color-white;
             text-decoration: none;
             transition: all 0.4s;
         }
@@ -174,7 +174,7 @@
             display: inline-block;
             width: 3.2rem;
             height: 3px;
-            background-color: white;
+            background-color: $color-white;
             transition: all 0.2s;
         }
 

@@ -3,7 +3,7 @@
     width: 100%;
     overflow: hidden;
     background-color: $color-turquoise;
-    color: white;
+    color: $color-white;
 
     @include respond(tab-land) {
         padding-bottom: 10rem;
@@ -84,7 +84,7 @@
         .h1 {
             position: relative;
             z-index: 1;
-            color: white;
+            color: $color-white;
             font-size: 8rem;
             transform: rotate(-5deg);
         }

@@ -95,6 +95,7 @@ export default class Timeline {
 
     moveSVG = (scroll) => {
         if (scroll.y < this.titleHeight) {
+            // clear offset and let scroll normally
             this.timeline.style.transform = `translateY(0px)`;
         }
         else if (scroll.y < this.startScroll ) {

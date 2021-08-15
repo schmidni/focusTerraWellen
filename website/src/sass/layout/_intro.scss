@@ -104,19 +104,18 @@
 
     &__text {
         height: 0;
-        color: white;
+        color: $color-white;
         overflow: hidden;
     }
 
     &__title {
-        color: white;
+        color: $color-white;
         white-space: nowrap;
 
         @media (max-width: 390px) {
             white-space: normal;
         }
         @include respond(phone) {
-           
         }
     }
 

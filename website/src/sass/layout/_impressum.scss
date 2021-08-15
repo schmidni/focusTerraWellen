@@ -2,7 +2,7 @@
     background-color: darken($color-base, 10%);
     padding: 0 $padding-left-default $padding-left-default
         $padding-left-default;
-    color: white;
+    color: $color-white;
 
     .h1 {
         padding-bottom: 4rem;
@@ -29,6 +29,5 @@
             padding-top: 2.5rem;
             padding-bottom: 2.5rem;
         }
-
     }
 }
