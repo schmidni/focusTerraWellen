@@ -109,7 +109,20 @@
         font-style: italic;
         font-size: 6rem;
         font-weight: 700;
+        padding-top: 1rem;
+
+        @include respond(tab-port) {
+            font-size: 4rem;
+        }
+    }
+
+    &__lang {
+        font-family: "Zilla Slab", serif;
+        font-style: italic;
+        font-size: 3rem;
+        font-weight: 700;
         padding-top: 4rem;
+        color: $color-white;
 
         @include respond(tab-port) {
             font-size: 4rem;
