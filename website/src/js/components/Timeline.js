@@ -1,3 +1,5 @@
+import clamp from '../utils/clamp';
+
 export default class Timeline {
     constructor(timeline, lscroll) {
         // get html elements
@@ -16,9 +18,12 @@ export default class Timeline {
         this.titleHeight = this.title.getBoundingClientRect().height;
 
         // distance between timeline items
-        this.itemSpacing = 400;
-        this.itemDelay = 500;
-        this.timelineLength = (this.items.length - 1) * this.itemSpacing + this.itemDelay;
+        this.minItemSpacing = 200;
+        this.minCenturySpacing = 600;
+        this.itemDelay = window.innerWidth * 0.3;
+        this.distances = this.getItemSpacings();
+
+        this.timelineLength = this.getTimelineLength();
 
         // after how much scrolling the timeline is over
         this.startScroll = this.titleHeight + this.timelineLength;
@@ -31,6 +36,9 @@ export default class Timeline {
             this.pathRect = this.linePath.getBoundingClientRect();
             this.titleHeight = this.title.getBoundingClientRect().height;
             this.containerHeight = this.getSvgContainerHeight();
+            this.itemDelay = window.innerWidth * 0.3;
+            this.distances = this.getItemSpacings();
+            this.timelineLength = this.getTimelineLength();
             this.startScroll = this.titleHeight + this.timelineLength;
             this.updateTimelineContainerHeight();
         });
@@ -53,9 +61,8 @@ export default class Timeline {
 
     positionElements = (scroll, circle, idx) => {
         const { left, height, width } = this.pathRect;
-
         // distance to scroll before element starts on path
-        const animationDelay = this.titleHeight + this.itemSpacing * idx - this.itemDelay;
+        const animationDelay = this.titleHeight + this.distances[idx] - this.itemDelay;
         const relativePageOffset = scroll.y - animationDelay;
 
         // how far along the path - controls speed
@@ -82,8 +89,31 @@ export default class Timeline {
             )`;
     };
 
+    getItemSpacings = () => {
+        let years = [];
+        let distances = [];
+
+        let centurySpacing = Math.min(this.minCenturySpacing, window.innerWidth);
+
+        this.items.forEach((circle, idx) => {
+            years.push(parseFloat(circle.querySelector('.timeline__year').innerHTML));
+            if (idx === 0) distances.push(0);
+            else {
+                let y = clamp(
+                    ((years[idx] - years[idx - 1]) / 100) * centurySpacing,
+                    this.minItemSpacing,
+                    centurySpacing
+                );
+                distances.push(distances[idx - 1] + y);
+            }
+        });
+        return distances;
+    };
+
     getSvgContainerHeight = () =>
         this.timeline.querySelector('.timeline__svgContainer').getBoundingClientRect().height;
+
+    getTimelineLength = () => this.distances[this.distances.length - 1] + this.itemDelay;
 
     updateTimelineContainerHeight = () => {
         const bottomTitleHeight = this.bottomTitle.getBoundingClientRect().height;
