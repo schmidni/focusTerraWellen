@@ -13,8 +13,8 @@ if (locomotiveElement) {
     let mobileLocomotive;
     if (touch.matches) {
         mobileLocomotive = {
-            smartphone: { smooth: false, direction: 'vertical' },
-            tablet: { smooth: false, direction: 'vertical' },
+            smartphone: { smooth: true, direction: 'vertical' },
+            tablet: { smooth: true, direction: 'vertical' },
         };
     } else {
         mobileLocomotive = {
@@ -41,14 +41,14 @@ if (locomotiveElement) {
         lscroll.on('scroll', ({ scroll }) => {
             const { width } = typenBackground.getBoundingClientRect();
             let y;
+
             if (!touch.matches) {
-                typenBackground.style.top = `${scroll.y}px`;
-                y = clamp(scroll.y / 2, 0, width / 3);
+                y = clamp(scroll.y / 2, 0, width * 0.4);
             } else {
-                y = clamp(scroll.y, 0, width * 2);
+                y = clamp(scroll.y, 0, width * 1.2);
             }
 
-            typenBackground.style.transform = `translate(${-1 * y}px, 0)`;
+            typenBackground.style.transform = `translate(${-1 * y}px, ${scroll.y}px)`;
         });
     }
 

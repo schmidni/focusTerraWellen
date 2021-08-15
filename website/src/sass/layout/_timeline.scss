@@ -3,7 +3,7 @@
     width: 100%;
 
     &__title {
-        padding: 10vh 15vw 5vh $padding-left-default;
+        padding: $padding-title;
         width: 100%;
         background-color: $color-turquoise;
 
@@ -17,15 +17,7 @@
     }
 
     &__lead {
-        width: 60%;
         margin-top: 8rem;
-
-        @include respond(tab-land) {
-            width: 80%;
-        }
-        @include respond(tab-port) {
-            width: 100%;
-        }
     }
 
     // TIMELINE SVGS **************************
@@ -118,6 +110,10 @@
 
         p {
             font-size: 1.4rem;
+        }
+
+        @include respond(tab-port) {
+            top: -100px;
         }
     }
 }
