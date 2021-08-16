@@ -9,14 +9,34 @@ defaultContentLanguage = "de"
 [languages]
     [languages.de]
         title = "Wellen, focusTerra"
-        languageName = "Deutsch"
+        languageName = "de"
         weight = 1
 
+
+        [languages.de.params]
+        weiter = "Weitergedacht"
+
         [languages.de.menu]
-            [[languages.de.menu.main]]
+            [[languages.de.menu.home]]
                 name = "Home"
                 url = "/"
                 weight = 1
+            [[languages.de.menu.intros]]
+                name = "Tauch ein!"
+                url = "/eintauchen"
+                weight = 1
+            [[languages.de.menu.intros]]
+                name = "Wellentypen"
+                url = "/wellentypen"
+                weight = 2
+            [[languages.de.menu.intros]]
+                name = "Wellenphysik"
+                url = "/wellenphysik"
+                weight = 3
+            [[languages.de.menu.intros]]
+                name = "Mit Wellen durch die Zeit"
+                url = "/zeit"
+                weight = 4
             [[languages.de.menu.main]]
                 name = "Ich sehe was, ..."
                 url = "/empfaenger/"
@@ -68,16 +88,35 @@ defaultContentLanguage = "de"
 
     [languages.en]
         title = "Waves, focusTerra"
-        languageName = "English"
+        languageName = "en"
         weight = 2
 
+        [languages.en.params]
+        weiter = "Think Further"
+
         [languages.en.menu]
-            [[languages.en.menu.main]]
+            [[languages.en.menu.home]]
                 name = "Home"
                 url = "/"
                 weight = 1
+            [[languages.en.menu.intros]]
+                name = "Dive In!"
+                url = "/divein"
+                weight = 1
+            [[languages.en.menu.intros]]
+                name = "Types of Waves"
+                url = "/wavetypes"
+                weight = 2
+            [[languages.en.menu.intros]]
+                name = "Wave Physics"
+                url = "/wavephysics"
+                weight = 3
+            [[languages.en.menu.intros]]
+                name = "Through Time with Waves"
+                url = "/time"
+                weight = 4
             [[languages.en.menu.main]]
-                name = "I spy with my little eye"
+                name = "I Spy with My Little Eye"
                 url = "/receiver/"
                 weight = 1
             [[languages.en.menu.main]]
@@ -90,7 +129,7 @@ defaultContentLanguage = "de"
                 weight = 3
             [[languages.en.menu.main]]
                 name = "Energy in Focus"
-                url = "/energy/"
+                url = "/interference/"
                 weight = 4
             [[languages.en.menu.main]]
                 name = "Seek and You Will Find"

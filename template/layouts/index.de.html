@@ -1,14 +1,27 @@
 {{ define "main" }}
 
 <div class="hero">
-    <h1 class="hero__title">
-        <span class="hero__title--main">Wellen<br></span>
-        <span class="hero__title--sub">Tauch ein!</span>
-    </h1>
+    <div class="hero__content">
+        <h1 class="hero__title wavesTitle">
+            <span class="wavesTitle__main">Wellen<br></span>
+            <span class="wavesTitle__sub">Tauch ein!</span>
+        </h1>
 
+        <div class="hero__greeting">
+            <h5 class="hero__greeting--welcome">
+                Willkommen auf der Online-Ausstellung von focusTerra.
+            </h5>
+            <h6 class="hero__greeting--details">
+                Diese Hompage begleitet die Ausstellung, die vom 24. August 2021 bis zum 5. März 2023
+                an der ETH Zürich gezeigt wird. Dort kannst du die Wellen auf grossen Leuchtbildern entdecken und
+                mit Experimenten selber erforschen. Wir freuen uns auf deinen Besuch!
+            </h6>
+        </div>
+
+    </div>
 
     <svg class="hero__icon">
-        <use xlink:href="/images/icons/solid.svg#chevron-circle-down"></use>
+        <use xlink:href="images/icons/solid.svg#chevron-circle-down"></use>
     </svg>
 </div>
 
@@ -94,7 +107,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Ich sehe was, ...</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 ... was du nicht siehst.
                 {{ .Param "subTitle" }}
             </div>
@@ -103,6 +116,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -112,7 +127,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -120,6 +135,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -129,7 +146,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -137,6 +154,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -146,7 +165,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -154,6 +173,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -163,7 +184,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -171,6 +192,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -180,7 +203,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -188,6 +211,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -197,7 +222,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -205,6 +230,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -214,7 +241,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -222,6 +249,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -232,7 +261,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -240,6 +269,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -249,7 +280,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -257,6 +288,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -266,7 +299,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -274,6 +307,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -283,7 +318,7 @@
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
-            <div class="navigation__text">
+            <div class="navigation__text h6">
                 {{ .Param "subTitle" }}
             </div>
             <a class="navigation__link" href='{{ .RelPermalink  }}'>
@@ -291,6 +326,8 @@
                     <use xlink:href="/images/icons/solid.svg#arrow-right"></use>
                 </svg>
             </a>
+            <img class="navigation__assoziation"
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
         </div>
     </div>
     {{ end }}
@@ -324,63 +361,7 @@
         viewBox="0 0 1920 100">
         <path d="M0,20.0206c777-89.4345,962,155.36,1920,46.0431l-.5,33.8776H0Z" />
     </svg>
-    <div class="impressum">
-        <h3 class="h1">Impressum & Danksagung</h3>
-        <div class="impressum__content">
-            <div class="impressum__text">
-                <h5> focusTerra bedankt sich bei allen Mitwirkenden und den Donatorinnen und Donatoren.</h5>
-                <p> <span class=h6>Ausstellungsteam:</span> focusTerra </p>
-                <p> <span class=h6>Projektleitung:</span> Dr. Ulrike Kastrup, Direktorin focusTerra </p>
-                <p> <span class=h6>Projektkoordinatorin:</span> Dr. Silke Ballmer</p>
-                <p> <span class=h6>Wissenschaftliche Mitarbeiterinnen:</span> Dr. Gillian Grün, Kerstin
-                    Fankhauser</p>
-                <p> <span class=h6>Illustrationen:</span> Oculus Illustration GmbH</p>
-                <p> <span class=h6>Gestaltung:</span> lötscher visuelle kommunikation</p>
-                <p> <span class=h6>Website:</span> Nicolas Schmid</p>
-
-                <h5> Wir danken den nationalen und internationalen Expertinnen, Experten und Organisationen für
-                    die Zusammenarbeit.</h5>
-                <p> <span class=h6>Departement Erdwissenschaften:</span> Professur Johan Robertsson, Departement
-                    Erdwissenschaften </p>
-                <p> <span class=h6>Agora / Schweizerischer Nationalfonds (SNF)</span></p>
-                <p> <span class=h6>Departement Erdwissenschaften (ETH Zürich)</span></p>
-                <p> <span class=h6>ETH-Bibliothek</span>ETH-Bibliothek</p>
-                <p> <span class=h6>Departement Physik (ETH Zürich)</span></p>
-                <p> <span class=h6>ETH Zürich Foundation</span></p>
-                <p> <span class=h6>Professuren xxx</span></p>
-            </div>
-
-            <div class="impressum__text">
-                <h5> Folgenden Privatpersonen, Firmen, Stiftungen, Organisationen und ETH-Professuren danken wir
-                    für ihre freundlichen Schenkungen.</h5>
-                <p>
-                    <span class=h6>ETH ZürichDepartement Erdwissenschaften und Schweizerischer Erdebendienst
-                        (SED):</span>
-                    Prof. Dr. Domenico Giardini, Prof. Dr. Paul Tackley
-                </p>
-                <p> <span class=h6>Departement Physik:</span> Dr. Sebastian Huber </p>
-                <p> <span class=h6>Department Civil, Environmental and Geomatic Engineering</span> </p>
-                <p> <span class=h6>Zurich-Basel Plant Science Center, Universität Zürich, ETH Zürich,
-                        Universität Basel</span></p>
-                <p> <span class=h6>Illustrationen:</span> Oculus Illustration GmbH</p>
-                <p> <span class=h6>Universität Zürich:</span> Geographisches Institut, Universität Zürich
-                    Science Lab, Universtität Zürich</p>
-                <p> <span class=h6>Schweizerisches Tropen- und Public Health-Institut</span> </p>
-                <p> <span class=h6>ETH-Bibliothek und Graphische Sammlung der ETH Zürich (???)</span></p>
-                <p> <span class=h6>FSM – Forschungsstiftung Strom und Mobilkommunikation</span></p>
-                <p> <span class=h6>SPEAG Zürich</span></p>
-                <p> <span class=h6>EMPA – Eidgenössische Materialprüfungs- und Forschungsanstalt</span></p>
-                <p> <span class=h6>Department of Physics and Astronomy, Brigham Young University, Utah und Los
-                        Alamos National Laboratories, New Mexico</span></p>
-                <p> <span class=h6>Werkstätten der Departemente Erdwissenschaften und Physik</span></p>
-                <p> <span class=h6>ETH Zürich Foundation</span></p>
-                <p> <span class=h6>Internationales WAVES Projekt mit Universitäten, Forschungszentren und
-                        Industriepartnern</span></p>
-
-            </div>
-
-        </div>
-    </div>
+    {{ partial "impressum.de.html" . }}
 </div>
 
 {{ end }}

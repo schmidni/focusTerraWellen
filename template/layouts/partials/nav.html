@@ -1,28 +1,39 @@
-
 <div class="menu">
     <div id="toggleMenu" class="menu__toggle">
         <span class="menu__icon">&nbsp;</span>
     </div>
     <div class="menu__background"></div>
     <nav class="menu__nav">
-        <ul class="menu__list">
-            {{ range .Site.Menus.main }}
-                <li class="menu__item"><a class="menu__link" href="{{ .URL | absLangURL }}">{{ .Name | safeHTML }}</a></li>
-            {{ end }}
-        </ul>
-        {{ if .Site.IsMultiLingual }}
-            <ul>
+        <ul class="menu__list menu__list--left">
+            <!-- LANG PICKER -->
+            {{ if .Site.IsMultiLingual }}
+            <li class="menu__item menu__lang">
                 {{ range .Site.Languages }}
-                    {{ if eq . $.Site.Language }}
-                        <li>{{ .LanguageName }}</li>
-                    {{ end }}
+                {{ if eq . $.Site.Language }}
+                <a href="#" class="menu__link">{{ .LanguageName }}</a>
+                {{ end }}
                 {{ end }}
                 {{ range $.Translations }}
-                    <li><a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                / <a class="menu__link" title="{{ .Language.LanguageName }}"
+                    href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
                 {{ end }}
-            </ul>
-        {{ end }}
+            </li>
+            {{ end }}
+
+            {{ range .Site.Menus.home }}
+            <li class="menu__item menu__home"><a class="menu__link"
+                    href="{{ .URL | absLangURL }}">{{ .Name | safeHTML }}</a></li>
+            {{ end }}
+            {{ range .Site.Menus.intros }}
+            <li class="menu__item menu__intro"><a class="menu__link"
+                    href="{{ .URL | absLangURL }}">{{ .Name | safeHTML }}</a></li>
+            {{ end }}
+        </ul>
+        <ul class="menu__list">
+            {{ range .Site.Menus.main }}
+            <li class="menu__item"><a class="menu__link" href="{{ .URL | absLangURL }}">{{ .Name | safeHTML }}</a></li>
+            {{ end }}
+        </ul>
+
     </nav>
 </div>
-
-

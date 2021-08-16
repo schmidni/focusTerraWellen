@@ -9,10 +9,20 @@
         <div class="fullscreen-image__titlesection">
             <h1>{{ .Param "Title" }}</h1>
             <h5>{{ .Param "subTitle" }}</h5>
-            {{ .Content }}
+            <h6>{{ .Content }}</h6>
+            <div class="shape-outside"></div>
+        </div>
+        <div class="fullscreen-image__weitergedacht hidden">
+            {{ if isset .Params "weitergedacht" }}
+            <img class="maskottchen"
+                src='/images/icons/weitergedacht/2-{{ .Param "number" }}-weitergedacht_{{ .Param "name" }}.svg' />
+            <h5>{{ .Site.Language.Params.params.weiter }}</h5>
+            <h6>{{ .Param "weitergedacht" }}</h6>
+            <div class="shape-outside"></div>
+            {{ end }}
         </div>
 
-        <img class="fullscreen-image__img" src='/images/{{ .Param "image" }}' alt="" />
+        <img class="fullscreen-image__img" src='/images/{{ .Param "name" }}.jpg' alt="" />
 
         {{ range .Param "annotations" }}
         <div class="annotations">
@@ -47,5 +57,6 @@
     </div>
 </main>
 
-
+{{ $js := "js/stories.js" | relURL }}
+<script src="{{ $js }}"></script>
 {{ end }}
