@@ -10,16 +10,21 @@
 
     &__content {
         display: flex;
-        // justify-content: space-between;
         gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-        @include respond(phone) {
-            flex-wrap: wrap;
+    &__lead {
+        flex: 0 0 60%;
+
+        @include respond(tab-port) {
+            flex: 0 0 100%;
         }
     }
 
     &__text {
-        // flex: 1 1 40rem; // if columns should be equal
+        flex: 0 0 45%;
 
         p {
             padding-bottom: 1rem;
@@ -28,6 +33,9 @@
         h5 {
             padding-top: 2.5rem;
             padding-bottom: 2.5rem;
+        }
+        @include respond(tab-port) {
+            flex: 0 0 100%;
         }
     }
 }

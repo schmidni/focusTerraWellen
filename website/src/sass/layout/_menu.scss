@@ -21,8 +21,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        // gap: 4rem;
+        flex-wrap: nowrap;
 
         width: 0;
         opacity: 0;
@@ -52,7 +51,6 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            flex-wrap: nowrap;
         }
     }
 
