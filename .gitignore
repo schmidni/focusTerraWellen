@@ -2,7 +2,6 @@
 config.py
 .vscode/
 logs/
-template/public/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
