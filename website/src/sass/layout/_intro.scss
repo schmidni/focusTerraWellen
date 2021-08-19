@@ -3,19 +3,27 @@
     justify-content: flex-start;
 
     height: 20rem;
-    padding: 0 $padding-left-default;
+    padding-left: $padding-left-default;
 
     transition: height, 0.5s;
 
     @include respond(tab-port) {
         padding-left: $padding-left-small;
     }
+    @include respond(phone-small) {
+        padding-left: 4rem;
+    }
 
     @include on-hover("") {
         height: 30rem;
 
-        @include respond(phone-small) {
+        @include respond(phone) {
             height: 35rem;
+        }
+
+        @include respond(phone-small) {
+            height: 40rem;
+            padding: 0 2rem 0 4rem;
         }
     }
 
@@ -44,8 +52,16 @@
                 height: 26rem;
             }
 
+            @include respond(phone) {
+                height: 33rem;
+            }
+
             @include respond(phone-small) {
-                height: 31rem;
+                height: 35rem;
+            }
+
+            @media (max-width: 390px) {
+                height: 38rem;
             }
         }
 
@@ -56,7 +72,7 @@
 
     &__content {
         margin-top: -1vw;
-        max-width: 75vw;
+        max-width: 60vw;
         overflow: hidden;
 
         @include respond(big) {
@@ -66,6 +82,7 @@
 
         @include respond(tab-land) {
             margin-top: 1vw;
+            max-width: 75vw;
         }
 
         @include respond(tab-port) {
@@ -112,7 +129,7 @@
         color: $color-white;
         white-space: nowrap;
 
-        @media (max-width: 390px) {
+        @include respond(phone) {
             white-space: normal;
         }
     }

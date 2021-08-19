@@ -43,7 +43,7 @@ if (locomotiveElement) {
             let y;
 
             if (!touch.matches) {
-                y = clamp(scroll.y / 2, 0, width * 0.4);
+                y = clamp(scroll.y / 2, 0, width * 0.55);
             } else {
                 y = clamp(scroll.y, 0, width * 1.2);
             }

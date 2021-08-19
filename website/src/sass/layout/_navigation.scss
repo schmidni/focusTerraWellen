@@ -14,12 +14,12 @@
 
     @include respond(tab-port) {
         min-width: 100%;
-        min-height: 0;
+        min-height: 12rem;
         flex-basis: 10rem;
     }
 
     @include respond(phone-small) {
-        min-height: 15rem;
+        min-height: 18rem;
     }
 
     @include on-hover("") {
@@ -66,8 +66,8 @@
             margin: -5rem 0;
         }
 
-        @include respond(phone-small) {
-            height: 12rem;
+        @include respond(phone) {
+            display: none;
         }
     }
 
@@ -162,8 +162,13 @@
 
         @include respond(tab-port) {
             justify-content: center;
-            padding: 4rem $padding-left-small;
+            padding: 4rem 2rem 4rem $padding-left-small;
         }
+
+        @include respond(phone-small) {
+            padding-left: 4rem;
+        }
+
         @include on-hover("") {
             padding: 12rem $padding-left-default;
 
@@ -182,10 +187,8 @@
         @include respond(tab-port) {
             flex-direction: column;
             transform: rotate(0deg);
-        }
-
-        @media (max-width: 390px) {
             white-space: normal;
+            line-height: 1.2;
         }
     }
 
@@ -202,6 +205,6 @@
 
     &__assoziation {
         display: none;
-        transform: scale(1.2);
+        max-height: 200px;
     }
 }

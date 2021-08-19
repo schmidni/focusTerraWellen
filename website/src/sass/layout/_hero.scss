@@ -28,15 +28,21 @@
         }
 
         @include respond(tab-port) {
+            margin-top: -50px;
             transform: scale(80%);
         }
 
         @include respond(phone) {
-            transform: scale(65%);
+            margin-top: -75px;
+            transform: scale(60%);
         }
 
         @include respond(phone-small) {
+            margin-top: -50px;
             transform: scale(50%);
+        }
+        @media (max-width: 390px) {
+            transform: scale(40%);
         }
     }
 
@@ -60,6 +66,7 @@
 
         @include respond(phone-small) {
             margin-top: -12rem;
+            line-height: 1.4;
 
             &--details {
                 color: $color-base;

@@ -20,9 +20,9 @@
 
     </div>
 
-    <svg class="hero__icon">
+    <!-- <svg class="hero__icon">
         <use xlink:href="images/icons/solid.svg#chevron-circle-down"></use>
-    </svg>
+    </svg> -->
 </div>
 
 {{ with .Site.GetPage "eintauchen" }}
@@ -103,7 +103,7 @@
 <div class="navigation__container">
 
     {{ with .Site.GetPage "empfaenger" }}
-    <div class="navigation" style=' background-image: url("/images/thumbnails/empfaenger_thumb.jpg");'>
+    <div class="navigation" style=' background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">Ich sehe was, ...</h2>
@@ -117,13 +117,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "reflexion" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/reflexion_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -136,13 +136,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "geschwindigkeit" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/geschwindigkeit_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -155,13 +155,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "energie" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/energie_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -174,13 +174,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "lokalisierung" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/lokalisierung_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -193,13 +193,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "kommunikation" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/empfaenger_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -212,13 +212,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "veraenderung" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/veraenderung_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -231,13 +231,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "manipulierbarkeit" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/manipulierbarkeit_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -250,14 +250,14 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
 
     {{ with .Site.GetPage "frequenzgehalt" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/frequenzgehalt_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -270,13 +270,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "wellenlaenge" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/empfaenger_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -289,13 +289,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "gesellschaft" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/gesellschaft_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -308,13 +308,13 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}
 
     {{ with .Site.GetPage "risiken" }}
-    <div class="navigation" style='background-image: url("/images/thumbnails/risiken_thumb.jpg");'>
+    <div class="navigation" style='background-image: url("/images/thumbnails/{{ .Param "name" }}_thumb.jpg");'>
         <div class="navigation__overlay"></div>
         <div class="navigation__content">
             <h2 class="navigation__title h1">{{ .Param "Title" }}</h2>
@@ -327,7 +327,7 @@
                 </svg>
             </a>
             <img class="navigation__assoziation"
-                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.svg' />
+                src='/images/icons/assoziationen/2-{{ .Param "number" }}-assoziation_{{ .Param "name" }}.png' />
         </div>
     </div>
     {{ end }}

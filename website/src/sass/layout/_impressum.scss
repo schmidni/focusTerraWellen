@@ -1,8 +1,16 @@
 .impressum {
     background-color: darken($color-base, 10%);
-    padding: 0 $padding-left-default $padding-left-default
-        $padding-left-default;
+    padding: $padding-left-default;
     color: $color-white;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+        padding: $padding-left-small;
+    }
+
+    @include respond(phone) {
+        padding: $padding-left-small 3rem 5rem $padding-left-small;
+    }
 
     .h1 {
         padding-bottom: 4rem;
