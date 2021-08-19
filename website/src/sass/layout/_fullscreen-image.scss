@@ -145,5 +145,27 @@
         &.hidden {
             opacity: 0;
         }
+
+        &__close {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 10rem;
+            right: 3rem;
+        }
+    }
+
+    #pointer-weitergedacht {
+        position: absolute;
+        z-index: 1000;
+
+        &.hidden {
+            opacity: 0;
+        }
+
+        .icon-circle {
+            border-color: yellow;
+            box-shadow: yellow;
+        }
     }
 }

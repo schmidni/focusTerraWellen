@@ -6,9 +6,9 @@ export default class InteractiveImage {
     constructor(scrollContainer) {
         this.titleSection = document.querySelector('.fullscreen-image__titlesection');
         this.weitergedacht = document.querySelector('.fullscreen-image__weitergedacht');
+        this.weitergedachtPointer = document.querySelector('#pointer-weitergedacht');
         this.fullscreenImage = document.querySelector('.fullscreen-image__img');
         this.titleVisible = true;
-        this.weitergedachtVisible = false;
         this.mobileLocomotive = {};
 
         // small hack to use locomotive on desktop screens < 1024
@@ -53,6 +53,7 @@ export default class InteractiveImage {
         this.updatePosition();
         this.hideTitleOnScroll();
         this.hideTitleOnMobile();
+        this.showWeitergedacht();
     }
 
     // update position relative to image width
@@ -77,25 +78,19 @@ export default class InteractiveImage {
 
         const weiterLeft = `${width - this.weitergedacht.getBoundingClientRect().width}px`;
         this.weitergedacht.style.left = weiterLeft;
+        this.weitergedachtPointer.style.left = `calc(${width - 220}px`;
+        this.weitergedachtPointer.style.bottom = `110px`;
     };
 
     hideTitleOnScroll = () => {
         // hide title section on scroll event
-        this.lscroll.on('scroll', ({ scroll, limit }) => {
+        this.lscroll.on('scroll', ({ scroll }) => {
             if (scroll.x < 100 && !this.titleVisible) {
                 this.titleSection.classList.remove('hidden');
                 this.titleVisible = true;
             } else if (scroll.x >= 100 && this.titleVisible) {
                 this.titleSection.classList.add('hidden');
                 this.titleVisible = false;
-            }
-
-            if (scroll.x > limit.x - 100 && !this.weitergedachtVisible) {
-                this.weitergedacht.classList.remove('hidden');
-                this.weitergedachtVisible = true;
-            } else if (scroll.x <= limit.x - 100 && this.weitergedachtVisible) {
-                this.weitergedacht.classList.add('hidden');
-                this.weitergedachtVisible = false;
             }
         });
     };
@@ -106,11 +101,19 @@ export default class InteractiveImage {
                 this.titleSection.classList.add('hidden');
                 this.titleVisible = false;
             }
-
-            if (!this.weitergedachtVisible) {
-                this.weitergedacht.classList.remove('hidden');
-                this.weitergedachtVisible = true;
-            }
         };
+    };
+
+    showWeitergedacht = () => {
+        const close = this.weitergedacht.querySelector('#close-weitergedacht');
+        close.addEventListener('click', () => {
+            this.weitergedacht.classList.add('hidden');
+            this.weitergedachtPointer.classList.remove('hidden');
+        });
+
+        this.weitergedachtPointer.addEventListener('click', () => {
+            this.weitergedacht.classList.remove('hidden');
+            this.weitergedachtPointer.classList.add('hidden');
+        });
     };
 }
