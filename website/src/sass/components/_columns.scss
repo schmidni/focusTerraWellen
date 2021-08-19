@@ -7,7 +7,7 @@ $padding-small: $padding-left-small - 2.5rem;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    align-items: center;
+    align-items: flex-start;
     overflow: hidden;
     padding: 0 $padding;
 
