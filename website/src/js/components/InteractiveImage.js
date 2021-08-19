@@ -78,8 +78,8 @@ export default class InteractiveImage {
 
         const weiterLeft = `${width - this.weitergedacht.getBoundingClientRect().width}px`;
         this.weitergedacht.style.left = weiterLeft;
-        this.weitergedachtPointer.style.left = `calc(${width - 220}px`;
-        this.weitergedachtPointer.style.bottom = `110px`;
+        this.weitergedachtPointer.style.left = `calc(${width - 200}px`;
+        this.weitergedachtPointer.style.bottom = `90px`;
     };
 
     hideTitleOnScroll = () => {
