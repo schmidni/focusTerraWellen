@@ -2,7 +2,11 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("../images/titelbild.png");
+    // background-image: url("../images/titelbild.png");
+    background-image: image-set(
+        "../images/Titelbild_1980w.png" 1x,
+        "../images/Titelbild_2560w.png" 2x
+    );
     background-size: cover;
     background-position: center;
     overflow: hidden;

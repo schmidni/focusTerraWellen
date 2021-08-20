@@ -15,6 +15,8 @@ defaultContentLanguage = "de"
 
         [languages.de.params]
         weiter = "Weitergedacht"
+        weiter_alt = "Weitergedacht Maskottchen für"
+        fullscreen_image_alt = "Poster zum Thema"
 
         [languages.de.menu]
             [[languages.de.menu.home]]
@@ -93,6 +95,8 @@ defaultContentLanguage = "de"
 
         [languages.en.params]
         weiter = "Think Further"
+        weiter_alt = "Think further icon for"
+        fullscreen_image_alt = "Poster to the topic of"
 
         [languages.en.menu]
             [[languages.en.menu.home]]

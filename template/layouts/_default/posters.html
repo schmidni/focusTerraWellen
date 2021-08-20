@@ -20,19 +20,40 @@
             <div class="icon-circle icon-circle--3"></div>
             <div class="icon-circle icon-circle--4"></div>
         </div>
+
         <div class="fullscreen-image__weitergedacht hidden">
+
             <img class="maskottchen"
-                src='/images/icons/weitergedacht/2-{{ .Param "number" }}-weitergedacht_{{ .Param "name" }}.png' />
+                src='/images/icons/weitergedacht/2-{{ .Param "number" }}-weitergedacht_{{ .Param "name"}}.png'
+                alt='{{ .Site.Language.Params.params.weiter_alt }} {{.Param "name" | humanize}}' />
+
             <h5>{{ .Site.Language.Params.params.weiter }}</h5>
             <h6>{{ .Param "weitergedacht" }}</h6>
             <div class="shape-outside"></div>
+
             <div id="close-weitergedacht" class="fullscreen-image__weitergedacht__close">
                 <span class="close-icon">&nbsp;</span>
             </div>
+
         </div>
         {{ end }}
 
-        <img class="fullscreen-image__img" src='/images/{{ .Param "name" }}.jpg' alt="" />
+        <!--
+            800w -> 600h
+            1280w -> 800h
+            1920w -> 1080h    
+            2560w -> 1440h
+            3840w -> 2160h
+        
+        -->
+
+        <img class="fullscreen-image__img" srcset='/images/stories/{{ .Param "name" }}_600h.jpg 1600w,
+                        /images/stories/{{ .Param "name" }}_800h.jpg 2133w,
+                        /images/stories/{{ .Param "name" }}_1080h.jpg 2880w,
+                        /images/stories/{{ .Param "name" }}_1440h.jpg 3840w,
+                        /images/stories/{{ .Param "name" }}.jpg 5680w' sizes="270vw"
+            src='/images/stories/{{ .Param "name" }}.jpg'
+            alt='{{ .Site.Language.Params.params.fullscreen_image_alt }} {{.Param "name" | humanize }}' />
 
         {{ range .Param "annotations" }}
         <div class="annotations">
