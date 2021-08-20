@@ -49,7 +49,7 @@ export default class InteractiveImage {
         window.addEventListener('resize', debounce(this.updatePosition, 100));
 
         // set up event listeners for 'weitergedacht'
-        this.showWeitergedacht();
+        if (this.weitergedacht) this.showWeitergedacht();
 
         // set up event listener to hide Title
         if (this.isTouch.matches) this.hideTitleOnMobile();
@@ -77,13 +77,15 @@ export default class InteractiveImage {
             annot.style.transform = `rotate(${annot.dataset.rot}deg)`;
         });
 
-        // update weitergedacht position
-        const weiterLeft = `${width - this.weitergedacht.getBoundingClientRect().width}px`;
-        this.weitergedacht.style.left = weiterLeft;
+        if (this.weitergedacht) {
+            // update weitergedacht position
+            const weiterLeft = `${width - this.weitergedacht.getBoundingClientRect().width}px`;
+            this.weitergedacht.style.left = weiterLeft;
 
-        // update weitergedacht weitergedacht pointer position
-        this.weitergedachtPointer.style.left = `calc(${width - 200}px`;
-        this.weitergedachtPointer.style.bottom = `90px`;
+            // update weitergedacht weitergedacht pointer position
+            this.weitergedachtPointer.style.left = `calc(${width - 200}px`;
+            this.weitergedachtPointer.style.bottom = `90px`;
+        }
     };
 
     hideTitleOnScroll = () => {

@@ -17,7 +17,7 @@ function typenInit() {
             if (!touch.matches) {
                 y = clamp(scroll.y / 2, 0, width * 0.55);
             } else {
-                y = clamp(scroll.y, 0, width * 1.2);
+                y = clamp(scroll.y, 0, width * 2);
             }
 
             typenBackground.style.transform = `translate(${-1 * y}px, ${scroll.y}px)`;

@@ -1,5 +1,5 @@
 $padding: $padding-left-default - 2.5rem;
-$padding-small: $padding-left-small - 2.5rem;
+$padding-small: $padding-left-small - 3rem;
 
 .columns {
     width: 100%;
@@ -17,6 +17,10 @@ $padding-small: $padding-left-small - 2.5rem;
     &__col {
         z-index: 1;
         padding: 1rem 2.5rem;
+
+        @include respond(phone) {
+            padding: 1rem 1.5rem;
+        }
 
         &--2 {
             flex: 0 0 50%;
@@ -49,6 +53,10 @@ $padding-small: $padding-left-small - 2.5rem;
         img {
             max-width: 100%;
             max-height: 80vh;
+            @include respond(phone) {
+                max-width: 90vw;
+                margin: 1rem -3rem 2rem;
+            }
         }
     }
 }
