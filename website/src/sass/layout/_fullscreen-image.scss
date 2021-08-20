@@ -5,6 +5,10 @@
     position: relative;
     margin: 0;
 
+    @media (hover: hover) and (pointer: fine) {
+        overflow: hidden;
+    }
+
     &__img {
         height: 100%;
         min-width: 100vw;
@@ -14,7 +18,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 10;
+        z-index: 2;
 
         width: 150rem;
         white-space: normal;
@@ -91,7 +95,7 @@
 
     &__weitergedacht {
         position: absolute;
-        z-index: 10;
+        z-index: 9;
         bottom: 0;
 
         width: 120rem;
@@ -157,7 +161,7 @@
 
     #pointer-weitergedacht {
         position: absolute;
-        z-index: 1000;
+        z-index: 10;
 
         &.hidden {
             opacity: 0;
