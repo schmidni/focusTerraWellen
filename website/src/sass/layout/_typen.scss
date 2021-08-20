@@ -27,6 +27,7 @@
 
         @include respond(tab-port) {
             padding-left: $padding-left-small;
+            margin-bottom: 3rem;
         }
     }
 

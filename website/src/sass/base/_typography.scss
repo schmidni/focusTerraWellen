@@ -25,6 +25,9 @@ h1,
         @include respond(tab-port) {
             font-size: 8rem;
         }
+        @include respond(phone-small) {
+            font-size: 6rem;
+        }
     }
 }
 

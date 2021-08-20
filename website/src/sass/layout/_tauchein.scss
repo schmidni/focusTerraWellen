@@ -4,13 +4,14 @@
     padding-bottom: 10rem;
     background-color: $color-turquoise;
     color: $color-white;
+    overflow: hidden;
 
     &--white {
         background-color: $color-white;
         color: $color-teal;
     }
 
-    &__title {
+    &__header {
         min-height: 45vh;
         padding: 0 0 0 $padding-left-default;
 
@@ -19,26 +20,39 @@
         }
 
         @include respond(phone-small) {
-            padding-left: 5vw;
-        }
-
-        .wavesTitle {
-            position: relative;
-            z-index: 1;
-            transform: scale(0.6);
-            margin-top: -5rem;
-
-            @include respond(phone-small) {
-                transform: scale(0.5);
-            }
-        }
-
-        .h1--intro {
-            padding-top: 3rem;
+            padding-left: 4rem;
         }
     }
 
-    &__titlewave {
+    &__title {
+        position: relative;
+        z-index: 1;
+        transform: scale(0.8);
+        margin-top: -3rem;
+        margin-left: -4rem;
+        float: left;
+
+        @include respond(tab-land) {
+            transform: scale(0.75);
+            margin-left: -9rem;
+        }
+
+        @include respond(phone) {
+            transform: scale(0.65);
+            margin-left: -12.5rem;
+        }
+
+        @include respond(phone-small) {
+            transform: scale(0.45);
+            margin-left: -17rem;
+        }
+    }
+
+    .h1--intro {
+        padding-top: 3rem;
+    }
+
+    &__svg {
         position: absolute;
         top: 0;
         left: 0;
@@ -64,5 +78,6 @@
 
     .columns {
         min-height: 50vh;
+        margin-bottom: 5rem;
     }
 }
