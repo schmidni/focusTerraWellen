@@ -7,7 +7,7 @@ export default class Timeline {
         this.lscroll = lscroll;
         this.linePath = this.timeline.querySelector('.timeline__line path');
         this.title = this.timeline.querySelector('.timeline__title');
-        this.bottomTitle = this.timeline.querySelector('.timeline__title--bottom');
+        this.bottomTitle = this.timeline.querySelector('.zukunft');
         this.svg = this.linePath.ownerSVGElement;
         this.items = document.getElementsByClassName('timeline__item');
 

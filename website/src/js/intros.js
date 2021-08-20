@@ -55,7 +55,9 @@ if (locomotiveElement) {
     // if timeline element exists initialize Timeline
     const timeline = document.querySelector('.timeline');
     if (timeline) {
-        // eslint-disable-next-line no-unused-vars
-        const tl = new Timeline(timeline, lscroll);
+        imagesLoaded(locomotiveElement, () => {
+            // eslint-disable-next-line no-unused-vars
+            const tl = new Timeline(timeline, lscroll);
+        });
     }
 }
