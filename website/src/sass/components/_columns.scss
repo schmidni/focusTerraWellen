@@ -1,25 +1,32 @@
-$padding: $padding-left-default - 2.5rem;
-$padding-small: $padding-left-small - 3rem;
+// $padding: 12;
+$gap-padding: 4rem;
+$gap-padding-small: 2rem;
 
 .columns {
     width: 100%;
+    // max-width: 2160px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: flex-start;
     overflow: hidden;
-    padding: 0 $padding;
-
+    padding: 0 10rem 0 $padding-left-default;
+    
     @include respond(phone) {
-        padding: 0 $padding-small;
+        padding: 0 $padding-left-small;
     }
 
+
     &__col {
-        z-index: 1;
-        padding: 1rem 2.5rem;
+         z-index: 1;
+        padding: 1rem $gap-padding;
 
         @include respond(phone) {
-            padding: 1rem 1.5rem;
+            padding: 1rem $gap-padding-small;
+        }
+
+        @include respond(big) {
+            padding: 0 ($gap-padding+$gap-padding-small);
         }
 
         &--2 {
@@ -50,6 +57,7 @@ $padding-small: $padding-left-small - 3rem;
             }
         }
 
+        //!!!
         img {
             max-width: 100%;
             max-height: 80vh;

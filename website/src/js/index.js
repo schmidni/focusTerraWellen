@@ -6,6 +6,18 @@ toggleMenu?.addEventListener('click', () => {
     toggleMenu.classList.toggle('active');
 });
 
+const scrollIcon = document.getElementsByClassName('icon')[0];
+
+document.addEventListener('scroll', () => {
+    console.log('hiding!!??');
+    scrollIcon.classList.add('hidden');
+});
+
+document.addEventListener('touchmove', () => {
+    console.log('hiding!!??');
+    scrollIcon.classList.add('icon--hidden');
+});
+
 // collect all navigation elements
 const navigation = [
     ...document.getElementsByClassName('navigation'),
