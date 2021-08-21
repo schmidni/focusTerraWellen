@@ -18,8 +18,8 @@
             border-radius: 50%;
             border-color: $color-info-icon;
             border-style: solid;
-            box-shadow: 0 0 2rem darken($color-info-icon, 30%),
-                darken($color-info-icon, 30%) 0 0 2rem inset;
+            box-shadow: 0 0 2rem darken($color-base, 0%),
+                darken($color-base, 0%) 0 0 2rem inset;
 
             animation-name: circleGrows;
             animation-timing-function: linear;

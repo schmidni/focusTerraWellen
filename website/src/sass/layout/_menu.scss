@@ -194,7 +194,8 @@
         &::after {
             display: inline-block;
             width: 3.2rem;
-            height: 3px;
+            height: 4px;
+            border-radius: 2px;
             background-color: $color-white;
             transition: all 0.2s;
         }
@@ -227,7 +228,7 @@
         background-color: transparent;
 
         &:hover {
-            transform: scale(1.2) rotate(90deg);
+            transform: scale(1.2);
         }
     }
 
