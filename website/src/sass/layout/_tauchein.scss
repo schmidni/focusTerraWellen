@@ -23,9 +23,10 @@
 
     &__stein {
         position: absolute;
+        left: 50%;
         z-index: 1000;
-        width: 50rem;
-        height: 50rem;
+        width: 30rem;
+        max-height: 30rem;
     }
 
     &__header {
