@@ -21,34 +21,21 @@
         color: $color-white;
     }
 
-    &__stein {
-        position: absolute;
-        left: 50%;
-        z-index: 1000;
-        width: 30rem;
-        max-height: 30rem;
-    }
+    
 
     &__header {
-        min-height: 45vh;
-        padding: 0 0 0 $padding-left-default;
-
-        @include respond(tab-port) {
-            padding-left: $padding-left-small;
-        }
-
-        @include respond(phone-small) {
-            padding-left: 4rem;
-        }
+        min-height: 60vh;
+       
     }
 
+
     &__title {
-        position: relative;
+        // position: relative;
         z-index: 1;
         transform: scale(0.8);
-        margin-top: -3rem;
+        // margin-top: -3rem;
         margin-left: -4rem;
-        float: left;
+        // float: left;
 
         .wavesTitle__main {
             color: white;
@@ -65,17 +52,45 @@
 
         @include respond(phone) {
             transform: scale(0.65);
-            margin-left: -12.5rem;
+            // margin-left: -12.5rem;
         }
 
         @include respond(phone-small) {
             transform: scale(0.45);
-            margin-left: -17rem;
+            // margin-left: -17rem;
         }
     }
 
     .h1--intro {
-        padding-top: 3rem;
+        padding: 3rem 4rem 0 $padding-left-default;
+        @include respond(phone) {
+            padding-left: $padding-left-small;
+        }
+        @include respond(phone-small) {
+            padding-left: 4rem;
+            
+        }
+    }
+
+    &__lead {
+        position: relative;
+        z-index: 1;
+        padding: 16rem 4rem 8rem $padding-left-default;
+
+        h3 {
+            color: $color-yellow;
+            // padding-top: 8rem;
+        }
+
+
+        @include respond(phone) {
+            padding: 8rem 4rem 8rem $padding-left-small;
+        }
+
+        @include respond(phone-small) {
+            padding-left: 4rem;
+            
+        }
     }
 
     &__svg {
@@ -108,8 +123,31 @@
         }
     }
 
-    .columns {
-        min-height: 50vh;
-        margin-bottom: 5rem;
+    // .columns {
+    //     min-height: 45vh;
+    //     // margin-bottom: 5rem;
+    // }
+
+
+    #surfing {
+        padding-top: 12rem;
+        max-height: 60rem;
+        display: block;
+        margin: 0 auto;
+
+        @include respond(tab-land) {
+            margin-top: -10rem;
+            padding: $padding-left-small;
+        }
+    }
+
+    #stone {
+        max-width: 100%;
+
+        @include respond(tab-land) {
+            margin-top: -10rem;
+            padding: $padding-left-small;
+            // max-width: 50rem;
+        }
     }
 }

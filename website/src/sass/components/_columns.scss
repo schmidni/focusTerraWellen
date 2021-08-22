@@ -18,15 +18,15 @@ $gap-padding-small: 2rem;
 
 
     &__col {
-         z-index: 1;
+        z-index: 1;
         padding: 1rem $gap-padding;
 
-        @include respond(phone) {
-            padding: 1rem $gap-padding-small;
+        @include respond(tab-land) {
+            padding: 1rem 0 1rem 0;
         }
 
         @include respond(big) {
-            padding: 0 ($gap-padding+$gap-padding-small);
+            padding: 1 ($gap-padding+$gap-padding-small);
         }
 
         &--2 {
