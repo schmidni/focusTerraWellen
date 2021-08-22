@@ -7,16 +7,15 @@ toggleMenu?.addEventListener('click', () => {
 });
 
 const scrollIcon = document.getElementsByClassName('icon')[0];
+if (scrollIcon) {
+    document.addEventListener('wheel', () => {
+        scrollIcon.classList.add('icon--hidden');
+    });
 
-document.addEventListener('scroll', () => {
-    console.log('hiding!!??');
-    scrollIcon.classList.add('hidden');
-});
-
-document.addEventListener('touchmove', () => {
-    console.log('hiding!!??');
-    scrollIcon.classList.add('icon--hidden');
-});
+    document.addEventListener('touchmove', () => {
+        scrollIcon.classList.add('icon--hidden');
+    });
+}
 
 // collect all navigation elements
 const navigation = [
