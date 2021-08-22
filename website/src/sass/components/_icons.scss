@@ -1,113 +1,126 @@
-#icon{
+#icon {
     &-stories {
-        top: 50vh; 
-        left: 50%; 
+        top: 50vh;
+        left: 50%;
         fill: $color-info-icon;
         transform: scale(1.5);
         // background-color: rgba(black, 0.3);
         // box-shadow: 0 0 2rem rgba(black, 0.6);
-        
-        .icon{
+
+        .icon {
             &--mouse-wheel {
                 fill: $color-white;
             }
-            &__chev-up, &__chev-down{
+
+            &__chev-up,
+            &__chev-down {
                 display: none;
             }
         }
     }
 
     &-home {
-        top: 75vh; 
-        left: 50%; 
+        top: 75vh;
+        left: 50%;
         fill: $color-base;
 
-        .icon{
+        .icon {
             &--mouse-wheel {
                 fill: $color-white;
             }
-            &__chev-left, &__chev-right{
+
+            &__chev-left,
+            &__chev-right {
                 display: none;
             }
         }
     }
-    &-tauchein {
-        top: 45vh; 
-        left: 50%; 
 
-        .icon{
+    &-tauchein {
+        top: 45vh;
+        left: 50%;
+
+        .icon {
             &--mouse-wheel {
                 fill: $color-teal;
             }
-            &__chev-left, &__chev-right{
+
+            &__chev-left,
+            &__chev-right {
                 display: none;
             }
         }
     }
 
     &-typen {
-        top: 75vh; 
-        left: 50%; 
+        top: 75vh;
+        left: 50%;
 
-        .icon{
+        .icon {
             &--mouse-wheel {
                 fill: #568083;
             }
-            &__chev-left, &__chev-right{
+
+            &__chev-left,
+            &__chev-right {
                 display: none;
             }
         }
     }
 
     &-physik {
-        top: 45vh; 
-        left: 50%; 
+        top: 45vh;
+        left: 50%;
 
-        .icon{
+        .icon {
             &--mouse-wheel {
                 fill: $color-teal;
             }
-            &__chev-left, &__chev-right{
+
+            &__chev-left,
+            &__chev-right {
                 display: none;
             }
         }
     }
 
     &-zeit {
-        top: 75vh; 
-        left: 50%; 
+        top: 75vh;
+        left: 50%;
 
-        .icon{
+        .icon {
             &--mouse-wheel {
                 fill: $color-turquoise;
             }
 
-            &__chev-left, &__chev-right{
+            &__chev-left,
+            &__chev-right {
                 display: none;
             }
         }
     }
 }
 
-
 .icon {
     fill: $color-yellow;
 
     width: 12rem;
-    height:auto;
-    position:fixed; 
+    height: auto;
+    position: fixed;
     z-index: 999;
 
     opacity: 1;
-    transition: opacity 0.8s ease 0.2s;
+    // transition: opacity 0.8s ease 0.2s;
 
     &--hidden {
-        opacity: 0;
+        // opacity: 0;
+        display: none;
     }
 
     &--mouse-wheel {
         display: block;
-        animation: wheel 1.2s cubic-bezier(.15,0,.51,1) 0s infinite normal none;
+        animation: wheel 1.2s cubic-bezier(0.15, 0, 0.51, 1) 0s infinite normal
+            none;
 
         @include respond(tab-land) {
             display: none;
@@ -127,9 +140,9 @@
             display: block;
         }
     }
+
     &__chev-down {
         animation: down-fade 1.2s linear 0s infinite normal none;
-        
     }
 
     &__chev-up {
@@ -138,14 +151,12 @@
 
     &__chev-right {
         animation: right-fade 1.2s linear 0s infinite normal none;
-        
     }
 
     &__chev-left {
         animation: left-fade 1.2s linear 0s infinite normal none;
     }
 }
-
 
 .close-icon {
     position: relative;
