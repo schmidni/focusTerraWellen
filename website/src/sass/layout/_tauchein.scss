@@ -30,12 +30,9 @@
 
 
     &__title {
-        // position: relative;
         z-index: 1;
         transform: scale(0.8);
-        // margin-top: -3rem;
         margin-left: -4rem;
-        // float: left;
 
         .wavesTitle__main {
             color: white;
@@ -52,12 +49,10 @@
 
         @include respond(phone) {
             transform: scale(0.65);
-            // margin-left: -12.5rem;
         }
 
         @include respond(phone-small) {
             transform: scale(0.45);
-            // margin-left: -17rem;
         }
     }
 
@@ -76,12 +71,6 @@
         position: relative;
         z-index: 1;
         padding: 16rem 4rem 8rem $padding-left-default;
-
-        h3 {
-            color: $color-yellow;
-            // padding-top: 8rem;
-        }
-
 
         @include respond(phone) {
             padding: 8rem 4rem 8rem $padding-left-small;
@@ -123,21 +112,16 @@
         }
     }
 
-    // .columns {
-    //     min-height: 45vh;
-    //     // margin-bottom: 5rem;
-    // }
-
-
     #surfing {
         padding-top: 12rem;
+        padding-bottom: 6rem;
         max-height: 60rem;
         display: block;
         margin: 0 auto;
 
         @include respond(tab-land) {
-            margin-top: -10rem;
-            padding: $padding-left-small;
+            margin-top: -20rem;
+            padding: 0 $padding-left-small 4rem $padding-left-small;
         }
     }
 
@@ -147,7 +131,6 @@
         @include respond(tab-land) {
             margin-top: -10rem;
             padding: $padding-left-small;
-            // max-width: 50rem;
         }
     }
 }

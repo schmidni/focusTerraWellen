@@ -6,18 +6,24 @@
     color: $color-white;
 
     &__title {
+       
         min-height: 100vh;
         padding: $padding-title;
 
-        @include respond(tab-port) {
-            padding-left: $padding-left-small;
+        .columns {
+            padding: 0;
+            white-space: nowrap;
+
+            @include respond(phone) {
+                white-space: normal;
+            }
         }
     }
 
     &__lead {
         position: relative;
         z-index: 1;
-        margin-top: 30vh;
+        // margin-top: 30vh;
     }
 
     &__wave {
@@ -36,6 +42,20 @@
             height: 100%;
             width: 100%;
             transform: rotate(180deg);
+        }
+    }
+
+    #walking {
+        position: relative;
+        padding: $padding-left-default;
+        max-height: 60rem;
+        display: block;
+        margin: 0 auto;
+        z-index: 1001;
+
+        @include respond(tab-land) {
+            margin-top: -9rem;
+            padding: $padding-left-small;
         }
     }
 }

@@ -25,7 +25,7 @@
         padding: $padding-title;
         padding-top: 8vh;
 
-        @include respond(tab-port) {
+        @include respond(phone) {
             padding-left: $padding-left-small;
             margin-bottom: 3rem;
         }

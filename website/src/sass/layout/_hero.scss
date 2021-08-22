@@ -53,10 +53,11 @@
     &__greeting {
         padding: 2rem;
         margin-top: -4rem;
-        max-width: 70rem;
+        max-width: 85rem;
 
         &--welcome {
             color: $color-base;
+            padding-bottom: 2rem;
         }
 
         &--details {
