@@ -1,4 +1,4 @@
-baseURL = "https://focus-terra-wellen-bn7o7.ondigitalocean.app/"
+baseURL = "https://wellen.ethz.ch/"
 languageCode = "de-ch"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS", "list"]
 defaultContentLanguage = "de"
@@ -17,6 +17,7 @@ defaultContentLanguage = "de"
         weiter = "Weitergedacht"
         weiter_alt = "Weitergedacht Maskottchen für"
         fullscreen_image_alt = "Poster zum Thema"
+        description = "Diese Hompage begleitet die Ausstellung, die vom 24. August 2021 bis zum 5. März 2023 an der ETH Zürich gezeigt wird. Dort kannst du die Wellen auf grossen Leuchtbildern entdecken und mit Experimenten selber erforschen. Wir freuen uns auf deinen Besuch!"
 
         [languages.de.menu]
             [[languages.de.menu.home]]
@@ -97,6 +98,7 @@ defaultContentLanguage = "de"
         weiter = "Think Further"
         weiter_alt = "Think further icon for"
         fullscreen_image_alt = "Poster to the topic of"
+        description = "The online exhibition accompanies the exhibition shown from 24 August 2021 to 5 March 2023 in focusTerra at ETH Zurich. There you can discover the waves on large illuminated illustrations and explore them yourself in many experiments. We look forward to your visit."
 
         [languages.en.menu]
             [[languages.en.menu.home]]

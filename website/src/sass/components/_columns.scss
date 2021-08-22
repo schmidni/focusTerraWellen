@@ -11,22 +11,21 @@ $gap-padding-small: 2rem;
     align-items: flex-start;
     overflow: hidden;
     padding: 0 10rem 0 $padding-left-default;
-    
+
     @include respond(phone) {
         padding: 0 $padding-left-small;
     }
-
 
     &__col {
         z-index: 1;
         padding: 1rem $gap-padding;
 
         @include respond(tab-land) {
-            padding: 1rem 0 1rem 0;
+            padding: 1rem 0;
         }
 
         @include respond(big) {
-            padding: 1 ($gap-padding+$gap-padding-small);
+            padding: 1 ($gap-padding + $gap-padding-small);
         }
 
         &--2 {

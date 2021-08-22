@@ -7,6 +7,16 @@
         // background-color: rgba(black, 0.3);
         // box-shadow: 0 0 2rem rgba(black, 0.6);
 
+        @include respond(tab-land) {
+            top: auto;
+            bottom: 25vh;
+        }
+
+        @include respond(phone) {
+            top: auto;
+            bottom: 10vh;
+        }
+
         .icon {
             &--mouse-wheel {
                 fill: $color-white;
@@ -115,6 +125,14 @@
     &--hidden {
         // opacity: 0;
         display: none;
+    }
+
+    svg {
+        position: relative;
+        left: -50%;
+        @include respond(tab-land) {
+            left: -30%;
+        }
     }
 
     &--mouse-wheel {
