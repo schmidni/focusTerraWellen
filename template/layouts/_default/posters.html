@@ -77,7 +77,7 @@
         {{ range .Param "annotations" }}
         <div class="annotations">
             <div class="annotations__element" data-posx="{{.posx}}" data-posy="{{.posy}}" data-rot="{{.rot}}"
-                {{ if isset . "color" }} style='color: {{.color}}; text-shadow: none;' {{end}}>
+                {{ if isset . "color" }} style='color: {{.color}}; text-shadow: none; font-size: 0.95rem;' {{end}}>
                 {{.string}}
             </div>
         </div>
