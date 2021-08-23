@@ -30,7 +30,7 @@
         rel="stylesheet">
 
     {{ $style := "css/style.css" | relURL}}
-    <link rel="stylesheet" href="{{ $style }}">
+    <link rel="stylesheet" href="{{ $style }}?{{ now.Unix }}">
 
     {{ $title := print .Title " | " .Site.Title }}
 

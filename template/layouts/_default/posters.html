@@ -109,5 +109,5 @@
 </main>
 
 {{ $js := "js/stories.js" | relURL }}
-<script src="{{ $js }}"></script>
+<script src="{{ $js }}?{{ now.Unix }}"></script>
 {{ end }}

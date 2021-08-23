@@ -3,6 +3,6 @@
 {{ .Content }}
 
 {{ $js := "js/intros.js" | relURL }}
-<script src="{{ $js }}"></script>
+<script src="{{ $js }}?{{ now.Unix }}"></script>
 
 {{ end }}
