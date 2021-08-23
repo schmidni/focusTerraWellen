@@ -44,6 +44,13 @@
         justify-content: center;
         overflow: hidden;
 
+        padding: 12rem $padding-left-default;
+
+        .h1 {
+            opacity: 1;
+            font-size: 4.5rem;
+        }
+
         @include respond(tab-port) {
             width: 100%;
         }
@@ -53,6 +60,7 @@
         transform: rotate(0);
         margin: 0;
     }
+
     @include on-hover("&__text") {
         display: block;
     }
@@ -168,27 +176,19 @@
         @include respond(phone-small) {
             padding-left: 4rem;
         }
-
-        @include on-hover("") {
-            padding: 12rem $padding-left-default;
-
-            .h1 {
-                opacity: 1;
-                font-size: 4.5rem;
-            }
-        }
     }
 
     &__title {
         color: $color-white;
         transform: rotate(-90deg);
         white-space: nowrap;
+        line-height: 1.2;
 
         @include respond(tab-port) {
             flex-direction: column;
             transform: rotate(0deg);
             white-space: normal;
-            line-height: 1.2;
+            padding-top: 0.8rem;
         }
     }
 
