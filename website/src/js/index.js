@@ -22,6 +22,8 @@ const navigation = [
     ...document.getElementsByClassName('navigation'),
     ...document.getElementsByClassName('intro'),
 ];
+// need hover on container to manipulate display on "not selected" elements
+const navContainer = document.querySelector('.navigation__container');
 
 // construct media query
 const x = window.matchMedia('not all and (hover: hover), not all and (pointer: fine)');
@@ -32,7 +34,13 @@ if (x.matches) {
             // don't execute if link is clicked
             if (!checkInstanceOfClicked(e, HTMLAnchorElement)) {
                 // toggle class
-                nav.classList.toggle('hover');
+                if (nav.classList.contains('hover')) {
+                    nav.classList.remove('hover');
+                    navContainer.classList.remove('hover');
+                } else {
+                    nav.classList.add('hover');
+                    navContainer.classList.add('hover');
+                }
                 // remove class from all other nav elements
                 navigation.forEach((otherNav) => {
                     if (otherNav !== nav) {

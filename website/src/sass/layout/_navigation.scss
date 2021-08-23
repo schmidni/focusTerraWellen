@@ -69,7 +69,7 @@
         display: block;
 
         @include respond(tab-port) {
-            height: 20rem;
+            max-height: 15rem;
             align-self: center;
             margin: -5rem 0;
         }
@@ -109,6 +109,7 @@
         }
     }
 
+    // this is the container where all the "navigation" elements are inside
     &__container {
         position: relative;
 
@@ -121,13 +122,16 @@
             flex-direction: column;
         }
 
+        // opacity for h1 elements which are NOT selected
         @include on-hover("") {
             .h1 {
                 opacity: 0.75;
                 font-size: 4rem;
+
                 @include respond(tab-land) {
                     opacity: 0;
                 }
+
                 @include respond(tab-port) {
                     opacity: 0.75;
                 }

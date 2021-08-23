@@ -1,14 +1,16 @@
 .hero {
     position: relative;
     height: 100vh;
+    min-height: 650px;
     width: 100%;
-    // background-image: url("../images/titelbild.png");
+
     background-image: image-set(
         "../images/Titelbild_1980w.png" 1x,
         "../images/Titelbild_2560w.png" 2x
     );
     background-size: cover;
     background-position: center;
+
     overflow: hidden;
 
     &__content {
@@ -27,12 +29,20 @@
     }
 
     &__title {
+        margin-top: -50px;
+
         @include respond(big) {
+            margin-top: 0;
             transform: scale(120%);
         }
 
+        @include respond(tab-land) {
+            margin-top: -85px;
+            transform: scale(80%);
+        }
+
         @include respond(tab-port) {
-            margin-top: -50px;
+            margin-top: -75px;
             transform: scale(80%);
         }
 
@@ -51,7 +61,7 @@
     }
 
     &__greeting {
-        padding: 2rem;
+        padding: 0 2rem;
         margin-top: -4rem;
         max-width: 85rem;
 
@@ -62,6 +72,10 @@
 
         &--details {
             color: $color-teal;
+        }
+
+        @include respond(tab-port) {
+            padding: 2rem;
         }
 
         @include respond(phone) {
@@ -78,15 +92,6 @@
             }
         }
     }
-
-    // &__icon {
-    //     height: 7.5rem;
-    //     width: 7.5rem;
-    //     position: absolute;
-    //     left: calc(50vw - 3.75rem);
-    //     bottom: 10rem;
-    //     fill: $color-base;
-    // }
 
     &__box {
         width: 50vw;
