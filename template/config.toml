@@ -17,7 +17,7 @@ defaultContentLanguage = "de"
         weiter = "Weitergedacht"
         weiter_alt = "Weitergedacht Maskottchen für"
         fullscreen_image_alt = "Poster zum Thema"
-        description = "Diese Hompage begleitet die Ausstellung, die vom 24. August 2021 bis zum 5. März 2023 an der ETH Zürich gezeigt wird. Dort kannst du die Wellen auf grossen Leuchtbildern entdecken und mit Experimenten selber erforschen. Wir freuen uns auf deinen Besuch!"
+        description = "Diese Website begleitet die Ausstellung, die vom 24. August 2021 bis zum 5. März 2023 an der ETH Zürich gezeigt wird. Dort kannst du die Wellen auf grossen Leuchtbildern entdecken und mit Experimenten selber erforschen. Wir freuen uns auf deinen Besuch!"
 
         [languages.de.menu]
             [[languages.de.menu.home]]
