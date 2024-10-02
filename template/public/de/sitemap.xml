@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://wellen.ethz.ch/manipulierbarkeit/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
@@ -15,9 +14,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/manipulierbarkeit/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/geschwindigkeit/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -30,9 +27,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/geschwindigkeit/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/wellenlaenge/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -45,9 +40,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/wellenlaenge/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/frequenzgehalt/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -60,9 +53,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/frequenzgehalt/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/kommunikation/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -75,9 +66,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/kommunikation/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/energie/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -90,9 +79,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/energie/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/reflexion/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -105,9 +92,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/reflexion/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/empfaenger/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -120,9 +105,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/empfaenger/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/zeit/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -135,9 +118,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/zeit/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/eintauchen/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -150,9 +131,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/eintauchen/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/gesellschaft/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -165,9 +144,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/gesellschaft/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -180,9 +157,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/wellenphysik/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -195,9 +170,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/wellenphysik/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/wellentypen/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -210,9 +183,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/wellentypen/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/veraenderung/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -225,9 +196,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/veraenderung/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/lokalisierung/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -240,9 +209,7 @@
                 hreflang="de"
                 href="https://wellen.ethz.ch/lokalisierung/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://wellen.ethz.ch/risiken/</loc>
     <lastmod>2019-01-12T22:14:57-06:00</lastmod>
     <xhtml:link
@@ -256,5 +223,4 @@
                 href="https://wellen.ethz.ch/risiken/"
                 />
   </url>
-  
 </urlset>
