@@ -18,7 +18,8 @@
             border-radius: 50%;
             border-color: $color-info-icon;
             border-style: solid;
-            box-shadow: 0 0 2rem darken($color-base, 0%),
+            box-shadow:
+                0 0 2rem darken($color-base, 0%),
                 darken($color-base, 0%) 0 0 2rem inset;
 
             animation-name: circleGrows;
@@ -51,8 +52,8 @@
 
     &__text {
         position: absolute;
-        min-height: fit-content;
         max-height: 70vh; // if changed, need to update javascript interactiveInfo.js
+        // min-height: fit-content;
         width: 60rem;
         overflow-y: auto;
         padding: 4rem 5rem;

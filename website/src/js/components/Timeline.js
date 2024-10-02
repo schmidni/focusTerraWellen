@@ -9,7 +9,9 @@ export default class Timeline {
         this.title = this.timeline.querySelector('.timeline__title');
         this.bottomTitle = this.timeline.querySelector('.zukunft');
         this.svg = this.linePath.ownerSVGElement;
-        this.items = document.getElementsByClassName('timeline__item');
+        this.items = Array.from(
+            document.getElementsByClassName('timeline__item')
+        );
 
         // get dimensions
         this.containerHeight = this.getSvgContainerHeight();
@@ -52,7 +54,6 @@ export default class Timeline {
             // stop scrolling
             this.moveSVG(scroll);
         });
-
         // initial positioning of timeline elements
         this.items.forEach((circle, idx) => {
             this.positionElements({ x: 0, y: 0 }, circle, idx);
@@ -62,7 +63,8 @@ export default class Timeline {
     positionElements = (scroll, circle, idx) => {
         const { left, height, width } = this.pathRect;
         // distance to scroll before element starts on path
-        const animationDelay = this.titleHeight + this.distances[idx] - this.itemDelay;
+        const animationDelay =
+            this.titleHeight + this.distances[idx] - this.itemDelay;
         const relativePageOffset = scroll.y - animationDelay;
 
         // how far along the path - controls speed
@@ -77,7 +79,8 @@ export default class Timeline {
         const y = pathPoint.y / (this.svg.viewBox.baseVal.height / height);
 
         // offset of path to the top of the page
-        const topOffset = this.titleHeight + (this.containerHeight - height) / 2;
+        const topOffset =
+            this.titleHeight + (this.containerHeight - height) / 2;
 
         // only make element visible when on line
         this.checkVisibility(circle, pointPercentage);
@@ -93,10 +96,15 @@ export default class Timeline {
         let years = [];
         let distances = [];
 
-        let centurySpacing = Math.min(this.minCenturySpacing, window.innerWidth);
+        let centurySpacing = Math.min(
+            this.minCenturySpacing,
+            window.innerWidth
+        );
 
         this.items.forEach((circle, idx) => {
-            years.push(parseFloat(circle.querySelector('.timeline__year').innerHTML));
+            years.push(
+                parseFloat(circle.querySelector('.timeline__year').innerHTML)
+            );
             if (idx === 0) distances.push(0);
             else {
                 let y = clamp(
@@ -111,13 +119,18 @@ export default class Timeline {
     };
 
     getSvgContainerHeight = () =>
-        this.timeline.querySelector('.timeline__svgContainer').getBoundingClientRect().height;
+        this.timeline
+            .querySelector('.timeline__svgContainer')
+            .getBoundingClientRect().height;
 
-    getTimelineLength = () => this.distances[this.distances.length - 1] + this.itemDelay;
+    getTimelineLength = () =>
+        this.distances[this.distances.length - 1] + this.itemDelay;
 
     updateTimelineContainerHeight = () => {
-        const bottomTitleHeight = this.bottomTitle.getBoundingClientRect().height;
-        const heightFixedContainer = this.titleHeight + this.containerHeight + bottomTitleHeight;
+        const bottomTitleHeight =
+            this.bottomTitle.getBoundingClientRect().height;
+        const heightFixedContainer =
+            this.titleHeight + this.containerHeight + bottomTitleHeight;
         this.timeline.style.height = `${heightFixedContainer + this.timelineLength}px`;
         this.lscroll.update();
     };
